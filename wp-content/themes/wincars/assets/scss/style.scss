@@ -1,0 +1,22 @@
+@import 'node_modules/reset-css/sass/reset';
+@import "inc/default";
+@import "inc/fonts";
+@import "inc/vars";
+@import "inc/mixins";
+@import "inc/typographics";
+@import "inc/layout";
+@import "inc/general";
+
+@import "inc/header";
+@import "inc/main";
+
+
+@import "inc/footer";
+
+// .page-template-front-page {}
+// .blog, .category {}
+.error404 {
+	.page-title {
+		margin-bottom: 30px;
+	}
+}

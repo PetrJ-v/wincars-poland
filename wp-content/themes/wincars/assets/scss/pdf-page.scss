@@ -1,0 +1,158 @@
+@import "node_modules/reset-css/sass/reset";
+@import "inc/default";
+@import "inc/layout";
+@import "inc/fonts";
+@import "inc/vars";
+@import "inc/mixins";
+
+@font-face {
+	font-family: "Cambria";
+	font-display: swap;
+	src:
+		url("../fonts/Cambria.woff2") format("woff2"),
+		url("../fonts/Cambria.woff") format("woff");
+	font-style: normal;
+}
+.page-template-pdf {
+	// padding: 0 15pt;
+	font-family: "Cambria";
+	line-height: 1.2;
+	color: #000;
+	.a-4-container {
+		margin: auto; /* для центровки страницы */
+		max-width: 850px;
+	}
+	.header {
+		margin-bottom: 30px;
+	}
+	main {
+		padding: 0 15pt;
+	}
+	.pdf-header__img {
+		max-width: 100%;
+		line-height: 0;
+	}
+	.pdf-title {
+		margin-bottom: 3pt;
+		font-weight: 700;
+		font-size: 18pt;
+		text-transform: uppercase;
+		color: #d1890d;
+	}
+	.pdf-link {
+		display: block;
+		margin-bottom: 20px;
+		font-size: 16pt;
+		line-height: 1.2;
+		color: #ffc71d;
+		font-style: italic;
+		text-decoration: underline;
+	}
+	.pdf-content {
+		position: relative;
+		padding-bottom: 15pt;
+		&-bg {
+			@media (min-width: $breakSmall) {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				width: 75%;
+				aspect-ratio: 1 / 1;
+				background: url("@img/pdf/logo-bg.png") no-repeat;
+				background-size: contain;
+				transform: translateX(-50%);
+				z-index: -1;
+				opacity: 0.1;
+			}
+			@media (max-width: $breakSmall) {
+				display: none;
+			}
+		}
+	}
+	.pdf-table {
+		&__item {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			padding: 4pt 0;
+			border-bottom: 2px solid #000;
+			font-weight: 700;
+			font-size: 16pt;
+			@media (max-width: 150mm) {
+				font-size: 14pt;
+			}
+			@media (max-width: $breakSmall) {
+				flex-direction: column;
+			}
+			&:last-child {
+				font-size: 20pt;
+				@media (max-width: 150mm) {
+					font-size: 16pt;
+				}
+			}
+		}
+		&__item-text,
+		&__item-price {
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+		&__item-text {
+			@media (max-width: $breakSmall) {
+				text-align: center;
+			}
+		}
+		&__item-price {
+			text-align: center;
+			@media (min-width: $breakSmall) {
+				max-width: 140px;
+				min-width: 140px;
+			}
+			@media (min-width: $breakLarge) {
+				max-width: 210px;
+			}
+			@media (max-width: $breakSmall) {
+				text-align: center;
+			}
+		}
+		&__item-info {
+			display: none;
+			font-size: 12px;
+			font-weight: normal;
+			font-style: italic;
+			@media (max-width: $breakSmall) {
+				text-align: center;
+			}
+		}
+		&__item--additional {
+			.pdf-table__item-info {
+				display: block;
+				min-width: 100%;
+			}
+		}
+	}
+	.text-info {
+		padding-top: 3pt;
+		&__item {
+			font-size: 12px;
+			font-style: italic;
+			&--copyright {
+				margin-top: 20px;
+			}
+		}
+	}
+}
+@media print {
+	@page {
+		margin: 20pt 30pt 20pt;
+		// padding: 20pt;
+		// padding: 30pt 20pt 10pt;
+	}
+	.page-template-pdf {
+		.a-4-container {
+			margin: auto; /* для центровки страницы */
+			width: 210mm;
+			height: 297mm;
+			page-break-after: always; /* для начала следующего элемента с новой страницы */
+		}
+	}
+}

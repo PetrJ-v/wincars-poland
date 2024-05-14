@@ -1,0 +1,14 @@
+body {
+	min-width: 345px;
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-family: "InterTight";
+	font-weight: 400;
+	font-size: 19px;
+	line-height: calc(22.8 / 19);
+	color: var(--default-font-color);
+	background-color: var(--bg-color);
+	-webkit-font-smoothing: antialiased;
+}

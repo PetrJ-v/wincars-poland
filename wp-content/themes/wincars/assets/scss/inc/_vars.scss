@@ -1,0 +1,17 @@
+:root {
+	--default-font-color: #212125;
+	--bg-color: #fff;
+}
+/***********************************************************************************************************************
+**	BREAKPOINT AND WIDTH VARIABLES
+***********************************************************************************************************************/
+
+$maxWidth: 1920;
+$mobWidth: 414;
+// $contentWidth: calc(#{$maxWidth}px);
+
+$breakSmall: 575.98px;
+$breakMedium: 767.98px;
+$breakLarge: 991.98px;
+$breakExtra: 1199.98px;
+$breakHuge: 1439.98px;
