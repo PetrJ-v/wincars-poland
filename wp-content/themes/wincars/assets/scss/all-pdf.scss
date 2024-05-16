@@ -1,0 +1,77 @@
+@import "node_modules/reset-css/sass/reset";
+@import "inc/default";
+@import "inc/fonts";
+@import "inc/vars";
+@import "inc/mixins";
+
+@font-face {
+	font-family: "Cambria";
+	font-display: swap;
+	src:
+		url("../fonts/Cambria-Regular.woff2") format("woff2"),
+		url("../fonts/Cambria-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+%img-wrapper {
+	line-height: 0;
+	img, svg,
+	picture {
+		width: 100%;
+		height: auto;
+	}
+}
+html {
+	margin-top: 0 !important;
+}
+body {
+	min-width: 345px;
+	font-family: "Cambria";
+	font-weight: 400;
+	font-size: 19px;
+	line-height: calc(22.8 / 19);
+	color: var(--default-font-color);
+	background-color: var(--bg-color);
+	-webkit-font-smoothing: antialiased;
+}
+.header {
+	padding: 20px 0;
+	display: flex;
+	justify-content: center;
+}
+.header__logo {
+	@extend %img-wrapper;
+	width: 80px;
+}
+.main {
+	margin-top: 50px;
+}
+h1 {
+	margin-bottom: 20px;
+	font-size: 30px;
+	// text-transform: uppercase;
+	color: #d1890d;
+}
+footer {
+	margin-bottom: 100px;
+}
+.page-template-all-pdf {
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 15px;
+	}
+
+	.pdf-links {
+		display: flex;
+		column-gap: 20px;
+		a {
+			font-size: 20px;
+			color: var(--default-font-color);
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

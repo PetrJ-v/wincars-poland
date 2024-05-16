@@ -1,6 +1,5 @@
 @import "node_modules/reset-css/sass/reset";
 @import "inc/default";
-@import "inc/layout";
 @import "inc/fonts";
 @import "inc/vars";
 @import "inc/mixins";
@@ -9,19 +8,37 @@
 	font-family: "Cambria";
 	font-display: swap;
 	src:
-		url("../fonts/Cambria.woff2") format("woff2"),
-		url("../fonts/Cambria.woff") format("woff");
+		url("../fonts/Cambria-Regular.woff2") format("woff2"),
+		url("../fonts/Cambria-Regular.woff") format("woff");
+	font-weight: 400;
 	font-style: normal;
 }
-.page-template-pdf {
-	// padding: 0 15pt;
+@font-face {
+	font-family: "Cambria";
+	font-display: swap;
+	src:
+		url("../fonts/Cambria-Italic.woff2") format("woff2"),
+		url("../fonts/Cambria-Italic.woff") format("woff");
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Cambria";
+	font-display: swap;
+	src:
+		url("../fonts/Cambria-Bold.woff2") format("woff2"),
+		url("../fonts/Cambria-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+.single-pdf-price {
+	margin: auto; /* для центровки страницы */
+	min-width: 345px;
+	max-width: 850px;
 	font-family: "Cambria";
 	line-height: 1.2;
 	color: #000;
-	.a-4-container {
-		margin: auto; /* для центровки страницы */
-		max-width: 850px;
-	}
+
 	.header {
 		margin-bottom: 30px;
 	}
@@ -58,7 +75,6 @@
 				left: 50%;
 				width: 75%;
 				aspect-ratio: 1 / 1;
-				background: url("@img/pdf/logo-bg.png") no-repeat;
 				background-size: contain;
 				transform: translateX(-50%);
 				z-index: -1;
@@ -104,8 +120,8 @@
 		&__item-price {
 			text-align: center;
 			@media (min-width: $breakSmall) {
-				max-width: 140px;
-				min-width: 140px;
+				max-width: 170px;
+				min-width: 170px;
 			}
 			@media (min-width: $breakLarge) {
 				max-width: 210px;
@@ -147,12 +163,10 @@
 		// padding: 20pt;
 		// padding: 30pt 20pt 10pt;
 	}
-	.page-template-pdf {
-		.a-4-container {
-			margin: auto; /* для центровки страницы */
-			width: 210mm;
-			height: 297mm;
-			page-break-after: always; /* для начала следующего элемента с новой страницы */
-		}
+	.single-pdf-price {
+		margin: auto; /* для центровки страницы */
+		width: 210mm;
+		height: 297mm;
+		page-break-after: always; /* для начала следующего элемента с новой страницы */
 	}
 }

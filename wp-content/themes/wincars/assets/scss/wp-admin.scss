@@ -1,0 +1,23 @@
+@import 'node_modules/reset-css/sass/reset';
+@import "inc/vars";
+@import "inc/mixins";
+.acf-fields > .acf-field.ab-pdf-price-row {
+	.acf-fields {
+		@media (min-width: 851px) and (max-width: 1050px){
+			display: flex;
+			flex-direction: column;
+		}
+		@media (max-width: $breakMedium) {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	.acf-field {
+		@media (min-width: 851px) and (max-width: 1050px){
+			width: 100%!important;
+		}
+		@media (max-width: $breakMedium) {
+			width: 100%!important;
+		}
+	}
+}

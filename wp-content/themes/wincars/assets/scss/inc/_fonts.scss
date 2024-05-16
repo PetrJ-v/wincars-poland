@@ -1,7 +1,21 @@
 @font-face {
-	font-family: "InterTight";
+	font-family: "Cambria";
 	font-display: swap;
-	src: url("../fonts/InterTight-Regular.woff2") format("woff2"), url("../fonts/InterTight-Regular.woff") format("woff");
+	src: url("../fonts/Cambria-Regular.woff2") format("woff2"), url("../fonts/Cambria-Regular.woff") format("woff");
 	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Cambria";
+	font-display: swap;
+	src: url("../fonts/Cambria-Italic.woff2") format("woff2"), url("../fonts/Cambria-Italic.woff") format("woff");
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Cambria";
+	font-display: swap;
+	src: url("../fonts/Cambria-Bold.woff2") format("woff2"), url("../fonts/Cambria-Bold.woff") format("woff");
+	font-weight: 700;
 	font-style: normal;
 }

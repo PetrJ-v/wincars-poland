@@ -3,7 +3,7 @@ add_action( 'init', 'register_post_types' );
 
 function register_post_types(){
 
-	register_post_type( 'pdf_price', [
+	register_post_type( 'pdf-price', [
 		'taxonomies' => ['category'], // post related taxonomies
 		'label'  => 'Pdf price',
 		'labels' => [
@@ -21,10 +21,6 @@ function register_post_types(){
 		],
 		'description'         => 'Template for generate pdf price',
 		'public'              => true,
-		//'publicly_queryable'  => null, // depends on public
-		//'exclude_from_search' => null, // depends on public
-		//'show_ui'             => null, // depends on public
-		//'show_in_nav_menus'   => null, // depends on public
 		'show_in_menu'        => null, // whether to in admin panel menu
 		//'show_in_admin_bar'   => null, // depends on show_in_menu.
 		'show_in_rest'        => null, // Add to REST API. WP 4.7.
@@ -36,7 +32,7 @@ function register_post_types(){
 		//'map_meta_cap'      => null, // Set to true to enable the default handler for meta caps.
 		'hierarchical'        => false,
 		// [ 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats' ]
-		'supports'            => [ 'title', 'editor', 'page-attributes' ],
+		'supports'            => [ 'title', 'author', 'editor', 'page-attributes', 'revisions' ],
 		'has_archive'         => false,
 		'rewrite'             => true,
 		'query_var'           => true,
