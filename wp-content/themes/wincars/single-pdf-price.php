@@ -47,22 +47,14 @@
 					<?php endif; ?>
 					<div class="pdf-table">
 						<?php
-						$auction_condition = get_field('auction_condition');
-						$auction_condition_price = get_field('auction_condition_price');
-						?>
-						<?php if ($auction_condition) : ?>
-							<div class="pdf-table__item">
-								<div class="pdf-table__item-text"><?php echo $auction_condition; ?></div>
-								<div class="pdf-table__item-price"><?php echo $auction_condition_price . '$'; ?></div>
-							</div>
-						<?php endif; ?>
-
-						<?php
-						$prices = get_field('prices');
 						global $usd_course, $euro_course, $total_cost;
+						$prices = get_field('prices');
 						$usd_course = get_field('exchange_usd');
 						$euro_course = get_field('exchange_euro');
 						$total_cost = 0;
+						settype($usd_course, "float");
+						settype($euro_course, "float");
+						settype($total_cost, "float");
 						function update_total_cost($currency, $value)
 						{
 							global $usd_course, $euro_course, $total_cost;
@@ -88,10 +80,17 @@
 							$displayed_row_value = $row_value . $row_value_currency;
 							$additional_classes = (isset($prices_row['additional_information'])) ? ' pdf-table__item--additional' : '';
 							?>
-							<?php if ($row_value) : ?>
+							<?php if ($row_value >= 0) : ?>
 								<div class="pdf-table__item<?php echo $additional_classes; ?>">
 									<div class="pdf-table__item-text"><?php echo $row_text; ?></div>
-									<div class="pdf-table__item-price"><?php echo $displayed_row_value; ?></div>
+									<div class="pdf-table__item-price">
+										<?php
+										if ($row_value == 0) {
+											$displayed_row_value = 'няма';
+										}
+										echo $displayed_row_value;
+										?>
+									</div>
 									<?php if (isset($prices_row['additional_information'])) : ?>
 										<div class="pdf-table__item-info"><?php echo $prices_row['additional_information']; ?></div>
 									<?php endif; ?>
@@ -100,27 +99,8 @@
 							<?php endif; ?>
 						<?php endforeach; ?>
 						<?php
-						$insurance = get_field('price_row_11');
-						$insurance_text = $insurance['price_row_name'];
-						$insurance_price = $insurance['price_row_value'];
-						$insurance_currency = $insurance['currency'];
-						$additional_classes = (isset($insurance['additional_information'])) ? ' pdf-table__item--additional' : '';
-						?>
-						<?php if ($insurance_price != '') : ?>
-							<div class="pdf-table__item<?php echo $additional_classes; ?>">
-								<div class="pdf-table__item-text"><?php echo $insurance_text; ?></div>
-								<div class="pdf-table__item-price"><?php echo $insurance_price . ' ' . $insurance_currency; ?></div>
-								<?php if (isset($insurance['additional_information'])) : ?>
-									<div class="pdf-table__item-info"><?php echo $insurance['additional_information']; ?></div>
-								<?php endif; ?>
-							</div>
-							<?php update_total_cost($insurance_currency, $insurance_price); ?>
-						<?php endif; ?>
-						<?php
-						$common = get_field('price_row_12');
+						$common = get_field('price_row_13');
 						$common_text = $common['price_row_name'];
-						$common_price = $common['price_row_value'];
-						$common_currency = $common['currency'];
 						$additional_classes = (isset($common['additional_information'])) ? ' pdf-table__item--additional' : '';
 						?>
 

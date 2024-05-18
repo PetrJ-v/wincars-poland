@@ -7,7 +7,7 @@ function indiana_assets()
 	$post_type = get_post_type();
 
 	if ($page_template_name === 'all-pdf') {
-		wp_enqueue_style('all-pdf', get_stylesheet_directory_uri() . '/assets/css/all-pdf.css', array(), '1.0.0');
+		wp_enqueue_style('all-pdf', get_stylesheet_directory_uri() . '/assets/css/all-pdf.css', array(), '1.0.1');
 	}
 	if ($post_type === 'pdf-price') {
 		wp_enqueue_style('single-pdf', get_stylesheet_directory_uri() . '/assets/css/single-pdf.css', array(), '1.0.0');
