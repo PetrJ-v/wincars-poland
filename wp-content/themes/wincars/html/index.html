@@ -1,93 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-@@include('components/head-pdf.html', {"title": "Pdf template"})
 
-<body class="single-pdf-price">
-	<header class="header">
-		<div class="pdf-header">
-			<div class="pdf-header__img">
-				<img src="@img/pdf/pdf-header.jpg">
+<head>
+	<!-- <meta charset="utf-8" />
+	<title>Collage generator</title>
+	<meta name="description" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="theme-color" content="#ffffff" /> -->
+	<link rel="stylesheet" href="css/collage.css" />
+	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+</head>
+
+
+<body class="collage-page">
+	<main>
+		<div class="collage" id="photo">
+			<div class="collage-header">
+				<div class="collage-info">
+					<div class="collage-info__title">MERCEDES-BENZ</div>
+					<div class="collage-info__m-y">
+						<span>CLC</span><span>43</span><span>AMG</span><span>2020</span>
+					</div>
+					<div class="collage-info__price">20,300 ЛЕВА</div>
+				</div>
+				<div class="collage-logo img-wrapper">
+					<img src="@img/logo-272.png" alt="wincars logo">
+				</div>
+			</div>
+			<div class="collage-body">
+				<div class="collage-body__top">
+					<div class="collage-body-img collage-body-img--top-left cover-img">
+						<img src="@img/collage/collage-1.jpg">
+					</div>
+					<div class="collage-body-img collage-body-img--top-right cover-img">
+						<img src="@img/collage/collage-2.jpg">
+						<div class="deco-lines img-wrapper">
+							<img src="@img/collage/right-lines.png">
+						</div>
+					</div>
+				</div>
+				<div class="collage-body__center">
+					<div class="collage-body-img collage-body-img--center cover-img">
+						<img src="@img/collage/collage-3.jpg">
+					</div>
+				</div>
+				<div class="collage-body__bottom">
+					<div class="collage-body-img collage-body-img--bottom-left cover-img">
+						<img src="@img/collage/collage-2.jpg">
+						<div class="deco-lines img-wrapper">
+							<img src="@img/collage/left-lines.png">
+						</div>
+					</div>
+					<div class="collage-body-img collage-body-img--bottom-right cover-img">
+						<img src="@img/collage/collage-2.jpg">
+					</div>
+				</div>
 			</div>
 		</div>
-	</header>
-	<main class="main">
-		<h1 class="pdf-title">2014 AUDI Q5 PREMIUM WP1AG2A57HLB50301</h1>
-		<a class="pdf-link" href="https://www.copart.com/ru/lot/44516154"
-			target='blank'>https://www.copart.com/ru/lot/44516154</a>
-		<div class="pdf-content">
-			<div class="pdf-content-bg"></div>
-			<div class="pdf-table">
-				<div class="pdf-table__item">
-					<div class="pdf-table__item-text">Ако се спечели на търг на цена:</div>
-					<div class="pdf-table__item-price">1000$</div>
-				</div>
-				<div class="pdf-table__item">
-					<div class="pdf-table__item-text">Такса търг:</div>
-					<div class="pdf-table__item-price">1000$</div>
-				</div>
-				<div class="pdf-table__item">
-					<div class="pdf-table__item-text">Вътрешен транспорт САЩ:</div>
-					<div class="pdf-table__item-price">1000$</div>
-				</div>
-				<div class="pdf-table__item">
-					<div class="pdf-table__item-text">Морски транспорт:</div>
-					<div class="pdf-table__item-price">1000$</div>
-				</div>
-				<div class="pdf-table__item">
-					<div class="pdf-table__item-text">Такса Експедитор:</div>
-					<div class="pdf-table__item-price">400€</div>
-				</div>
-				<div class="pdf-table__item">
-					<div class="pdf-table__item-text">Такса Брокер:</div>
-					<div class="pdf-table__item-price">100€</div>
-				</div>
-				<div class="pdf-table__item">
-					<div class="pdf-table__item-text">Административна такса:</div>
-					<div class="pdf-table__item-price">100€</div>
-				</div>
-				<div class="pdf-table__item pdf-table__item--additional">
-					<div class="pdf-table__item-text">Митническа такса:</div>
-					<div class="pdf-table__item-price">1000€</div>
-					<div class="pdf-table__item-info">*Цената е приблизителна</div>
-				</div>
-				<div class="pdf-table__item pdf-table__item--additional">
-					<div class="pdf-table__item-text">Застраховка:</div>
-					<div class="pdf-table__item-price">28$</div>
-					<div class="pdf-table__item-info">*По желание на клиента</div>
-				</div>
-				<div class="pdf-table__item">
-					<div class="pdf-table__item-text">Комисиона WINCARS:</div>
-					<div class="pdf-table__item-price">950€</div>
-				</div>
-				<div class="pdf-table__item">
-					<div class="pdf-table__item-text">Транспорт Ротердам – София:</div>
-					<div class="pdf-table__item-price">1500 лева</div>
-				</div>
-				<div class="pdf-table__item">
-					<div class="pdf-table__item-text">Company fee</div>
-					<div class="pdf-table__item-price">100$</div>
-				</div>
-				<div class="pdf-table__item pdf-table__item--additional">
-					<div class="pdf-table__item-text">Общо:</div>
-					<div class="pdf-table__item-price">20 000 лева</div>
-					<div class="pdf-table__item-info">по курса на БНБ. Цената може да се промени в зависимост от курса
-						на вашата банка</div>
-				</div>
-			</div>
-			<div class="text-info">
-				<div class="text-info__item">*Банковите разноски за превод не са включени в цената и се поемат от
-					клиента</div>
-				<div class="text-info__item">*След покупката на автомобила преводът към САЩ/Канада трябва да бъде
-					извършен на следващия работен ден</div>
-				<div class="text-info__item">*В случай на закъснение на превода глобата към търга се поема от клиента
-				</div>
-				<div class="text-info__item text-info__item--copyright">© 2024 WINCARS. Всички права запазени.</div>
-			</div>
-		</div>
+
+		<button onclick="takeshot()">Take Screenshot</button>
+		<h2>Screenshot:</h2>
+		<div id="output"></div>
+		<script type="text/javascript">
+			// Define the function to screenshot the div
+			function takeshot() {
+				let div = document.getElementById('photo');
+
+				// Use the html2canvas function to take a screenshot and append it to the output div
+				html2canvas(div).then(
+					function (canvas) {
+						document.getElementById('output').appendChild(canvas);
+					})
+			}
+		</script>
 	</main>
-	<!-- <div class="a-4-container">
-
-	</div> -->
 </body>
 
 </html>

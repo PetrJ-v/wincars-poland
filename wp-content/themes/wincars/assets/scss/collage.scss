@@ -1,0 +1,117 @@
+@import "node_modules/reset-css/sass/reset";
+@import "inc/default";
+@import "inc/fonts";
+@import "inc/general";
+@import "inc/vars";
+@import "inc/mixins";
+
+$accent-color: #ffb727;
+.collage-page {
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+.collage {
+	max-width: 1080px;
+	margin-inline: auto;
+	font-family: "Cambria";
+	background: url("@img/collage/collage-bg.jpg") no-repeat;
+	background-size: cover;
+	background-position: top center;
+}
+.collage-header {
+	padding: 27px 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 20px;
+}
+.collage-info {
+	position: relative;
+	padding: 15px 80px;
+	font-weight: 700;
+	font-size: 40px;
+	color: #000;
+	text-align: center;
+	background: linear-gradient(90deg, #e2b36b 40%, #c3d2f3 100%);
+	border-radius: 80px;
+	overflow: hidden;
+	&::before {
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		width: 100%;
+		aspect-ratio: 1;
+		background-color: $accent-color;
+		transform: translate(-38%, -68%) rotate(45deg);
+		border-radius: 223px;
+	}
+	&__title {
+		position: relative;
+		// font-size: 40px;
+	}
+	&__m-y {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		column-gap: 10px;
+		font-size: 45px;
+	}
+	&__price {
+		position: relative;
+		margin-top: 10px;
+	}
+}
+.collage-logo {
+	min-width: 250px;
+	max-width: 250px;
+	flex-grow: 1;
+}
+.collage-body {
+	padding: 0 50px 50px;
+	&__top {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__center {
+		margin: -60px 0;
+		position: relative;
+		// top: -65px;
+		display: flex;
+		justify-content: center;
+	}
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+.collage-body-img {
+	max-width: 460px;
+	aspect-ratio: 460 / 282;
+	&--bottom-left {
+		position: relative;
+		.deco-lines {
+			position: absolute;
+			width: 90px;
+			left: 0;
+			top: 0;
+			transform: translate(-45%, -45%);
+		}
+	}
+	&--top-right {
+		position: relative;
+		.deco-lines {
+			position: absolute;
+			width: 90px;
+			right: 0;
+			top: 0;
+			transform: translate(45%, -45%);
+		}
+	}
+}
+.deco-lines {
+	width: 90px;
+}
+.footer {
+	margin-top: 100px;
+}
