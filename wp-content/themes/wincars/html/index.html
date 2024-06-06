@@ -10,7 +10,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/collage.css" />
-	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+	<script src="libs/html2canvas/html2canvas-1.0.0-rc.5.min.js"></script>
 </head>
 
 
@@ -19,6 +19,19 @@
 		<div class="collage" id="photo">
 			<div class="collage-header">
 				<div class="collage-info">
+					<style>
+						.collage-info__title {
+							font-size: 40px;
+						}
+
+						.collage-info__m-y {
+							font-size: 45px;
+						}
+
+						.collage-info__price {
+							font-size: 40px;
+						}
+					</style>
 					<div class="collage-info__title">MERCEDES-BENZ</div>
 					<div class="collage-info__m-y">
 						<span>CLC</span><span>43</span><span>AMG</span><span>2020</span>
@@ -32,10 +45,18 @@
 			<div class="collage-body">
 				<div class="collage-body__top">
 					<div class="collage-body-img collage-body-img--top-left">
-						<img src="@img/collage/collage-1.jpg">
+						<style>
+							.collage-body-img--top-left {
+								background: url('@img/collage/collage-1.jpg') no-repeat;
+							}
+						</style>
 					</div>
 					<div class="collage-body-img collage-body-img--top-right">
-						<img src="@img/collage/collage-2.jpg">
+						<style>
+							.collage-body-img--top-right {
+								background: url('@img/collage/collage-2.jpg') no-repeat;
+							}
+						</style>
 						<div class="deco-lines img-wrapper">
 							<img src="@img/collage/right-lines.png">
 						</div>
@@ -46,7 +67,11 @@
 				</div>
 				<div class="collage-body__center">
 					<div class="collage-body-img collage-body-img--center">
-						<img src="@img/collage/collage-3.jpg">
+						<style>
+							.collage-body-img--center {
+								background: url('@img/collage/collage-3.jpg') no-repeat;
+							}
+						</style>
 					</div>
 				</div>
 				<div class="collage-body__bottom">
@@ -54,13 +79,21 @@
 						<img src="@img/collage/wincars-text.png" alt="">
 					</div>
 					<div class="collage-body-img collage-body-img--bottom-left">
-						<img src="@img/collage/collage-4.jpg">
+						<style>
+							.collage-body-img--bottom-left {
+								background: url('@img/collage/collage-4.jpg') no-repeat;
+							}
+						</style>
 						<div class="deco-lines img-wrapper">
 							<img src="@img/collage/left-lines.png">
 						</div>
 					</div>
 					<div class="collage-body-img collage-body-img--bottom-right">
-						<img src="@img/collage/collage-5.jpg">
+						<style>
+							.collage-body-img--bottom-right {
+								background: url('@img/collage/collage-5.jpg') no-repeat;
+							}
+						</style>
 					</div>
 				</div>
 			</div>
@@ -84,8 +117,13 @@
 					scrollY: (window.pageYOffset * -1)
 				}).then(
 					function (canvas) {
-						document.getElementById('results-wrapper').appendChild(canvas);
-						document.navigateFunc(destination);
+						const link = document.createElement('a');
+						link.download = 'collage.png';
+						link.href = canvas.toDataURL();
+						link.click();
+						link.delete;
+						// document.getElementById('results-wrapper').appendChild(canvas);
+						// document.navigateFunc(destination);
 					})
 			}
 		</script>

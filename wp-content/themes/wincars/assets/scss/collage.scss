@@ -7,14 +7,18 @@
 @font-face {
 	font-family: "Cambria";
 	font-display: swap;
-	src: url("../fonts/Cambria-Italic.woff2") format("woff2"), url("../fonts/Cambria-Italic.woff") format("woff");
+	src:
+		url("../fonts/Cambria-Italic.woff2") format("woff2"),
+		url("../fonts/Cambria-Italic.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
 	font-family: "RubikMonoOne";
 	font-display: swap;
-	src: url("../fonts/RubikMonoOne-Regular.woff2") format("woff2"), url("../fonts/RubikMonoOne-Regular.woff") format("woff");
+	src:
+		url("../fonts/RubikMonoOne-Regular.woff2") format("woff2"),
+		url("../fonts/RubikMonoOne-Regular.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
@@ -71,12 +75,12 @@ $accent-color: #ffb727;
 		z-index: 2;
 		padding: 15px 80px;
 		font-family: "RubikMonoOne";
-		font-size: 40px;
 		line-height: 1;
 		color: #000;
 		text-align: center;
 		background: linear-gradient(90deg, #e2b36b 40%, #c3d2f3 100%);
 		border-radius: 80px;
+		filter: drop-shadow(1mm 1mm 4mm rgb(195, 211, 243));
 		overflow: hidden;
 		&::before {
 			position: absolute;
@@ -98,8 +102,7 @@ $accent-color: #ffb727;
 			z-index: 2;
 			display: flex;
 			justify-content: center;
-			column-gap: 10px;
-			font-size: 45px;
+			column-gap: 19px;
 		}
 		&__price {
 			position: relative;
@@ -107,12 +110,11 @@ $accent-color: #ffb727;
 			font-family: "Cambria";
 			font-weight: 700;
 			font-style: normal;
-			// font-family: "Colette";
 		}
 	}
 	.collage-logo {
-		min-width: 250px;
-		max-width: 250px;
+		min-width: 238px;
+		max-width: 238px;
 		flex-grow: 1;
 	}
 	.collage-body {
@@ -152,11 +154,10 @@ $accent-color: #ffb727;
 	}
 	.collage-body-img {
 		line-height: 0;
-		max-width: 464px;
-		// height: 286px;
-		// height: auto;
-		// aspect-ratio: 464 / 286;
-		// aspect-ratio: 640 / 480;
+		width: 464px;
+		height: 286px;
+		background-size: cover;
+		background-position: center;
 		&--bottom-left {
 			position: relative;
 			.deco-lines {
