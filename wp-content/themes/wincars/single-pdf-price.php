@@ -1,4 +1,4 @@
-<?php get_header('pdf'); ?>
+<?php get_header(); ?>
 
 <body <?php body_class(); ?>>
 	<header class="header">
@@ -131,6 +131,9 @@
 		<?php endif; ?>
 	</main>
 
+	<footer>
+		<?php wp_footer(); ?>
+	</footer>
+</body>
 
-
-	<?php get_footer('pdf'); ?>
+</html>

@@ -1,6 +1,6 @@
 <?php
 #Template Name: All pdf
-get_header('pdf');
+get_header();
 ?>
 
 <body <?php body_class(); ?>>
@@ -41,5 +41,10 @@ get_header('pdf');
 		</div>
 	</main>
 
+	<footer>
+		<?php wp_footer(); ?>
+	</footer>
 
-	<?php get_footer('pdf'); ?>
+</body>
+
+</html>

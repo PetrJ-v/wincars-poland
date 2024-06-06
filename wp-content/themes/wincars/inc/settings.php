@@ -40,5 +40,6 @@ function disable_wp_editor()
 	remove_post_type_support('page', 'editor');
 	remove_post_type_support('post', 'editor');
 	remove_post_type_support('pdf-price', 'editor');
+	remove_post_type_support('collage', 'editor');
 }
 

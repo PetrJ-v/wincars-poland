@@ -20,3 +20,11 @@
 		}
 	}
 }
+.acf-fields > .ap-collage-center-img {
+	.acf-fields {
+		display: flex;
+	}
+	.acf-field-image {
+		margin-inline: auto;
+	}
+}

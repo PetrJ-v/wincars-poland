@@ -7,10 +7,8 @@
 @font-face {
 	font-family: "Cambria";
 	font-display: swap;
-	src:
-		url("../fonts/Cambria-Italic.woff2") format("woff2"),
-		url("../fonts/Cambria-Italic.woff") format("woff");
-	font-weight: 400;
+	src: url("../fonts/Cambria-Bold.woff2") format("woff2"), url("../fonts/Cambria-Bold.woff") format("woff");
+	font-weight: 700;
 	font-style: normal;
 }
 @font-face {
@@ -24,7 +22,7 @@
 }
 
 $accent-color: #ffb727;
-.collage-page {
+.single-collage {
 	margin-bottom: 100px;
 	font-family: "Rubik Mono One", monospace;
 	font-weight: 400;
@@ -43,13 +41,6 @@ $accent-color: #ffb727;
 			background-color: #000;
 			color: #fff;
 		}
-	}
-	.results-wrapper {
-		display: inline-block;
-		margin-top: 30px;
-		position: relative;
-		left: 50vw;
-		transform: translateX(-50%);
 	}
 }
 .collage {
