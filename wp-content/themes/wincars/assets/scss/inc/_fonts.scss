@@ -1,21 +1,35 @@
-@font-face {
+@font-face { 
+	font-family: "Cambria";
+	font-display: swap;
+	src: url("../fonts/Cambria-Bold.woff2") format("woff2"), url("../fonts/Cambria-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face { 
 	font-family: "Cambria";
 	font-display: swap;
 	src: url("../fonts/Cambria-Regular.woff2") format("woff2"), url("../fonts/Cambria-Regular.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
-@font-face {
+@font-face { 
 	font-family: "Cambria";
 	font-display: swap;
 	src: url("../fonts/Cambria-Italic.woff2") format("woff2"), url("../fonts/Cambria-Italic.woff") format("woff");
 	font-weight: 400;
-	font-style: italic;
+	font-style: normal;
 }
-@font-face {
-	font-family: "Cambria";
+@font-face { 
+	font-family: "Colette";
 	font-display: swap;
-	src: url("../fonts/Cambria-Bold.woff2") format("woff2"), url("../fonts/Cambria-Bold.woff") format("woff");
-	font-weight: 700;
+	src: url("../fonts/Colette-Regular.woff2") format("woff2"), url("../fonts/Colette-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face { 
+	font-family: "RubikMonoOne";
+	font-display: swap;
+	src: url("../fonts/RubikMonoOne-Regular.woff2") format("woff2"), url("../fonts/RubikMonoOne-Regular.woff") format("woff");
+	font-weight: 400;
 	font-style: normal;
 }

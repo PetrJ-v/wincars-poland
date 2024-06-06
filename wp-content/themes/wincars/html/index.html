@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
-	<!-- <meta charset="utf-8" />
+	<meta charset="utf-8" />
 	<title>Collage generator</title>
-	<meta name="description" content="" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content="Collage generator" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<meta name="theme-color" content="#ffffff" /> -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/collage.css" />
 	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 </head>
@@ -30,63 +31,65 @@
 			</div>
 			<div class="collage-body">
 				<div class="collage-body__top">
-					<div class="collage-body-img collage-body-img--top-left cover-img">
+					<div class="collage-body-img collage-body-img--top-left">
 						<img src="@img/collage/collage-1.jpg">
 					</div>
-					<div class="collage-body-img collage-body-img--top-right cover-img">
+					<div class="collage-body-img collage-body-img--top-right">
 						<img src="@img/collage/collage-2.jpg">
 						<div class="deco-lines img-wrapper">
 							<img src="@img/collage/right-lines.png">
 						</div>
 					</div>
+					<div class="body-top-deco img-wrapper">
+						<img src="@img/collage/wincars-text.png" alt="">
+					</div>
 				</div>
 				<div class="collage-body__center">
-					<div class="collage-body-img collage-body-img--center cover-img">
+					<div class="collage-body-img collage-body-img--center">
 						<img src="@img/collage/collage-3.jpg">
 					</div>
 				</div>
 				<div class="collage-body__bottom">
-					<div class="collage-body-img collage-body-img--bottom-left cover-img">
-						<img src="@img/collage/collage-2.jpg">
+					<div class="body-bottom-deco img-wrapper">
+						<img src="@img/collage/wincars-text.png" alt="">
+					</div>
+					<div class="collage-body-img collage-body-img--bottom-left">
+						<img src="@img/collage/collage-4.jpg">
 						<div class="deco-lines img-wrapper">
 							<img src="@img/collage/left-lines.png">
 						</div>
 					</div>
-					<div class="collage-body-img collage-body-img--bottom-right cover-img">
-						<img src="@img/collage/collage-2.jpg">
+					<div class="collage-body-img collage-body-img--bottom-right">
+						<img src="@img/collage/collage-5.jpg">
 					</div>
 				</div>
 			</div>
 		</div>
+		<button onclick="takeshot()" class="take-screen">Get image from collage</button>
+		<div class="results-wrapper" id="results-wrapper"></div>
 	</main>
-	<script type="text/javascript">
-		window.addEventListener("load", (event) => {
-
-			let div = document.getElementById('photo');
-			html2canvas(div).then(
-				function (canvas) {
-					document.body.appendChild(canvas);
-				})
-		});
-
-	</script>
-	<!-- <footer class="footer">
-		<div class="results-wrapper">
-			<button onclick="takeshot()" class="take-screen">Take Screenshot</button>
-			<h2 class="result-title">Screenshot:</h2>
-			<div id="output"></div>
-		</div>
+	<footer class="footer">
+		<script src="libs/jquery/jquery.min.js"></script>
 		<script type="text/javascript">
+			document.navigateFunc = function (destination, topMargin = false) {
+				topMargin = (topMargin) ? topMargin : 0;
+				if ($(destination).length != 0) {
+					$('html, body').animate({ scrollTop: $(destination).offset().top - topMargin }, 800, 'linear') // анимируем скроолинг к элементу destination
+				}
+			};
 			function takeshot() {
-				let div = document.getElementById('photo');
-				html2canvas(div).then(
+				let div = document.getElementById('photo'),
+					destination = $('.results-wrapper');
+				html2canvas(div, {
+					scrollY: (window.pageYOffset * -1)
+				}).then(
 					function (canvas) {
-						document.getElementById('output').appendChild(canvas);
+						document.getElementById('results-wrapper').appendChild(canvas);
+						document.navigateFunc(destination);
 					})
 			}
-
 		</script>
-	</footer> -->
+	</footer>
 </body>
 
 </html>

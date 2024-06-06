@@ -1,135 +1,184 @@
 // @import "node_modules/reset-css/sass/reset";
 @import "inc/default";
-@import "inc/fonts";
 @import "inc/general";
 @import "inc/vars";
 @import "inc/mixins";
 
+@font-face {
+	font-family: "Cambria";
+	font-display: swap;
+	src: url("../fonts/Cambria-Italic.woff2") format("woff2"), url("../fonts/Cambria-Italic.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "RubikMonoOne";
+	font-display: swap;
+	src: url("../fonts/RubikMonoOne-Regular.woff2") format("woff2"), url("../fonts/RubikMonoOne-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
 $accent-color: #ffb727;
 .collage-page {
 	margin-bottom: 100px;
+	font-family: "Rubik Mono One", monospace;
+	font-weight: 400;
+	font-style: normal;
+	.take-screen {
+		display: block;
+		margin: 30px auto 0;
+		padding: 17px 30px 15px;
+		font-size: 20px;
+		line-height: 1;
+		color: #000;
+		background-color: $accent-color;
+		border-radius: 15px;
+		cursor: pointer;
+		&:hover {
+			background-color: #000;
+			color: #fff;
+		}
+	}
+	.results-wrapper {
+		display: inline-block;
+		margin-top: 30px;
+		position: relative;
+		left: 50vw;
+		transform: translateX(-50%);
+	}
 }
 .collage {
-	width: 1080px;
-	height: 1080px;
-	font-family: "Cambria";
+	position: relative;
+	left: 50vw;
+	margin-bottom: 50px;
+	min-width: 1080px;
 	max-width: 1080px;
-	margin-inline: auto;
 	background: url("@img/collage/collage-bg.jpg") no-repeat;
 	background-size: cover;
 	background-position: top center;
-}
-.collage-header {
-	padding: 27px 20px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	column-gap: 20px;
-}
-.collage-info {
-	position: relative;
-	padding: 15px 80px;
-	font-weight: 700;
-	font-size: 40px;
-	color: #000;
-	text-align: center;
-	background: linear-gradient(90deg, #e2b36b 40%, #c3d2f3 100%);
-	border-radius: 80px;
 	overflow: hidden;
-	&::before {
-		position: absolute;
-		content: "";
-		top: 0;
-		left: 0;
-		width: 100%;
-		aspect-ratio: 1;
-		// height: 100%;
-		background-color: $accent-color;
-		transform: translate(-38%, -68%) rotate(45deg);
-		border-radius: 223px;
-	}
-	&__title {
-		position: relative;
-		// font-size: 40px;
-	}
-	&__m-y {
-		position: relative;
+	transform: translateX(-50%);
+	.collage-header {
+		padding: 27px 20px;
 		display: flex;
 		justify-content: center;
-		column-gap: 10px;
-		font-size: 45px;
+		align-items: center;
+		column-gap: 20px;
 	}
-	&__price {
+	.collage-info {
 		position: relative;
-		margin-top: 10px;
-	}
-}
-.collage-logo {
-	min-width: 250px;
-	max-width: 250px;
-	flex-grow: 1;
-}
-.collage-body {
-	padding: 0 50px 50px;
-	&__top {
-		display: flex;
-		justify-content: space-between;
-	}
-	&__center {
-		position: relative;
-		margin: -60px 0;
-		position: relative;
-		// top: -65px;
-		display: flex;
-		justify-content: center;
 		z-index: 2;
-	}
-	&__bottom {
-		display: flex;
-		justify-content: space-between;
-	}
-}
-.collage-body-img {
-	max-width: 460px;
-	aspect-ratio: 460 / 282;
-	&--bottom-left {
-		position: relative;
-		.deco-lines {
+		padding: 15px 80px;
+		font-family: "RubikMonoOne";
+		font-size: 40px;
+		line-height: 1;
+		color: #000;
+		text-align: center;
+		background: linear-gradient(90deg, #e2b36b 40%, #c3d2f3 100%);
+		border-radius: 80px;
+		overflow: hidden;
+		&::before {
 			position: absolute;
-			width: 90px;
+			content: "";
+			top: 0;
 			left: 0;
-			top: 0;
-			transform: translate(-45%, -45%);
+			width: 100%;
+			aspect-ratio: 1;
+			background-color: $accent-color;
+			transform: translate(-38%, -68%) rotate(45deg);
+			border-radius: 223px;
+		}
+		&__title {
+			position: relative;
+			z-index: 2;
+		}
+		&__m-y {
+			position: relative;
+			z-index: 2;
+			display: flex;
+			justify-content: center;
+			column-gap: 10px;
+			font-size: 45px;
+		}
+		&__price {
+			position: relative;
+			margin-top: 10px;
+			font-family: "Cambria";
+			font-weight: 700;
+			font-style: normal;
+			// font-family: "Colette";
 		}
 	}
-	&--top-right {
-		position: relative;
-		.deco-lines {
+	.collage-logo {
+		min-width: 250px;
+		max-width: 250px;
+		flex-grow: 1;
+	}
+	.collage-body {
+		padding: 0 50px 50px;
+		&__top {
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+		}
+		&__center {
+			position: relative;
+			margin: -60px 0;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			z-index: 2;
+		}
+		&__bottom {
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+		}
+		.body-top-deco {
+			width: 240px;
 			position: absolute;
-			width: 90px;
-			right: 0;
+			bottom: 0;
+			left: -20px;
+			transform: translateY(90%);
+		}
+		.body-bottom-deco {
+			width: 240px;
+			position: absolute;
 			top: 0;
-			transform: translate(45%, -45%);
+			right: -20px;
+			transform: translateY(-90%);
 		}
 	}
-}
-.deco-lines {
-	width: 90px;
-}
-.take-screen {
-	padding: 5px 10px;
-	border-radius: 10px;
-}
-.result-title {
-	margin-top: 10px;
-}
-.results-wrapper {
-	max-width: 1200px;
-	margin: 20px auto 0;
-}
-#output {
-	margin: 20px auto 0;
-}
-.footer {
-	margin-top: 50px;
+	.collage-body-img {
+		line-height: 0;
+		max-width: 464px;
+		// height: 286px;
+		// height: auto;
+		// aspect-ratio: 464 / 286;
+		// aspect-ratio: 640 / 480;
+		&--bottom-left {
+			position: relative;
+			.deco-lines {
+				position: absolute;
+				width: 90px;
+				left: 0;
+				top: 0;
+				transform: translate(-45%, -45%);
+			}
+		}
+		&--top-right {
+			position: relative;
+			.deco-lines {
+				position: absolute;
+				width: 90px;
+				right: 0;
+				top: 0;
+				transform: translate(45%, -45%);
+			}
+		}
+	}
+	.deco-lines {
+		width: 90px;
+	}
 }
