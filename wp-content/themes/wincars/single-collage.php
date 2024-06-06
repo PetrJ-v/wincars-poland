@@ -144,7 +144,12 @@
 			</script>
 
 		<?php else : ?>
-			<h1 class="pdf-title">Нямате достъп до тази страница</h1>
+			<div class="no-access-container">
+				<div class="no-access">
+					<h1 class="no-access__title">Нямате достъп до тази страница</h1>
+					<div class="no-access__text">Моля, влезте в <a href="/wp-admin/" class="no-access__link">админ панела</a></div>
+				</div>
+			</div>
 		<?php endif; ?>
 	</main>
 	<footer>

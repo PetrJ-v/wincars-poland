@@ -57,7 +57,30 @@ a {
 .screen-reader-response {
 	display: none;
 }
-
+.no-access-container {
+	margin: 0 30px;
+	height: 100dvh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.no-access {
+	&__title {
+		text-align: center;
+	}
+	&__text {
+		margin-top: 15px;
+		font-size: 25px;
+		text-align: center;
+	}
+	&__link {
+		color: #0a0691d0;
+		text-decoration: underline;
+		&:hover {
+			color: #ffb727;
+		}
+	}
+}
 /***********************************************************************************************************************
 **	SWIPER BASE STYLES
 ***********************************************************************************************************************/
