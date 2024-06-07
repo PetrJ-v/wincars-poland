@@ -1,0 +1,39 @@
+// @import "node_modules/reset-css/sass/reset";
+@import "inc/default";
+@import "inc/general";
+@import "inc/vars";
+@import "inc/mixins";
+
+
+.watermark {
+	margin: 30px auto 0;
+	max-width: 1200px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	&__item {
+		min-width: calc(100% / 3 - 40px / 3);
+		max-width: calc(100% / 3 - 40px / 3);
+	}
+}
+.watermark-page {
+	.download-btn {
+		display: block;
+		margin: 30px auto 0;
+		width: 200px;
+		appearance: none;
+		padding: 10px 20px;
+		font-size: 18px;
+		line-height: 1;
+		color: #fff;
+		text-align: center;
+		border: 2px solid #ccc;
+		border-radius: 5px;
+		background-color: #000;
+		cursor: pointer;
+		&:hover{
+			color: #000;
+			background-color: #fff;
+		}
+	}
+}
