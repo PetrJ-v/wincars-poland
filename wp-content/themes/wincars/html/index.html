@@ -3,127 +3,45 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Collage generator</title>
+	<title>Watermark</title>
 	<meta name="description" content="Collage generator" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<link rel="stylesheet" href="css/collage.css" />
-	<script src="libs/html2canvas/html2canvas-1.0.0-rc.5.min.js"></script>
+	<link rel="stylesheet" href="css/watermark.css" />
 </head>
 
 
-<body class="collage-page">
+<body class="watermark-page">
 	<main>
-		<div class="collage" id="photo">
-			<div class="collage-header">
-				<div class="collage-info">
-					<style>
-						.collage-info__title {
-							font-size: 40px;
-						}
-
-						.collage-info__m-y {
-							font-size: 45px;
-						}
-
-						.collage-info__price {
-							font-size: 40px;
-						}
-					</style>
-					<div class="collage-info__title">MERCEDES-BENZ</div>
-					<div class="collage-info__m-y">
-						<span>CLC</span><span>43</span><span>AMG</span><span>2020</span>
-					</div>
-					<div class="collage-info__price">20,300 ЛЕВА</div>
-				</div>
-				<div class="collage-logo img-wrapper">
-					<img src="@img/logo-272.png" alt="wincars logo">
-				</div>
+		<div class="watermark">
+			<div class="watermark__item img-wrapper">
+				<img src="@img/collage/collage-1.jpg" alt="">
 			</div>
-			<div class="collage-body">
-				<div class="collage-body__top">
-					<div class="collage-body-img collage-body-img--top-left">
-						<style>
-							.collage-body-img--top-left {
-								background: url('@img/collage/collage-1.jpg') no-repeat;
-							}
-						</style>
-					</div>
-					<div class="collage-body-img collage-body-img--top-right">
-						<style>
-							.collage-body-img--top-right {
-								background: url('@img/collage/collage-2.jpg') no-repeat;
-							}
-						</style>
-						<div class="deco-lines img-wrapper">
-							<img src="@img/collage/right-lines.png">
-						</div>
-					</div>
-					<div class="body-top-deco img-wrapper">
-						<img src="@img/collage/wincars-text.png" alt="">
-					</div>
-				</div>
-				<div class="collage-body__center">
-					<div class="collage-body-img collage-body-img--center">
-						<style>
-							.collage-body-img--center {
-								background: url('@img/collage/collage-3.jpg') no-repeat;
-							}
-						</style>
-					</div>
-				</div>
-				<div class="collage-body__bottom">
-					<div class="body-bottom-deco img-wrapper">
-						<img src="@img/collage/wincars-text.png" alt="">
-					</div>
-					<div class="collage-body-img collage-body-img--bottom-left">
-						<style>
-							.collage-body-img--bottom-left {
-								background: url('@img/collage/collage-4.jpg') no-repeat;
-							}
-						</style>
-						<div class="deco-lines img-wrapper">
-							<img src="@img/collage/left-lines.png">
-						</div>
-					</div>
-					<div class="collage-body-img collage-body-img--bottom-right">
-						<style>
-							.collage-body-img--bottom-right {
-								background: url('@img/collage/collage-5.jpg') no-repeat;
-							}
-						</style>
-					</div>
-				</div>
+			<div class="watermark__item img-wrapper">
+				<img src="@img/collage/collage-2.jpg" alt="">
+			</div>
+			<div class="watermark__item img-wrapper">
+				<img src="@img/collage/collage-3.jpg" alt="">
 			</div>
 		</div>
-		<button onclick="takeshot()" class="take-screen">Get image from collage</button>
-		<div class="results-wrapper" id="results-wrapper"></div>
+		<button class="download-btn">Download</button>
 	</main>
 	<footer class="footer">
 		<script src="libs/jquery/jquery.min.js"></script>
-		<script type="text/javascript">
-			document.navigateFunc = function (destination, topMargin = false) {
-				topMargin = (topMargin) ? topMargin : 0;
-				if ($(destination).length != 0) {
-					$('html, body').animate({ scrollTop: $(destination).offset().top - topMargin }, 800, 'linear') // анимируем скроолинг к элементу destination
-				}
-			};
-			function takeshot() {
-				let div = document.getElementById('photo'),
-					destination = $('.results-wrapper');
-				html2canvas(div, {
-					scrollY: (window.pageYOffset * -1)
-				}).then(
-					function (canvas) {
-						const link = document.createElement('a');
-						link.download = 'collage.png';
-						link.href = canvas.toDataURL();
-						link.click();
-						link.delete;
-						// document.getElementById('results-wrapper').appendChild(canvas);
-						// document.navigateFunc(destination);
-					})
-			}
+		<script src="libs/jzip/jszip.min.js"></script>
+		<script>
+			let imagesUrl = document.querySelectorAll('img');
+			console.log(imagesUrl);
+
+			// const imageUrl = 'https://images.unsplash.com/photo-1576328842079-95ef7deedc89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80.jpg';
+
+			// // Fetch the image and parse the response stream as a blob
+			// const imageBlob = fetch(imageUrl).then(response => response.blob());
+
+			// // create a new file from the blob object
+			// const imageFile = new File([imageBlob], "filename.jpg");
+
 		</script>
+
 	</footer>
 </body>
 
