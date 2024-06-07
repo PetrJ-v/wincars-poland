@@ -23,23 +23,46 @@
 				<img src="@img/collage/collage-3.jpg" alt="">
 			</div>
 		</div>
-		<button class="download-btn">Download</button>
+		<button class="download-btn" id="get-wm-archive">Download</button>
 	</main>
 	<footer class="footer">
 		<script src="libs/jquery/jquery.min.js"></script>
 		<script src="libs/jzip/jszip.min.js"></script>
+		<script src="libs/jzip/file-saver/file-saver.min.js"></script>
 		<script>
-			let imagesUrl = document.querySelectorAll('img');
-			console.log(imagesUrl);
+			zip = new JSZip();
 
-			// const imageUrl = 'https://images.unsplash.com/photo-1576328842079-95ef7deedc89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80.jpg';
+			let dwnldBtn = document.getElementById('get-wm-archive'),
+				folder = zip.folder(),
+				images = document.querySelectorAll('.watermark img'),
+				imagesUrl = [],
+				imagesNames = [];
 
-			// // Fetch the image and parse the response stream as a blob
-			// const imageBlob = fetch(imageUrl).then(response => response.blob());
+			dwnldBtn.addEventListener('click', async () => {
+				images.forEach(element => {
+					imagesUrl.push(element.src);
+				});
 
-			// // create a new file from the blob object
-			// const imageFile = new File([imageBlob], "filename.jpg");
+				const promises = imagesUrl.map(async (url) => {
+					let imgageName = url.slice(url.lastIndexOf('/')+1);
 
+					imagesNames.push(imgageName);
+					const res = await fetch(url);
+					const blob = await res.blob();
+					return blob;
+				})
+				const imagesBlobs = await Promise.all(promises);
+
+
+				imagesBlobs.forEach((imageBlob, index) => {
+					// Назначение строки ниже пока не понял
+					// let imageFile = new File([imageBlob], imagesNames[index]);
+					folder.file(imagesNames[index], imageBlob);
+				})
+
+				folder.generateAsync({ type: "blob" }).then(content => saveAs(content, 'Wincars images'));
+
+			})
 		</script>
 
 	</footer>
