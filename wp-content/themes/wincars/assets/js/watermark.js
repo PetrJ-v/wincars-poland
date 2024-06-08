@@ -25,6 +25,24 @@ dwnldBtn.addEventListener('click', async () => {
 		imagesDivArr = Array.from(imagesDiv);
 
 	/**
+	 * Convert image in dataUrl format back to file
+	 * @param {string} dataurl
+	 * @param {string} filename
+	 * @returns
+	 */
+	let dataURLtoFile = (dataurl, filename) => {
+		var arr = dataurl.split(","),
+			mime = arr[0].match(/:(.*?);/)[1],
+			bstr = atob(arr[arr.length - 1]),
+			n = bstr.length,
+			u8arr = new Uint8Array(n);
+		while (n--) {
+			u8arr[n] = bstr.charCodeAt(n);
+		}
+		return new File([u8arr], filename, { type: mime });
+	}
+
+	/**
 	 * Save image like it is, without zip
 	 * @param {Object} readyToDownload - an object with all the necessary data to save image (name and url)
 	 */
@@ -45,11 +63,14 @@ dwnldBtn.addEventListener('click', async () => {
 			folder = zip.folder();
 
 		readyToDownload.forEach((imageObj) => {
+			let fileName = imageObj.name,
+				currentImageFile = dataURLtoFile(imageObj.imgDataUrl, fileName);
 			// console.log(imageObj);
 			// Назначение строки ниже пока не понял
 			// let imageFile = new File([imageBlob], imagesNames[index]);
 
-			folder.file(imageObj.name, imageObj.imgBlob);
+			// folder.file(imageObj.name, imageObj.imgBlob);
+			folder.file(fileName, currentImageFile);
 		})
 
 		folder.generateAsync({ type: "blob" }).then(content => saveAs(content, 'Wincars images'));
@@ -57,7 +78,8 @@ dwnldBtn.addEventListener('click', async () => {
 
 	const promises = imagesDivArr.map(async (imageDiv, index) => {
 		html2canvas(imageDiv, {
-			scrollY: (window.pageYOffset * -1)
+			scrollY: (window.pageYOffset * -1),
+			scale: 1
 		}).then(function (canvas) {
 			let imageObj = {
 				name: uploads.files[index].name,
@@ -71,10 +93,12 @@ dwnldBtn.addEventListener('click', async () => {
 		})
 	})
 
-	if (readyToDownload.length == 1) {
-		saveSingleImage(readyToDownload[0])
-	}
-	if (readyToDownload.length > 1) {
-		saveImageArchive(readyToDownload)
-	}
+	setTimeout(() => {
+		if (readyToDownload.length == 1) {
+			saveSingleImage(readyToDownload[0])
+		}
+		if (readyToDownload.length > 1) {
+			saveImageArchive(readyToDownload)
+		}
+	}, 1000)
 })
