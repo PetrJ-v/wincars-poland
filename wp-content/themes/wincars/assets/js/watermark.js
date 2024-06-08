@@ -102,3 +102,26 @@ dwnldBtn.addEventListener('click', async () => {
 		}
 	}, 1000)
 })
+
+function delay() {
+	return new Promise(resolve => setTimeout(resolve, 1000));
+}
+async function delayedLog(item) {
+	// мы можем использовать await для Promise
+	// который возвращается из delay
+	await delay();
+	console.log(item);
+}
+
+async function processArray(array) {
+	for (const item of array) {
+		await delayedLog(item);
+	}
+	console.log('Done!');
+}
+let testBtn = document.getElementById('test-btn');
+testBtn.addEventListener('click', async () => {
+	console.log('test btn');
+	let testArray = [1, 2, 3];
+	processArray(testArray);
+})

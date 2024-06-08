@@ -52,6 +52,9 @@
 		border-radius: 5px;
 		background-color: #000;
 		cursor: pointer;
+		&#test-btn {
+			display: block;
+		}
 		&:hover {
 			color: #000;
 			background-color: #fff;
