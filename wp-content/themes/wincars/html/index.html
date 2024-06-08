@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Watermark</title>
+	<link rel="icon" type="image/x-icon" href="apple-touch-icon.png">
 	<meta name="description" content="Collage generator" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<link rel="stylesheet" href="css/watermark.css" />
@@ -13,57 +14,24 @@
 <body class="watermark-page">
 	<main>
 		<div class="watermark">
-			<div class="watermark__item img-wrapper">
-				<img src="@img/collage/collage-1.jpg" alt="">
+			<div class="watermark__images" id="watermark-images">
+				<!-- <div class="watermark__img">
+					<img src="@img/collage/collage-1.jpg">
+				</div> -->
 			</div>
-			<div class="watermark__item img-wrapper">
-				<img src="@img/collage/collage-2.jpg" alt="">
-			</div>
-			<div class="watermark__item img-wrapper">
-				<img src="@img/collage/collage-3.jpg" alt="">
+			<div class="watermark__input">
+				<input type="file" id="oploaud" name="images" accept="image/png, image/jpeg" multiple />
 			</div>
 		</div>
 		<button class="download-btn" id="get-wm-archive">Download</button>
 	</main>
 	<footer class="footer">
 		<script src="libs/jquery/jquery.min.js"></script>
+		<!-- <script src="libs/html2canvas/html2canvas-1.0.0-rc.5.min.js"></script> -->
+		<script src="libs/html2canvas/html2canvas-1.4.1.min.js"></script>
 		<script src="libs/jzip/jszip.min.js"></script>
-		<script src="libs/jzip/file-saver/file-saver.min.js"></script>
-		<script>
-			zip = new JSZip();
-
-			let dwnldBtn = document.getElementById('get-wm-archive'),
-				folder = zip.folder(),
-				images = document.querySelectorAll('.watermark img'),
-				imagesUrl = [],
-				imagesNames = [];
-
-			dwnldBtn.addEventListener('click', async () => {
-				images.forEach(element => {
-					imagesUrl.push(element.src);
-				});
-
-				const promises = imagesUrl.map(async (url) => {
-					let imgageName = url.slice(url.lastIndexOf('/')+1);
-
-					imagesNames.push(imgageName);
-					const res = await fetch(url);
-					const blob = await res.blob();
-					return blob;
-				})
-				const imagesBlobs = await Promise.all(promises);
-
-
-				imagesBlobs.forEach((imageBlob, index) => {
-					// Назначение строки ниже пока не понял
-					// let imageFile = new File([imageBlob], imagesNames[index]);
-					folder.file(imagesNames[index], imageBlob);
-				})
-
-				folder.generateAsync({ type: "blob" }).then(content => saveAs(content, 'Wincars images'));
-
-			})
-		</script>
+		<script src="libs/file-saver/file-saver.min.js"></script>
+		<script src="js/watermark.js"></script>
 
 	</footer>
 </body>
