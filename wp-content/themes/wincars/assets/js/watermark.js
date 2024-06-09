@@ -1,36 +1,49 @@
 let uploads = document.getElementById('uploaud'),
 	imagesWrapper = document.getElementById('watermark-images'),
 	dwnldBtn = document.getElementById('get-wm-archive'),
-	resetBtnSpan = document.querySelector('.upload-input__text');
+	resetBtnSpan = document.querySelector('.upload-input__text'),
+	clearImageWrapper = (delay) => {
+		let images = document.querySelectorAll('.watermark__img');
+		images.forEach(item => {
+			item.remove();
+		})
+		return new Promise(resolve => {
+			setTimeout(() => {
+				resolve();
+			}, delay)
+		})
+	};
 
 uploads.addEventListener('change', () => {
-	let fileCounts = uploads.files.length,
-		currentImageCountOnPage = document.querySelectorAll('.watermark__img').length,
-		tottalCount = fileCounts + currentImageCountOnPage;
-	if (tottalCount == 1) {
-		resetBtnSpan.textContent = 'Избрано е 1 изображение';
-	} else if (tottalCount > 1) {
-		resetBtnSpan.textContent = `Избрани са ${tottalCount} изображения`;
-	}
-	else {
-		resetBtnSpan.textContent = '0 избрани изображения';
-	}
+	clearImageWrapper(200).then(() => {
+		let fileCounts = uploads.files.length,
+			currentImageCountOnPage = document.querySelectorAll('.watermark__img').length,
+			tottalCount = fileCounts + currentImageCountOnPage;
+		if (tottalCount == 1) {
+			resetBtnSpan.textContent = 'Избрано е 1 изображение';
+		} else if (tottalCount > 1) {
+			resetBtnSpan.textContent = `Избрани са ${tottalCount} изображения`;
+		}
+		else {
+			resetBtnSpan.textContent = '0 избрани изображения';
+		}
 
-	// let resetBtnTextSingle = 'Избрано е 1 изображение',
-	// 	resetBtnTextMultiple = 'Избрани са 10 изображения';
-	if (fileCounts > 0) {
-		Object.values(uploads.files).forEach(imgFile => {
-			const imgURL = URL.createObjectURL(imgFile);
-			let uploadedImg = document.createElement("img");
+		// let resetBtnTextSingle = 'Избрано е 1 изображение',
+		// 	resetBtnTextMultiple = 'Избрани са 10 изображения';
+		if (fileCounts > 0) {
+			Object.values(uploads.files).forEach(imgFile => {
+				const imgURL = URL.createObjectURL(imgFile);
+				let uploadedImg = document.createElement("img");
 
-			uploadedImg.src = imgURL;
-			let imgBlock = document.createElement("div");
-			imgBlock.className = 'watermark__img';
-			imgBlock.append(uploadedImg);
-			imagesWrapper.append(imgBlock);
-		});
-		dwnldBtn.disabled = false;
-	}
+				uploadedImg.src = imgURL;
+				let imgBlock = document.createElement("div");
+				imgBlock.className = 'watermark__img';
+				imgBlock.append(uploadedImg);
+				imagesWrapper.append(imgBlock);
+			});
+			dwnldBtn.disabled = false;
+		}
+	})
 })
 
 dwnldBtn.addEventListener('click', () => {
@@ -129,11 +142,7 @@ dwnldBtn.addEventListener('click', () => {
 
 let resetBtn = document.getElementById('reset-btn');
 resetBtn.addEventListener('click', async () => {
-	let images = document.querySelectorAll('.watermark__img');
-
-	images.forEach(item => {
-		item.remove();
-	})
+	clearImageWrapper(0);
 	dwnldBtn.disabled = true;
 	uploads.value = '';
 	resetBtnSpan.textContent = 'Изберете изображения';

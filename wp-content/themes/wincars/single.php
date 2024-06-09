@@ -45,7 +45,7 @@
 		<div class="container">
 			<div class="header">
 				<div class="header__logo">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="Wincars logo">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Wincars logo">
 				</div>
 			</div>
 		</div>
