@@ -50,7 +50,7 @@ body {
 		&:not(:first-child) {
 			margin-top: 30px;
 		}
-		&::after, .deco-el {
+		&::after {
 			position: absolute;
 			content: '';
 			right: 5px;
@@ -58,9 +58,7 @@ body {
 			aspect-ratio: 1 / 1;
 			width: 24%;
 			line-height: 0;
-			// background: url('@img/watemark/logo-bg.jpg') no-repeat;
-			// background: url('@img/watemark/shield-free.svg') no-repeat;
-			background: url('@img/watemark/logo-bg-transparent.png') no-repeat;
+			background: url('@img/watemark/logo-bg-transparent-cleaned.png') no-repeat;
 			background-size: contain;
 			border-radius: 50%;
 			overflow: hidden;
