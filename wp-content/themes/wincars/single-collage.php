@@ -129,12 +129,13 @@
 					takeScreenBtn.addEventListener('click', () => {
 						let div = document.getElementById('photo');
 						html2canvas(div, {
-							scrollY: (window.pageYOffset * -1)
+							scrollY: (window.pageYOffset * -1),
+							scale: 1
 						}).then(
 							function(canvas) {
 								const link = document.createElement('a');
 								link.download = '<?php echo $collage_save_name; ?>';
-								link.href = canvas.toDataURL();
+								link.href = canvas.toDataURL("image/jpeg", 1.0);
 								link.click();
 								link.delete;
 							}

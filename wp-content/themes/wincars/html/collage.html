@@ -8,10 +8,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<link rel="stylesheet" href="css/collage.css" />
 	<script src="libs/html2canvas/html2canvas-1.0.0-rc.5.min.js"></script>
+	<!-- <script src="libs/html2canvas/html2canvas-1.4.1.min.js"></script> -->
 </head>
 
 
-<body class="collage-page">
+<body class="single-collage">
 	<main>
 		<div class="collage" id="photo">
 			<div class="collage-header">
@@ -111,12 +112,13 @@
 				let div = document.getElementById('photo'),
 					destination = $('.results-wrapper');
 				html2canvas(div, {
-					scrollY: (window.pageYOffset * -1)
+					scrollY: (window.pageYOffset * -1),
+					scale: 1
 				}).then(
 					function (canvas) {
 						const link = document.createElement('a');
 						link.download = 'collage.png';
-						link.href = canvas.toDataURL();
+						link.href = canvas.toDataURL("image/jpeg", 1.0);
 						link.click();
 						link.delete;
 						// document.getElementById('results-wrapper').appendChild(canvas);
