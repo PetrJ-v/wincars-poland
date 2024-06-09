@@ -1,11 +1,9 @@
 let uploads = document.getElementById('oploaud'),
 	imagesWrapper = document.getElementById('watermark-images'),
-	dwnldBtn = document.getElementById('get-wm-archive'),
-	readyToDownload = [];
+	dwnldBtn = document.getElementById('get-wm-archive');
 
 uploads.addEventListener('change', () => {
 	if (uploads.files.length > 0) {
-		// console.log(uploads.files[0]);
 		Object.values(uploads.files).forEach(imgFile => {
 			const imgURL = URL.createObjectURL(imgFile);
 			let uploadedImg = document.createElement("img");
@@ -20,7 +18,7 @@ uploads.addEventListener('change', () => {
 	}
 })
 
-dwnldBtn.addEventListener('click', async () => {
+dwnldBtn.addEventListener('click', () => {
 	let imagesDiv = document.querySelectorAll('.watermark__img'),
 		imagesDivArr = Array.from(imagesDiv);
 
@@ -65,63 +63,56 @@ dwnldBtn.addEventListener('click', async () => {
 		readyToDownload.forEach((imageObj) => {
 			let fileName = imageObj.name,
 				currentImageFile = dataURLtoFile(imageObj.imgDataUrl, fileName);
-			// console.log(imageObj);
+
 			// Назначение строки ниже пока не понял
 			// let imageFile = new File([imageBlob], imagesNames[index]);
 
-			// folder.file(imageObj.name, imageObj.imgBlob);
 			folder.file(fileName, currentImageFile);
 		})
 
 		folder.generateAsync({ type: "blob" }).then(content => saveAs(content, 'Wincars images'));
 	}
 
-	const promises = imagesDivArr.map(async (imageDiv, index) => {
-		html2canvas(imageDiv, {
-			scrollY: (window.pageYOffset * -1),
-			scale: 1
-		}).then(function (canvas) {
-			let imageObj = {
-				name: uploads.files[index].name,
-				imgDataUrl: canvas.toDataURL("image/jpeg"), //"image/jpeg"
-				// imgBlob:
-			}
-			canvas.toBlob((blob) => {
-				imageObj.imgBlob = blob;
+	let getImagesData = imagesDivArr.map((imageDiv, index) => {
+		return new Promise(resolve => {
+			html2canvas(imageDiv, {
+				scrollY: (window.pageYOffset * -1),
+				scale: 1
 			})
-			readyToDownload.push(imageObj);
+				.then(canvas => {
+					return new Promise(resolve => {
+						canvas.toBlob((imgBlob) => {
+							let data = {
+								canvas: canvas,
+								imgBlob: imgBlob
+							}
+							resolve(data);
+						})
+					})
+				})
+				.then(result => {
+					let imageObj = {
+						name: uploads.files[index].name,
+						imgDataUrl: result.canvas.toDataURL("image/jpeg", 1.0), //"image/jpeg"
+						imgBlob: result.imgBlob
+					}
+					resolve(imageObj);
+				})
 		})
 	})
 
-	setTimeout(() => {
-		if (readyToDownload.length == 1) {
-			saveSingleImage(readyToDownload[0])
+	Promise.all(getImagesData).then((imagesArrayData) => {
+		if (imagesArrayData.length == 1) {
+			saveSingleImage(imagesArrayData[0])
 		}
-		if (readyToDownload.length > 1) {
-			saveImageArchive(readyToDownload)
+		if (imagesArrayData.length > 1) {
+			saveImageArchive(imagesArrayData)
 		}
-	}, 1000)
+	})
 })
 
-function delay() {
-	return new Promise(resolve => setTimeout(resolve, 1000));
-}
-async function delayedLog(item) {
-	// мы можем использовать await для Promise
-	// который возвращается из delay
-	await delay();
-	console.log(item);
-}
 
-async function processArray(array) {
-	for (const item of array) {
-		await delayedLog(item);
-	}
-	console.log('Done!');
-}
 let testBtn = document.getElementById('test-btn');
 testBtn.addEventListener('click', async () => {
-	console.log('test btn');
-	let testArray = [1, 2, 3];
-	processArray(testArray);
+
 })

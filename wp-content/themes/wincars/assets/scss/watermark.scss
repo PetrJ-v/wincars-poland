@@ -38,30 +38,37 @@
 	}
 }
 .watermark-page {
-	.download-btn {
-		display: none;
+	&__controls {
+		max-width: 95%;
 		margin: 30px auto 0;
-		width: 200px;
+		display: flex;
+		justify-content: center;
+		column-gap: 30px;
+	}
+	&-btn {
+		display: none;
+		min-width: 150px;
+		max-width: 200px;
 		appearance: none;
 		padding: 10px 20px;
 		font-size: 18px;
 		line-height: 1;
 		color: #fff;
 		text-align: center;
-		border: 2px solid #ccc;
 		border-radius: 5px;
 		background-color: #000;
 		cursor: pointer;
-		&#test-btn {
-			display: block;
-		}
 		&:hover {
 			color: #000;
 			background-color: #fff;
+			border: 2px solid #ccc;
 		}
 		&.visible {
 			display: block;
 		}
+	}
+	#reset-btn {
+		display: block;
 	}
 	.footer {
 		margin-top: 100px;
