@@ -3,11 +3,39 @@
 @import "inc/general";
 @import "inc/vars";
 @import "inc/mixins";
-
+body {
+	min-width: 345px;
+}
 .watermark {
 	margin-inline: auto;
 	&__input {
-		text-align: center;
+		display: flex;
+		justify-content: center;
+		#uploaud {
+			display: none;
+		}
+		.upload-input {
+			cursor: pointer;
+			margin-inline: auto;
+			padding: 10px 0;
+			min-width: 331px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #ffb727;
+			border-radius: 5px;
+			&__img {
+				padding: 0 10px 0 20px;
+				width: 54px;
+			}
+			&__text {
+				flex-grow: 1;
+				padding: 0 20px 0 10px;
+				font-size: 20px;
+				line-height: 1;
+				text-align: center;
+			}
+		}
 	}
 	&__images {
 		margin-top: 50px;
@@ -22,15 +50,17 @@
 		&:not(:first-child) {
 			margin-top: 30px;
 		}
-		&::after {
+		&::after, .deco-el {
 			position: absolute;
 			content: '';
-			right: 0;
-			bottom: 0;
+			right: 5px;
+			bottom: 5px;
 			aspect-ratio: 1 / 1;
 			width: 24%;
 			line-height: 0;
-			background: url('@img/watemark/logo-bg.jpg') no-repeat;
+			// background: url('@img/watemark/logo-bg.jpg') no-repeat;
+			// background: url('@img/watemark/shield-free.svg') no-repeat;
+			background: url('@img/watemark/logo-bg-transparent.png') no-repeat;
 			background-size: contain;
 			border-radius: 50%;
 			overflow: hidden;
@@ -46,29 +76,29 @@
 		column-gap: 30px;
 	}
 	&-btn {
-		display: none;
 		min-width: 150px;
 		max-width: 200px;
 		appearance: none;
 		padding: 10px 20px;
-		font-size: 18px;
+		font-size: 20px;
 		line-height: 1;
 		color: #fff;
 		text-align: center;
 		border-radius: 5px;
 		background-color: #000;
+		border: 2px solid #000;
+		transition: 0.3s;
 		cursor: pointer;
-		&:hover {
-			color: #000;
-			background-color: #fff;
-			border: 2px solid #ccc;
+		&:disabled {
+			opacity: 0.6;
 		}
-		&.visible {
-			display: block;
+		&:not(:disabled) {
+			&:hover {
+				color: #000;
+				background-color: #fff;
+				border: 2px solid #ccc;
+			}
 		}
-	}
-	#reset-btn {
-		display: block;
 	}
 	.footer {
 		margin-top: 100px;

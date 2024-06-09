@@ -1,9 +1,24 @@
-let uploads = document.getElementById('oploaud'),
+let uploads = document.getElementById('uploaud'),
 	imagesWrapper = document.getElementById('watermark-images'),
-	dwnldBtn = document.getElementById('get-wm-archive');
+	dwnldBtn = document.getElementById('get-wm-archive'),
+	resetBtnSpan = document.querySelector('.upload-input__text');
 
 uploads.addEventListener('change', () => {
-	if (uploads.files.length > 0) {
+	let fileCounts = uploads.files.length,
+		currentImageCountOnPage = document.querySelectorAll('.watermark__img').length,
+		tottalCount = fileCounts + currentImageCountOnPage;
+	if (tottalCount == 1) {
+		resetBtnSpan.textContent = 'Избрано е 1 изображение';
+	} else if (tottalCount > 1) {
+		resetBtnSpan.textContent = `Избрани са ${tottalCount} изображения`;
+	}
+	else {
+		resetBtnSpan.textContent = '0 избрани изображения';
+	}
+
+	// let resetBtnTextSingle = 'Избрано е 1 изображение',
+	// 	resetBtnTextMultiple = 'Избрани са 10 изображения';
+	if (fileCounts > 0) {
 		Object.values(uploads.files).forEach(imgFile => {
 			const imgURL = URL.createObjectURL(imgFile);
 			let uploadedImg = document.createElement("img");
@@ -14,7 +29,7 @@ uploads.addEventListener('change', () => {
 			imgBlock.append(uploadedImg);
 			imagesWrapper.append(imgBlock);
 		});
-		dwnldBtn.classList.add('visible');
+		dwnldBtn.disabled = false;
 	}
 })
 
@@ -112,7 +127,14 @@ dwnldBtn.addEventListener('click', () => {
 })
 
 
-let testBtn = document.getElementById('test-btn');
-testBtn.addEventListener('click', async () => {
+let resetBtn = document.getElementById('reset-btn');
+resetBtn.addEventListener('click', async () => {
+	let images = document.querySelectorAll('.watermark__img');
 
+	images.forEach(item => {
+		item.remove();
+	})
+	dwnldBtn.disabled = true;
+	uploads.value = '';
+	resetBtnSpan.textContent = 'Изберете изображения';
 })
