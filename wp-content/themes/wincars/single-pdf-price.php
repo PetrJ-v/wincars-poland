@@ -5,7 +5,7 @@
 		<?php $header_image = get_field('header_image', 'options'); ?>
 		<?php if ($header_image) : ?>
 			<div class="pdf-header">
-				<div class="pdf-header__img">
+				<div class="pdf-header__img img-wrapper">
 					<?php echo wp_get_attachment_image($header_image, 'full'); ?>
 				</div>
 			</div>
@@ -117,7 +117,7 @@
 						<div class="text-info__item">*Банковите разноски за превод не са включени в цената и се поемат от
 							клиента</div>
 						<div class="text-info__item">*След покупката на автомобила преводът към САЩ/Канада трябва да бъде
-							извършен на следващия работен ден</div>
+							извършен най-късно на следващия работен ден</div>
 						<div class="text-info__item">*В случай на закъснение на превода глобата към търга се поема от клиента
 						</div>
 						<div class="text-info__item text-info__item--copyright">© <?php echo date('Y'); ?> WINCARS. Всички права запазени.</div>
