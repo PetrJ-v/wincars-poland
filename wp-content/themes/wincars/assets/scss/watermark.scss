@@ -4,8 +4,17 @@
 @import "inc/vars";
 @import "inc/mixins";
 
+@font-face {
+	font-family: "Cambria";
+	font-display: swap;
+	src: url("../fonts/Cambria-Regular.woff2") format("woff2"), url("../fonts/Cambria-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
 body {
 	min-width: 345px;
+	font-family: "Cambria";
+	font-weight: 400;
 }
 .watermark {
 	margin-inline: auto;
