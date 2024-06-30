@@ -1,0 +1,16 @@
+.ws-editor,
+.text {
+	p,
+	div,
+	ul {
+		margin-bottom: 20px;
+	}
+	ul {
+		display: inline-block;
+		text-align: left;
+		margin-left: 13px;
+	}
+	& > *:last-child {
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,19 @@
+.header-top-links {
+	padding: 16px 0;
+	display: flex;
+	column-gap: 14px;
+	@media (min-width: $breakSmall) {
+		padding-left: clamp(20px, vw(137), 137px);
+	}
+	a {
+		font-family: "Poppins";
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 1.2;
+		color: #fff;
+		text-decoration: none;
+		&:hover {
+			color: var(--base-orange);
+		}
+	}
+}

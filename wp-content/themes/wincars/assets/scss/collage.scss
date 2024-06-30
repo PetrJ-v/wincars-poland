@@ -1,8 +1,9 @@
 // @import "node_modules/reset-css/sass/reset";
-@import "inc/default";
-@import "inc/general";
 @import "inc/vars";
 @import "inc/mixins";
+@import "inc/default";
+@import "inc/general";
+@import "inc/no-access";
 
 @font-face {
 	font-family: "Cambria";
@@ -54,6 +55,7 @@ $accent-color: #ffb727;
 	background-position: top center;
 	overflow: hidden;
 	transform: translateX(-50%);
+
 	.collage-header {
 		padding: 27px 20px;
 		display: flex;

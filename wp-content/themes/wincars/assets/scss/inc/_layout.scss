@@ -4,11 +4,15 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	font-family: "InterTight";
-	font-weight: 400;
-	font-size: 19px;
-	line-height: calc(22.8 / 19);
-	color: var(--default-font-color);
-	background-color: var(--bg-color);
+	color: #fff;
+	background-color: var(--global-bg-grey);
 	-webkit-font-smoothing: antialiased;
+}
+.container {
+	max-width: 1440px;
+	margin-inline: auto;
+	padding-inline: clamp(15px, vw(30), 30px);
+}
+footer {
+	margin-top: auto;
 }

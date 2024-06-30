@@ -3,54 +3,42 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Watermark</title>
+	<title>Wincars front page</title>
 	<link rel="icon" type="image/x-icon" href="apple-touch-icon.png">
 	<meta name="description" content="Collage generator" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<link rel="stylesheet" href="css/watermark.css" />
+	<link rel="stylesheet" href="css/pages/front-page.css" />
 </head>
 
-
-<body class="page-template-watermark">
+<body class="home">
+	<header>
+		<div class="header">
+			<div class="container">
+				<div class="header-top-links">
+					<a href='#' rel='nofollow noopener sponsored' target='blank'>Нашите оферти в mobile.bg</a>
+					<a href='tel:+359889333631' rel='nofollow noopener sponsored' target='blank'>Контакти
+						+359889333631</a>
+				</div>
+				<div class="header-media">
+					<div class="header-media__cta">
+						<button class="header-media__cta-btn">ОСТАВИ ЗАПИТВАНЕ</button>
+					</div>
+					<div class="header-media__img">
+						<img src="@img/home/header-img.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
 	<main>
-		<div class="watermark">
-			<div class="watermark__images" id="watermark-images">
-				<!-- Exeple of image item
-				<div class="watermark__img">
-					<img src="@img/collage/collage-1.jpg">
-				</div> -->
-			</div>
-		</div>
-		<div class="watermark-page__controls">
-			<div class="watermark__input">
-				<input type="file" id="uploaud" name="images" accept="image/png, image/jpeg" multiple />
-				<label for="uploaud" class="upload-input">
-					<span class="upload-input__img img-wrapper"><img src="@img/icons/upload.svg"></span>
-					<span class="upload-input__text">Изберете изображения</span>
-				</label>
-			</div>
-			<div class="wtp-buttons-line">
-				<button class="watermark-page-btn" id="get-wm-archive" disabled>
-					<img src="@img/icons/download.svg" class="watermark-page-btn__icon">
-					<span class="watermark-page-btn__text">Изтегли</span>
-				</button>
-				<button class="watermark-page-btn" id="reset-btn">
-					<span class="watermark-page-btn__icon img-wrapper">
-						<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="m18 28a12 12 0 1 0 -12-12v6.2l-3.6-3.6-1.4 1.4 6 6 6-6-1.4-1.4-3.6 3.6v-6.2a10 10 0 1 1 10 10z"/></svg>
-					</span>
-					<span class="watermark-page-btn__text">Нулиране</span>
-				</button>
-			</div>
-		</div>
+
+
 	</main>
 	<footer class="footer">
+		<div class="container">
+			<h2>Test footer title</h2>
+		</div>
 		<script src="libs/jquery/jquery.min.js"></script>
-		<!-- <script src="libs/html2canvas/html2canvas-1.0.0-rc.5.min.js"></script> -->
-		<script src="libs/html2canvas/html2canvas-1.4.1.min.js"></script>
-		<script src="libs/jszip/jszip.min.js"></script>
-		<script src="libs/file-saver/file-saver.min.js"></script>
-		<script src="js/watermark.js"></script>
-
 	</footer>
 </body>
 
