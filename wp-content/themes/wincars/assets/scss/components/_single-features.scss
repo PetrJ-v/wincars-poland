@@ -34,6 +34,7 @@
 	display: flex;
 	align-items: center;
 	column-gap: clamp(15px, vw(24), 24px);
+	transition: column-gap 1s;
 	&__number {
 		font-family: "Poppins";
 		font-weight: 600;
@@ -41,6 +42,7 @@
 		color: var(--global-bg-grey); /* Цвет текста */
 		-webkit-text-stroke: 1px #ffffff; /* Толщина и цвет обводки */
 		text-stroke: 1px #ffffff; /* Толщина и цвет обводки (стандартное свойство) */
+		transition: -webkit-text-stroke 1s, text-stroke 1s;
 		@media (max-width: $breakExtra) {
 			font-size: clamp(30px, vw(70), 70px);
 		}
@@ -56,5 +58,12 @@
 		font-weight: 600;
 		font-size: clamp(14px, vw(16), 16px);
 		line-height: calc(20 / 16);
+	}
+	&:hover {
+		column-gap: clamp(calc(15px * 1.45), calc(vw(24) * 1.45), calc(24px * 1.45));
+		.sf-item__number {
+			-webkit-text-stroke: 1px var(--color-orange); /* Толщина и цвет обводки */
+			text-stroke: 1px var(--color-orange); /* Толщина и цвет обводки (стандартное свойство) */
+		}
 	}
 }
