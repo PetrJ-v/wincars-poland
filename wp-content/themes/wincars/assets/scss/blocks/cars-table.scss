@@ -23,6 +23,14 @@
 		overflow: hidden;
 		transition: background-color 0.5s;
 		cursor: pointer;
+		@media (max-width: $breakLarge) {
+			min-width: calc(50% - 10px);
+			max-width: calc(50% - 10px);
+		}
+		@media (max-width: 511px) {
+			min-width: 100%;
+			max-width: 100%;
+		}
 		&:hover {
 			background-color: var(--color-orange);
 			.car__link-img svg {
