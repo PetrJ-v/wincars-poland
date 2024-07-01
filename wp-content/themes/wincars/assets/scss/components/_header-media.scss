@@ -16,9 +16,23 @@
 			object-position: center;
 		}
 	}
-	// &__cta {
-	// 	padding: clamp(16px, vw(28), 28px);
-	// 	padding-top: clamp(10px, vw(18), 18px);
+	&__cta {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: clamp(9px, vw(18), 18px) clamp(12px, vw(24), 24px) clamp(14px, vw(28), 28px) clamp(14px, vw(18), 18px);
+		background-color: var(--global-bg-grey);
+		border-radius: 0 0 0 clamp(16px, vw(32), 32px);
+	}
+	&__cta-btn {
+		padding: 13px clamp(20px, vw(32), 32px) 11px;
+		font-family: "Montserrat";
+		font-weight: 800;
+		font-size: clamp(8px, vw(14), 14px);
+		line-height: 1;
+		text-transform: uppercase;
+		color: var(--color-black);
+		border-radius: 50px;
+	}
 
-	// }
 }

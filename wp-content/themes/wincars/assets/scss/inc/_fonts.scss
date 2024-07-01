@@ -1,81 +1,95 @@
-@font-face {
+@font-face { 
 	font-family: "Cambria";
 	font-display: swap;
 	src: url("../fonts/Cambria-Regular.woff2") format("woff2"), url("../fonts/Cambria-Regular.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
-@font-face {
-	font-family: "Cambria";
-	font-display: swap;
-	src: url("../fonts/Cambria-Italic.woff2") format("woff2"), url("../fonts/Cambria-Italic.woff") format("woff");
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
+@font-face { 
 	font-family: "Colette";
 	font-display: swap;
 	src: url("../fonts/Colette-Regular.woff2") format("woff2"), url("../fonts/Colette-Regular.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
-@font-face {
+@font-face { 
 	font-family: "Montserrat";
 	font-display: swap;
 	src: url("../fonts/Montserrat.woff2") format("woff2"), url("../fonts/Montserrat.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
-@font-face {
+@font-face { 
 	font-family: "Montserrat";
 	font-display: swap;
-	src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
-	font-weight: 600;
+	src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+	font-weight: 700;
 	font-style: normal;
 }
-@font-face {
+@font-face { 
 	font-family: "Montserrat";
 	font-display: swap;
-	src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+	src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face { 
+	font-family: "Cambria";
+	font-display: swap;
+	src: url("../fonts/Cambria-Italic.woff2") format("woff2"), url("../fonts/Cambria-Italic.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
-@font-face {
+@font-face { 
 	font-family: "Cambria";
 	font-display: swap;
 	src: url("../fonts/Cambria-Bold.woff2") format("woff2"), url("../fonts/Cambria-Bold.woff") format("woff");
 	font-weight: 700;
 	font-style: normal;
 }
-@font-face {
+@font-face { 
+	font-family: "Montserrat";
+	font-display: swap;
+	src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face { 
+	font-family: "Montserrat";
+	font-display: swap;
+	src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face { 
 	font-family: "Poppins";
 	font-display: swap;
 	src: url("../fonts/Poppins.woff2") format("woff2"), url("../fonts/Poppins.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
-@font-face {
+@font-face { 
 	font-family: "Poppins";
 	font-display: swap;
 	src: url("../fonts/Poppins-Bold.woff2") format("woff2"), url("../fonts/Poppins-Bold.woff") format("woff");
 	font-weight: 700;
 	font-style: normal;
 }
-@font-face {
+@font-face { 
 	font-family: "Poppins";
 	font-display: swap;
 	src: url("../fonts/Poppins-Light.woff2") format("woff2"), url("../fonts/Poppins-Light.woff") format("woff");
 	font-weight: 300;
 	font-style: normal;
 }
-@font-face {
+@font-face { 
 	font-family: "Poppins";
 	font-display: swap;
 	src: url("../fonts/Poppins-SemiBold.woff2") format("woff2"), url("../fonts/Poppins-SemiBold.woff") format("woff");
 	font-weight: 600;
 	font-style: normal;
 }
-@font-face {
+@font-face { 
 	font-family: "RubikMonoOne";
 	font-display: swap;
 	src: url("../fonts/RubikMonoOne-Regular.woff2") format("woff2"), url("../fonts/RubikMonoOne-Regular.woff") format("woff");

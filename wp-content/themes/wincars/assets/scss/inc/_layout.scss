@@ -13,6 +13,16 @@ body {
 	margin-inline: auto;
 	padding-inline: clamp(15px, vw(30), 30px);
 }
+
+.accent-btn {
+	background-color: var(--color-orange);
+	cursor: pointer;
+	transition: 0.5s;
+	&:hover {
+		background-color: var(--color-orange-hover);
+	}
+
+}
 footer {
 	margin-top: auto;
 }

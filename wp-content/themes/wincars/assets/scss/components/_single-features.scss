@@ -1,0 +1,60 @@
+.single-features {
+	@media (min-width: $breakSmall) {
+		display: flex;
+		justify-content: center;
+	}
+	@media (min-width: $breakMedium) {
+		padding: 0 44px;
+		justify-content: space-between;
+		column-gap: clamp(15px, vw(44), 44px);
+	}
+	@media (min-width: $breakSmall) and (max-width: $breakMedium){
+		flex-wrap: wrap;
+		gap: 50px 0;
+	}
+}
+.single-features__item {
+	@media (min-width: $breakSmall) and (max-width: $breakMedium){
+		min-width: 50%;
+		max-width: 50%;
+	}
+	@media (max-width: $breakMedium) {
+		display: flex;
+		justify-content: center;
+	}
+	@media (max-width: $breakSmall) {
+		&:not(:last-child){
+			margin-bottom: 50px;
+		}
+	}
+
+}
+
+.sf-item {
+	display: flex;
+	align-items: center;
+	column-gap: clamp(15px, vw(24), 24px);
+	&__number {
+		font-family: "Poppins";
+		font-weight: 600;
+		font-size: clamp(30px, vw(90), 90px);
+		color: var(--global-bg-grey); /* Цвет текста */
+		-webkit-text-stroke: 1px #ffffff; /* Толщина и цвет обводки */
+		text-stroke: 1px #ffffff; /* Толщина и цвет обводки (стандартное свойство) */
+		@media (max-width: $breakExtra) {
+			font-size: clamp(30px, vw(70), 70px);
+		}
+		@media (max-width: $breakMedium) {
+			font-size: clamp(45px, calc(70 / 768 * 100vw), 70px);
+		}
+		@media (max-width: $breakSmall) {
+			font-size: 50px;
+		}
+	}
+	&__text {
+		font-family: "Montserrat";
+		font-weight: 600;
+		font-size: clamp(14px, vw(16), 16px);
+		line-height: calc(20 / 16);
+	}
+}

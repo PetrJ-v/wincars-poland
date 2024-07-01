@@ -2,8 +2,8 @@
 	font-family: "Montserrat";
 	font-display: swap;
 	src:
-		url("../../fonts/Montserrat.woff2") format("woff2"),
-		url("../../fonts/Montserrat.woff") format("woff");
+		url("../../fonts/Montserrat-Regular.woff2") format("woff2"),
+		url("../../fonts/Montserrat-Regular.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
@@ -20,11 +20,21 @@
 	font-family: "Montserrat";
 	font-display: swap;
 	src:
-		url("../../fonts/Montserrat-Regular.woff2") format("woff2"),
-		url("../../fonts/Montserrat-Regular.woff") format("woff");
-	font-weight: 400;
+		url("../../fonts/Montserrat-Bold.woff2") format("woff2"),
+		url("../../fonts/Montserrat-Bold.woff") format("woff");
+	font-weight: 700;
 	font-style: normal;
 }
+@font-face {
+	font-family: "Montserrat";
+	font-display: swap;
+	src:
+		url("../../fonts/Montserrat-ExtraBold.woff2") format("woff2"),
+		url("../../fonts/Montserrat-ExtraBold.woff") format("woff");
+	font-weight: 800;
+	font-style: normal;
+}
+
 @font-face {
 	font-family: "Poppins";
 	font-display: swap;
@@ -69,15 +79,22 @@
 @import "../inc/layout";
 @import "../components/header-top-links";
 @import "../components/header-media";
-
 .header-media {
 	aspect-ratio: 1376 / 630;
 	transition: aspect-ratio 0.5s;
-	background-color: #ccc;
 	&.active {
 		aspect-ratio: 1376 / 430;
 	}
 }
+@import "../components/hp-tracking";
+.home__hp-tracking {
+	margin-bottom: clamp(50px, vw(100), 100px);
+}
+@import "../components/single-features";
+.home__single-features {
+	margin-bottom: clamp(50px, vw(100), 100px);
+}
+
 footer {
 	height: 100px;
 }

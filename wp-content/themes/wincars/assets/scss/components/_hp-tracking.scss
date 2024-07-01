@@ -1,0 +1,106 @@
+.hp-tracking {
+	position: relative;
+	margin-top: -32px;
+	font-family: "Montserrat";
+	transition: max-width 0.3s;
+	max-width: 60.4%;
+	@media (min-width: 670px) {
+		margin-top: clamp(-40px, vw(-56), -56px);
+		padding: 14px clamp(30px, vw(50), 50px);
+		display: flex;
+		align-items: center;
+		column-gap: clamp(20px, vw(40), 40px);
+		background-color: var(--global-bg-grey);
+		border-radius: 32px 32px 0 0;
+	}
+	@media (max-width: $breakLarge) {
+		max-width: 65%;
+	}
+	@media (max-width: $breakMedium) {
+		max-width: 75%;
+	}
+	@media (max-width: 670px) {
+		max-width: 100%;
+	}
+	&__form {
+		flex-grow: 1;
+		@media (min-width: 670px) {
+			display: flex;
+			align-items: center;
+			column-gap: clamp(20px, vw(40), 40px);
+		}
+	}
+	.hp-tracking-input-wrapper {
+		flex-grow: 1;
+		@media (max-width: 670px) {
+			max-width: 340px;
+			margin: 0 auto 28px;
+		}
+	}
+	&__title {
+		font-weight: 700;
+		font-size: clamp(14px, vw(16), 16px);
+		line-height: calc(20 / 16);
+
+		@media (max-width: 670px) {
+			max-width: 220px;
+			margin: 0 auto 9px;
+			padding-top: 10px;
+			font-size: 18px;
+			text-align: center;
+			background-color: var(--global-bg-grey);
+			border-radius: 20px 20px 0 0;
+		}
+	}
+}
+.hp-tracking__vin {
+	width: 100%;
+	padding: 8px 11px;
+	font-weight: 600;
+	font-size: 14px;
+	color: var(--color-light-blue);
+	background: transparent;
+	border-bottom: 1px solid #363636;
+	@media (max-width: 670px) {
+		padding: 14px 0;
+		border-bottom: 2px solid #363636;
+	}
+	&::placeholder {
+		opacity: 0.8;
+		transition: opacity 0.3s;
+	}
+	&:focus::placeholder {
+		opacity: 0.3;
+	}
+}
+.hp-tracking__submit {
+	padding: clamp(10px, vw(14), 14px) clamp(20px, vw(40), 40px) clamp(8px, vw(12), 12px);
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-size: clamp(14px, vw(16), 16px);
+	line-height: 1;
+	color: var(--color-black);
+	border-radius: 26px;
+	cursor: pointer;
+	@media (min-width: 670px) {
+		&:hover {
+			padding: clamp(10px, vw(14), 14px) clamp(calc(20px * 1.15), calc(vw(40) * 1.15), calc(40px * 1.15))
+				clamp(8px, vw(12), 12px);
+		}
+	}
+	@media (max-width: 670px) {
+		display: block;
+		width: 100%;
+		max-width: 364px;
+		margin-inline: auto;
+		padding: 13px 20px 15px;
+		font-weight: 600;
+		font-size: 24px;
+	}
+	// @media (max-width: $breakLarge) {
+	// 	padding: 10px clamp(30px, vw(40), 40px) 8px;
+	// 	&:hover {
+	// 		padding: 10px clamp(calc(30px * 1.15), calc(vw(40) * 1.15), calc(40px * 1.15)) 8px;
+	// 	}
+	// }
+}
