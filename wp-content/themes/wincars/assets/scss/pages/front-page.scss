@@ -84,14 +84,10 @@
 	}
 }
 @import "../components/hp-tracking";
-.home__hp-tracking {
-	margin-bottom: clamp(50px, vw(100), 100px);
-}
 @import "../blocks/single-features";
-.home__single-features {
-	margin-bottom: clamp(50px, vw(100), 100px);
-}
 @import "../blocks/cars-table";
+@import "../blocks/why-we";
+@import "../blocks/choice";
 
 footer {
 	margin-top: 100px;

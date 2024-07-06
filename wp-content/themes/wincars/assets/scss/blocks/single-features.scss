@@ -6,7 +6,7 @@
 		justify-content: center;
 	}
 	@media (min-width: $breakMedium) {
-		padding: 0 44px;
+		padding-inline: 44px;
 		justify-content: space-between;
 		column-gap: clamp(15px, vw(44), 44px);
 	}

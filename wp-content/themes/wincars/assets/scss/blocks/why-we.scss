@@ -1,0 +1,42 @@
+@import "../inc/vars";
+@import "../inc/mixins";
+@import "../inc/extends";
+.why-we {
+	&__title {
+		margin-bottom: clamp(35px, vw(50), 50px);
+		max-width: 400px;
+		@extend %home-page-h2;
+	}
+	&__item {
+		max-width: 376px;
+		color: #fff;
+	}
+	&__item-title {
+		padding: clamp(18px, vw(23), 23px) 0;
+		font-family: "Poppins";
+		font-weight: 600;
+		font-size: clamp(18px, vw(24), 24px);
+		line-height: 1;
+		color: inherit;
+	}
+	&__card {
+		padding: clamp(20px, vw(31), 31px) clamp(15px, vw(25), 25px);
+		background-color: var(--color-new-dark);
+		border-radius: 18px;
+	}
+	&__card-img {
+		margin-bottom: 22px;
+		border-radius: 18px;
+		overflow: hidden;
+	}
+	&__card-text {
+		font-family: "Montserrat";
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 1.2;
+		color: inherit;
+		@media (min-width: $breakSmall) {
+			font-size: clamp(14px, vw(16), 16px);
+		}
+	}
+}
