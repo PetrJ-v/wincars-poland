@@ -44,7 +44,9 @@ textarea {
 	text-transform: none;
 	outline: none !important;
 }
-
+button {
+	cursor: pointer;
+}
 button[disabled],
 html input[disabled] {
 	cursor: default;
