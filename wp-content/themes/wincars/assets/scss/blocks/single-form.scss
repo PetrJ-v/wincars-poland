@@ -1,0 +1,120 @@
+@import "../inc/vars";
+@import "../inc/mixins";
+@import "../inc/extends";
+
+.single-form {
+	max-width: 971px;
+	&__title {
+		margin-bottom: clamp(35px, vw(42), 42px);
+		font-family: "Montserrat";
+		font-weight: 600;
+		font-size: clamp(30px, vw(44), 44px);
+		line-height: calc(54 / 44);
+		color: var(--color-orange);
+		text-align: center;
+	}
+	&__text {
+		max-width: 76%;
+		margin: 0 auto clamp(35px, vw(42), 42px);
+		font-family: "Montserrat";
+		font-weight: 300;
+		font-size: 16px;
+		line-height: calc(19 / 16);
+		color: #fff;
+		text-align: center;
+	}
+}
+.single-form__form {
+	max-width: 461px;
+	.sf-row {
+		@media (min-width: 375px) {
+			display: flex;
+			border-radius: 26px;
+			background-color: #303030;
+		}
+	}
+	.wpcf7-form-control-wrap {
+		position: relative;
+		flex-grow: 1;
+	}
+	.wpcf7-not-valid-tip {
+		// Remove me start
+		display: none;
+		// Remove me end
+		position: absolute;
+		bottom: -3px;
+		left: 50%;
+		transform: translate(-50%, 100%);
+		font-family: "Montserrat";
+		font-weight: 300;
+		font-size: 12px;
+		color: var(--color-orange);
+		text-align: center;
+	}
+	.sf-email {
+		width: 100%;
+		height: 46px;
+		padding: 0 clamp(16px, vw(20), 20px) 0;
+		font-family: "Montserrat";
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1;
+		color: var(--color-light-blue);
+		background: transparent;
+		appearance: none;
+		-webkit-appearance: none;
+		@media (max-width: 375px) {
+			margin-bottom: 20px;
+			font-size: 16px;
+			border-radius: 26px;
+			background-color: #303030;
+		}
+		&::placeholder {
+			opacity: 0.8;
+			transition: opacity 0.3s;
+		}
+		&:focus::placeholder {
+			opacity: 0.3;
+		}
+	}
+	.sf-submit {
+		height: 46px;
+		padding: 0 clamp(16px, vw(24), 24px);
+		font-family: "Montserrat";
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 1;
+		text-align: center;
+		color: var(--color-black);
+		border-radius: 26px;
+		background-color: var(--color-orange);
+		transition: 1s;
+		cursor: pointer;
+		@media (max-width: $breakSmall) {
+			font-size: 14px;
+		}
+		@media (max-width: 375px) {
+			width: 100%;
+			font-size: 16px;
+			border-radius: 26px;
+		}
+		&:hover {
+			background-color: var(--color-orange-hover);
+			@media (min-width: $breakSmall) {
+				padding: 0 clamp(calc(16px * 1.4), calc(vw(24) * 1.4), calc(24px * 1.4));
+			}
+		}
+	}
+	.wpcf7-response-output {
+		// Remove me start
+		display: none;
+		// Remove me end
+		margin-top: 18px;
+		padding: 0 15px;
+		font-family: "Montserrat";
+		font-weight: 300;
+		font-size: 12px;
+		color: var(--color-orange-hover);
+		text-align: center;
+	}
+}

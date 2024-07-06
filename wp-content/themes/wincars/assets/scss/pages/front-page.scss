@@ -1,6 +1,13 @@
 @font-face {
 	font-family: "Montserrat";
 	font-display: swap;
+	src: url("../../fonts/Montserrat-Light.woff2") format("woff2"), url("../../fonts/Montserrat-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Montserrat";
+	font-display: swap;
 	src:
 		url("../../fonts/Montserrat-Regular.woff2") format("woff2"),
 		url("../../fonts/Montserrat-Regular.woff") format("woff");
@@ -88,6 +95,7 @@
 @import "../blocks/cars-table";
 @import "../blocks/why-we";
 @import "../blocks/choice";
+@import "../blocks/single-form";
 
 footer {
 	margin-top: 100px;

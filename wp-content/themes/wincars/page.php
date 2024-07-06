@@ -48,6 +48,14 @@
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Wincars logo">
 				</div>
 			</div>
+			<?php
+			// $page_template = (is_page_template('/page.php')) ? 'default' : "other";
+			$page_template = get_template_name();
+			?>
+			<h1><?php echo $page_template; ?></h1>
+			<div>
+				<?php echo do_shortcode('[contact-form-7 id="dfe3b0c" title="SImple-form"]'); ?>
+			</div>
 		</div>
 	</header>
 	<main></main>

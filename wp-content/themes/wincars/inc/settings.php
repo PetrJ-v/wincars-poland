@@ -37,9 +37,14 @@ function my_disable_gutenberg($can_edit, $post)
 add_action('admin_head', 'disable_wp_editor');
 function disable_wp_editor()
 {
-	remove_post_type_support('page', 'editor');
+	if ((get_template_name() != 'default')) {
+		remove_post_type_support('page', 'editor');
+	}
 	remove_post_type_support('post', 'editor');
 	remove_post_type_support('pdf-price', 'editor');
 	remove_post_type_support('collage', 'editor');
 }
 
+// Disable contact form 7 styles and paragraths
+add_filter('wpcf7_autop_or_not', '__return_false');
+add_filter('wpcf7_load_css', '__return_false');
