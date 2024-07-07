@@ -67,8 +67,8 @@
 			let fbText = $(this).find('.feedback__content');
 			fbText.slideUp(500);
 		})
-		if ($('.feedbacks__slider')) {
-			var feedbacksSlider = new Swiper(".feedbacks__slider", {
+		if ($('.feedbacks-slider')) {
+			var feedbacksSlider = new Swiper(".feedbacks-slider", {
 				spaceBetween: 20,
 				slidesPerView: 1,
 				navigation: {
