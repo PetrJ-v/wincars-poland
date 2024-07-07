@@ -71,6 +71,8 @@
 			var feedbacksSlider = new Swiper(".feedbacks-slider", {
 				spaceBetween: 20,
 				slidesPerView: 1,
+				centeredSlides: true,
+				initialSlide: 2,
 				navigation: {
 					nextEl: ".swiper-button-next",
 					prevEl: ".swiper-button-prev",
@@ -99,6 +101,43 @@
 					},
 				},
 			});
+		}
+
+		if ($('.previews-slider')) {
+			const previewSliderBreakpoint = window.matchMedia('(min-width:991.98px)');
+			let previewSlider = undefined;
+			const enablePreviewSlider = function () {
+				previewSlider = new Swiper(".previews-slider", {
+					slidesPerView: 1,
+					spaceBetween: 20,
+					// centeredSlides: true,
+					initialSlide: 1,
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev",
+					},
+					keyboard: {
+						enabled: true,
+						onlyInViewport: true,
+					},
+					breakpoints: {
+						499.98: {
+							slidesPerView: 2,
+						},
+						640.98: {
+							slidesPerView: 2,
+						},
+						// 839.98: {
+						// 	slidesPerView: 2.5,
+						// },
+					},
+				});
+			}
+
+			previewSliderBreakpoint.addEventListener("change", function () {
+				document.breakpointChecker(previewSliderBreakpoint, previewSlider, enablePreviewSlider)
+			});
+			document.breakpointChecker(previewSliderBreakpoint, previewSlider, enablePreviewSlider);
 		}
 	});
 })(jQuery);

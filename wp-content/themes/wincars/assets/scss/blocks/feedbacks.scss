@@ -7,10 +7,13 @@
 	line-height: calc(17 / 14);
 	color: var(--color-light-blue);
 }
+.container--feedbacks {
+	overflow: hidden;
+}
 .feedbacks {
 	font-family: "Montserrat";
 	&-slider {
-		@media (max-width: 1139.98) {
+		@media (max-width: 1139.98px) {
 			overflow: visible;
 		}
 		&--no-swiper {
@@ -28,26 +31,7 @@
 			}
 		}
 	}
-	&-slider__buttons {
-		margin-top: 10px;
-		margin-right: clamp(30px, vw(75), 75px);
-		margin-bottom: clamp(24px, vw(48), 48px);
-		display: flex;
-		justify-content: flex-end;
-		column-gap: 20px;
-		@media (max-width: $breakSmall) {
-			margin-top: 24px;
-		}
-		& > div {
-			cursor: pointer;
-		}
-		.swiper-button-disabled {
-			cursor: default;
-			img {
-				opacity: 0.5;
-			}
-		}
-	}
+	@import "../components/slider-buttons";
 }
 .feedbacks-header {
 	@media (min-width: $breakMedium) {
