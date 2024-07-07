@@ -15,6 +15,9 @@ body {
 	@media (max-width: $breakMedium) {
 		padding-inline: clamp(15px, calc(30 / 768 * 100vw), 30px);
 	}
+	&--overflow {
+		overflow: hidden;
+	}
 }
 
 .accent-btn {
