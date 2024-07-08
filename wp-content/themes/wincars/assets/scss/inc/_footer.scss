@@ -1,3 +1,121 @@
+%footer-link {
+	font-family: "Montserrat";
+	font-weight: 400;
+	font-size: 14px;
+	line-height: calc(17 / 14);
+	color: #fff;
+	transition: color 1s;
+}
 .footer {
-
+	padding: clamp(40px, vw(68), 68px) clamp(15px, vw(74), 74px);
+	background-color: var(--color-new-dark);
+	// border-radius: clamp(20px, vw(35), 35px) clamp(20px, vw(35), 35px) 0 0;
+	border-radius: 35px 35px 0 0;
+	overflow: hidden;
+	display: flex;
+	@media (min-width: $breakLarge) {
+		justify-content: space-between;
+		column-gap: 50px;
+	}
+	@media (max-width: $breakLarge) {
+		flex-direction: column;
+	}
+}
+.footer__left {
+	@media (min-width: $breakLarge) {
+		max-width: clamp(250px, vw(359), 359px);
+	}
+	@media (max-width: $breakLarge) {
+		order: 2;
+	}
+	&-links {
+		margin-bottom: 18px;
+	}
+	&-text {
+		font-family: "Montserrat";
+		font-weight: 400;
+		font-size: 12px;
+		line-height: calc(15 / 12);
+		color: var(--color-light-blue);
+	}
+}
+.footer__right {
+	display: flex;
+	column-gap: clamp(30px, vw(68), 68px);
+	@media (max-width: $breakLarge) {
+		margin-bottom: 40px;
+		order: 1;
+		justify-content: space-between;
+	}
+	@media (max-width: $breakMedium) {
+		flex-wrap: wrap;
+		column-gap: 70px;
+	}
+	@media (max-width: 500px) {
+		column-gap: 30px;
+	}
+}
+.footer-links {
+	display: flex;
+	align-items: center;
+	column-gap: 36px;
+}
+.footer-logo {
+	width: clamp(100px, vw(151), 151px);
+	svg path {
+		transition: fill 1s;
+	}
+	&:hover svg path {
+		fill: var(--color-orange);
+	}
+}
+.footer-social {
+	display: flex;
+	column-gap: 15px;
+	line-height: 1;
+	&-item {
+		svg path {
+			transition: fill 1s;
+		}
+		&:hover svg path {
+			fill: var(--color-orange);
+		}
+	}
+}
+.footer-menu-item {
+	.menu-item {
+		padding: 7px 0;
+		a {
+			@extend %footer-link;
+		}
+		&:hover a {
+			color: var(--color-orange);
+		}
+	}
+}
+.footer__contacts {
+	@media (max-width: $breakMedium) {
+		min-width: 100%;
+		margin-top: 20px;
+	}
+	&-item {
+		display: flex;
+		align-items: center;
+		column-gap: 16px;
+		padding: 7px 0;
+		svg path {
+			transition: stroke 1s;
+		}
+		span {
+			@extend %footer-link;
+		}
+		&:hover {
+			span {
+				color: var(--color-orange);
+			}
+			svg path {
+				stroke: var(--color-orange);
+			}
+		}
+	}
 }

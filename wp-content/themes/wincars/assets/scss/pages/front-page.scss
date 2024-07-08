@@ -155,8 +155,7 @@
 	}
 }
 @import "../components/previews";
-
-footer {
-	margin-top: 100px;
-	height: 100px;
+@import "../inc/footer";
+main {
+	margin-bottom: clamp(40px, vw(60), 60px);
 }
