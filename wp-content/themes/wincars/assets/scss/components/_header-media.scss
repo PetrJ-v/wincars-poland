@@ -20,21 +20,52 @@
 	}
 	&__cta {
 		position: absolute;
-		top: 0;
-		right: 0;
-		padding: clamp(9px, vw(18), 18px) clamp(12px, vw(24), 24px) clamp(14px, vw(28), 28px) clamp(14px, vw(18), 18px);
-		background-color: var(--global-bg-grey);
-		border-radius: 0 0 0 clamp(16px, vw(32), 32px);
+		width: clamp(250px, vw(305), 305px);
+		aspect-ratio: 305 / 97;
+		// height: 97px;
+		top: -1px;
+		right: -2px;
+		// padding: clamp(9px, vw(18), 18px) clamp(12px, vw(24), 24px) clamp(14px, vw(28), 28px) clamp(14px, vw(18), 18px);
+		// padding-top: 18px;
+		// padding-left: 55px;
+		// padding-right: 23px;
+		// padding-bottom: 28px;
+		background: url('../../img/header-media/cta-bg.svg') no-repeat;
+		background-position: left top;
+		background-size: contain;
+		// background-color: var(--global-bg-grey);
+		// border-radius: 0 0 0 clamp(16px, vw(32), 32px);
+	}
+	&__cta-btn-wrapper {
+		position: relative;
+		width: 100%;
+		height: 100%;
 	}
 	&__cta-btn {
-		padding: 13px clamp(20px, vw(32), 32px) 11px;
+		position: absolute;
+		// top: 50%;
+		right: 24px;
+		bottom: clamp(26px, vw(36), 36px);
+		// transform: translate(-50%, -50%);
+		// padding: 13px clamp(20px, vw(32), 32px) 11px;
+		// padding: 13px 32px 11px;
+		width: clamp(180px, vw(228), 228px);
+		height: 41px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		font-family: "Montserrat";
 		font-weight: 800;
-		font-size: clamp(8px, vw(14), 14px);
+		font-size: clamp(12px, vw(14), 14px);
 		line-height: 1;
 		text-transform: uppercase;
 		color: var(--color-black);
 		border-radius: 50px;
+		transition: right 1s, width 1s;
+		&:hover {
+			width: clamp(200px, vw(248), 248px);
+			right: 4px;
+		}
 	}
 
 }
