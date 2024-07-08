@@ -2,7 +2,7 @@
 // Montserrat 800
 .header-media {
 	position: relative;
-	border-radius: clamp(16px, vw(32), 32px);
+	border-radius: clamp(24px, vw(32), 32px);
 	overflow: hidden;
 	&__img {
 		position: absolute;
@@ -22,19 +22,11 @@
 		position: absolute;
 		width: clamp(250px, vw(305), 305px);
 		aspect-ratio: 305 / 97;
-		// height: 97px;
 		top: -1px;
 		right: -2px;
-		// padding: clamp(9px, vw(18), 18px) clamp(12px, vw(24), 24px) clamp(14px, vw(28), 28px) clamp(14px, vw(18), 18px);
-		// padding-top: 18px;
-		// padding-left: 55px;
-		// padding-right: 23px;
-		// padding-bottom: 28px;
 		background: url('../../img/header-media/cta-bg.svg') no-repeat;
 		background-position: left top;
 		background-size: contain;
-		// background-color: var(--global-bg-grey);
-		// border-radius: 0 0 0 clamp(16px, vw(32), 32px);
 	}
 	&__cta-btn-wrapper {
 		position: relative;
