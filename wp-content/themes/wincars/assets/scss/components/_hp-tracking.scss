@@ -1,56 +1,107 @@
 .hp-tracking {
-	margin-bottom: clamp(22px, vw(44), 44px);
 	position: relative;
-	margin-top: -32px;
 	font-family: "Montserrat";
 	transition: max-width 0.3s;
-	max-width: 60.4%;
-	@media (min-width: 670px) {
-		margin-top: clamp(-40px, vw(-56), -56px);
-		padding: 14px clamp(30px, vw(50), 50px);
+	max-width: 849px;
+	@media (min-width: $breakMedium) {
+		margin-top: 1px;
 		display: flex;
 		align-items: center;
 		column-gap: clamp(20px, vw(40), 40px);
-		background-color: var(--global-bg-grey);
-		border-radius: 32px 32px 0 0;
+		padding: 14px clamp(60px, vw(70), 70px) 0;
+		transform: translateY(-100%);
+		&::before {
+			position: absolute;
+			content: '';
+			left: 0;
+			top: 0;
+			width: 50%;
+			height: 100%;
+			background: url('../../img/hp-tracking/bottom-bg.svg') no-repeat;
+			background-position: left center;
+			background-size: 849px 57px;
+			overflow: hidden;
+		}
+		&::after {
+			position: absolute;
+			content: '';
+			right: 0;
+			top: 0;
+			width: 50%;
+			height: 100%;
+			background: url('../../img/hp-tracking/bottom-bg.svg') no-repeat;
+			background-position: right center;
+			background-size: 849px 57px;
+			overflow: hidden;
+		}
 	}
 	@media (max-width: $breakLarge) {
-		max-width: 65%;
+		max-width: 87%;
 	}
 	@media (max-width: $breakMedium) {
-		max-width: 75%;
-	}
-	@media (max-width: 670px) {
-		max-width: 100%;
+		width: 75%;
+		max-width: 400px;
+		margin: 0 auto clamp(22px, vw(44), 44px);
+		transform: translateY(-38px);
 	}
 	&__form {
 		flex-grow: 1;
-		@media (min-width: 670px) {
+		@media (min-width: $breakMedium) {
 			display: flex;
 			align-items: center;
 			column-gap: clamp(20px, vw(40), 40px);
 		}
 	}
 	.hp-tracking-input-wrapper {
+		position: relative;
 		flex-grow: 1;
-		@media (max-width: 670px) {
-			max-width: 340px;
-			margin: 0 auto 28px;
+		z-index: 2;
+		@media (max-width: $breakMedium) {
+			margin-bottom: 28px;
 		}
 	}
 	&__title {
+		position: relative;
 		font-weight: 700;
-		font-size: clamp(14px, vw(16), 16px);
+		font-size: 16px;
+		// font-size: clamp(14px, vw(16), 16px);
 		line-height: calc(20 / 16);
 
-		@media (max-width: 670px) {
-			max-width: 220px;
+		@media (max-width: $breakMedium) {
+			height: 40px;
+			padding-bottom: 5px;
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
 			margin: 0 auto 9px;
-			padding-top: 10px;
 			font-size: 18px;
-			text-align: center;
-			background-color: var(--global-bg-grey);
-			border-radius: 20px 20px 0 0;
+			z-index: 2;
+			&::before {
+				position: absolute;
+				content: '';
+				left: 0;
+				top: 0;
+				width: 50%;
+				height: 100%;
+				background: url('../../img/hp-tracking/bottom-bg-mobile.svg') no-repeat;
+				background-position: left center;
+				background-size: calc(232px * 1.333) calc(30px * 1.333);
+				overflow: hidden;
+				z-index: -1;
+			}
+			&::after {
+				position: absolute;
+				content: '';
+				right: 0;
+				top: 0;
+				width: 50%;
+				height: 100%;
+				background: url('../../img/hp-tracking/bottom-bg-mobile.svg') no-repeat;
+				background-position: right center;
+				background-size: calc(232px * 1.333) calc(30px * 1.333);
+				overflow: hidden;
+				z-index: -1;
+			}
 		}
 	}
 }
@@ -62,7 +113,7 @@
 	color: var(--color-light-blue);
 	background: transparent;
 	border-bottom: 1px solid #363636;
-	@media (max-width: 670px) {
+	@media (max-width: $breakMedium) {
 		padding: 14px 0;
 		border-bottom: 2px solid #363636;
 	}
@@ -75,6 +126,7 @@
 	}
 }
 .hp-tracking__submit {
+	position: relative;
 	padding: clamp(10px, vw(14), 14px) clamp(20px, vw(40), 40px) clamp(8px, vw(12), 12px);
 	font-family: "Montserrat";
 	font-weight: 700;
@@ -83,17 +135,18 @@
 	color: var(--color-black);
 	border-radius: 26px;
 	cursor: pointer;
-	@media (min-width: 670px) {
+	z-index: 2;
+	@media (min-width: $breakMedium) {
 		&:hover {
 			padding: clamp(10px, vw(14), 14px) clamp(calc(20px * 1.15), calc(vw(40) * 1.15), calc(40px * 1.15))
 				clamp(8px, vw(12), 12px);
 		}
 	}
-	@media (max-width: 670px) {
+	@media (max-width: $breakMedium) {
 		display: block;
 		width: 100%;
-		max-width: 364px;
-		margin-inline: auto;
+		// max-width: 364px;
+		// margin-inline: auto;
 		padding: 13px 20px 15px;
 		font-weight: 600;
 		font-size: 24px;

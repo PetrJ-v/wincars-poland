@@ -3,6 +3,9 @@
 	top: 18px;
 	left: clamp(20px, vw(55), 55px);
 	z-index: 2;
+	@media (max-width: $breakLarge) {
+		display: none;
+	}
 	.menu {
 		display: flex;
 		justify-content: center;
