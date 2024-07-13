@@ -91,10 +91,10 @@
 		aspect-ratio: 1376 / 730;
 	}
 	@media (max-width: $breakSmall) {
-		aspect-ratio: 428 / 253;
+		aspect-ratio: 428 / 340;
 	}
 	&.active {
-		aspect-ratio: 1376 / 430;
+
 	}
 }
 @import "../components/header-menu";

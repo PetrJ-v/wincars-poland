@@ -17,9 +17,10 @@
 		overflow: visible;
 		transition: width 0.7s, height 0.7s;
 	}
-	@media (max-width: 400px) {
-		top: 35px;
-	}
+	// @media (max-width: 400px) {
+	// 	top: 0;
+	// 	// top: 35px;
+	// }
 }
 .header-menu-btn {
 	position: relative;
@@ -138,6 +139,9 @@ body.menu-open {
 		border-radius: 0;
 		@media (max-width: 500px) {
 			height: calc(100dvh - 36px);
+		}
+		@media (max-width: 400px) {
+			top: 36px;
 		}
 	}
 	.header-top-links::after {
