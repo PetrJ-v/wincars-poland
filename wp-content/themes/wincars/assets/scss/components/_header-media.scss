@@ -27,6 +27,9 @@
 		background: url('../../img/header-media/cta-bg.svg') no-repeat;
 		background-position: left top;
 		background-size: contain;
+		@media (max-width: $breakMedium) {
+			width: clamp(220px, calc(242 / 768 * 100vw), 242px);
+		}
 	}
 	&__cta-btn-wrapper {
 		position: relative;
@@ -35,12 +38,8 @@
 	}
 	&__cta-btn {
 		position: absolute;
-		// top: 50%;
 		right: 24px;
 		bottom: clamp(26px, vw(36), 36px);
-		// transform: translate(-50%, -50%);
-		// padding: 13px clamp(20px, vw(32), 32px) 11px;
-		// padding: 13px 32px 11px;
 		width: clamp(180px, vw(228), 228px);
 		height: 41px;
 		display: flex;
@@ -54,9 +53,20 @@
 		color: var(--color-black);
 		border-radius: 50px;
 		transition: right 1s, width 1s;
+		@media (max-width: $breakMedium) {
+			width: clamp(159px, calc(180 / 768 * 100vw), 180px);
+			bottom: clamp(22px, vw(36), 36px);
+			font-size: clamp(10px, calc(12 / 768 * 100vw), 12px);
+		}
+		@media (max-width: $breakSmall) {
+			height: 34px;
+		}
 		&:hover {
 			width: clamp(200px, vw(248), 248px);
 			right: 4px;
+			@media (max-width: $breakMedium) {
+				width: clamp(179px, calc(200 / 768 * 100vw), 200px);
+			}
 		}
 	}
 

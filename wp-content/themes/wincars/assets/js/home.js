@@ -131,5 +131,24 @@
 				},
 			});
 		}
+
+		$('.header-menu-btn').on('click', () => {
+			if (!$('body').hasClass('menu-open')) {
+				$('body').addClass('menu-open');
+				setTimeout(() => {
+					$('.menu').addClass('menu--visible');
+				}, 500)
+				setTimeout(() => {
+					$('.header-menu').addClass('header-menu--opened');
+				}, 600)
+			}
+			else {
+				$('.header-menu').removeClass('header-menu--opened');
+				setTimeout(() => {
+					$('.menu').removeClass('menu--visible');
+					$('body').removeClass('menu-open');
+				}, 800)
+			}
+		})
 	});
 })(jQuery);

@@ -1,9 +1,31 @@
 .header-top-links {
-	padding: 16px 0;
+	position: relative;
+	height: 50px;
 	display: flex;
+	align-items: center;
 	column-gap: 14px;
+	&::after {
+		position: absolute;
+		content: '';
+		left: 50%;
+		bottom: 1px;
+		width: 0;
+		height: 1px;
+		transform: translateX(-50%);
+		background-color: rgba(#FCB001, 0.4);
+		// background-color: var(--color-orange);
+		transition: width 0.7s;
+		z-index: 2;
+	}
 	@media (min-width: $breakSmall) {
 		padding-left: clamp(20px, vw(137), 137px);
+	}
+	@media (max-width: $breakSmall) {
+		padding-inline: 15px;
+	}
+	@media (max-width: 400px) {
+		height: 36px;
+		visibility: hidden;
 	}
 	a {
 		font-family: "Poppins";

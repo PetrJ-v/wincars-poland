@@ -81,6 +81,7 @@
 @import "../inc/default";
 @import "../inc/general";
 @import "../inc/layout";
+@import "../inc/header";
 @import "../components/header-top-links";
 @import "../components/header-media";
 .header-media {
@@ -88,6 +89,9 @@
 	transition: aspect-ratio 0.5s;
 	@media (max-width: $breakLarge) {
 		aspect-ratio: 1376 / 730;
+	}
+	@media (max-width: $breakSmall) {
+		aspect-ratio: 428 / 253;
 	}
 	&.active {
 		aspect-ratio: 1376 / 430;
