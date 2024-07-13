@@ -83,7 +83,7 @@
 @import "../inc/layout";
 @import "../inc/header";
 @import "../components/header-top-links";
-@import "../components/header-media";
+@import "../components/header-media-common";
 .header-media {
 	aspect-ratio: 1376 / 630;
 	transition: aspect-ratio 0.5s;

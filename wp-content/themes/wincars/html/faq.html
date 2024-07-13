@@ -3,175 +3,257 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>За нас</title>
+	<title>FAQ</title>
 	<link rel="icon" type="image/x-icon" href="apple-touch-icon.png">
 	<meta name="description" content="Collage generator" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<link rel="stylesheet" href="css/pages/about.css" />
+	<link rel="stylesheet" href="css/pages/faq.css" />
 </head>
 
-<body class="page-template-about">
+<body class="page-template-faq">
 
-	@@include('components/header-page.html', {"img": "@img/about-us/about-header.jpg"})
+	@@include('components/header-page.html', {"img": "@img/faq/faq-header-image.jpg"})
 
-	<main class="about">
+	<main class="mt-30-44">
+		<!-- Faq block -->
 		<div class="container">
-			<div class="intro p-tb-20-35 align-center">
-				<h1 class="intro__title">За нас</h1>
-				<div class="intro__text">
-					Целта ни е сигурна и удобна доставка на автомобили от САЩ. С най-добрите логистични партньори
-					осигуряваме безопасен и бърз транспорт. Предлагаме отлични условия и персонализиран подход.
+			<div class="faq-block p-tb-30-44 align-center">
+				<div class="faq-block__left">
+					<div class="faq-block__left-lable">Support</div>
+					<h2 class="faq-block__left-title">FAQs</h2>
+					<div class="faq-block__left-text">
+						Защо закупуването на кола в САЩ ще бъде с 30-50% по-евтино?
+					</div>
 				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="info-grid p-tb-20-35">
-				<div class="wc-row-2-900">
-					<div class="wc-col">
-						<div class="info-grid-img cover-img border-24 mb-24">
-							<img src="@img/about-us/about-img-1.jpg">
-						</div>
-						<div class="wc-row-2-538">
-							<div class="wc-col">
-								<div class="mini-grid mb-24">
-									<div class="mini-grid-item">
-										<a href="#" class="about-social border-24">
-											<svg width="25" height="25" viewBox="0 0 25 25" fill="none"
-												xmlns="http://www.w3.org/2000/svg">
-												<g clip-path="url(#clip0_246_1012)">
-													<path
-														d="M25 12.5C25 5.59644 19.4036 0 12.5 0C5.59644 0 0 5.59644 0 12.5C0 18.739 4.57104 23.9104 10.5469 24.8481V16.1133H7.37305V12.5H10.5469V9.74609C10.5469 6.61328 12.4131 4.88281 15.2683 4.88281C16.6355 4.88281 18.0664 5.12695 18.0664 5.12695V8.20312H16.4902C14.9375 8.20312 14.4531 9.16675 14.4531 10.1562V12.5H17.9199L17.3657 16.1133H14.4531V24.8481C20.429 23.9104 25 18.739 25 12.5Z"
-														fill="#FDFDFD" />
-												</g>
-											</svg>
-										</a>
-									</div>
-									<div class="mini-grid-item">
-										<a href="#" class="about-social border-24">
-											<svg width="25" height="25" viewBox="0 0 25 25" fill="none"
-												xmlns="http://www.w3.org/2000/svg">
-												<g clip-path="url(#clip0_246_1018)">
-													<path
-														d="M12.5 2.25098C15.8398 2.25098 16.2354 2.26562 17.5488 2.32422C18.7695 2.37793 19.4287 2.58301 19.8682 2.75391C20.4492 2.97852 20.8691 3.25195 21.3037 3.68652C21.7432 4.12598 22.0117 4.54102 22.2363 5.12207C22.4072 5.56152 22.6123 6.22559 22.666 7.44141C22.7246 8.75977 22.7393 9.15527 22.7393 12.4902C22.7393 15.8301 22.7246 16.2256 22.666 17.5391C22.6123 18.7598 22.4072 19.4189 22.2363 19.8584C22.0117 20.4395 21.7383 20.8594 21.3037 21.2939C20.8643 21.7334 20.4492 22.002 19.8682 22.2266C19.4287 22.3975 18.7646 22.6025 17.5488 22.6563C16.2305 22.7148 15.835 22.7295 12.5 22.7295C9.16016 22.7295 8.76465 22.7148 7.45117 22.6563C6.23047 22.6025 5.57129 22.3975 5.13184 22.2266C4.55078 22.002 4.13086 21.7285 3.69629 21.2939C3.25684 20.8545 2.98828 20.4395 2.76367 19.8584C2.59277 19.4189 2.3877 18.7549 2.33398 17.5391C2.27539 16.2207 2.26074 15.8252 2.26074 12.4902C2.26074 9.15039 2.27539 8.75488 2.33398 7.44141C2.3877 6.2207 2.59277 5.56152 2.76367 5.12207C2.98828 4.54102 3.26172 4.12109 3.69629 3.68652C4.13574 3.24707 4.55078 2.97852 5.13184 2.75391C5.57129 2.58301 6.23535 2.37793 7.45117 2.32422C8.76465 2.26562 9.16016 2.25098 12.5 2.25098ZM12.5 0C9.10645 0 8.68164 0.0146484 7.34863 0.0732422C6.02051 0.131836 5.10742 0.34668 4.31641 0.654297C3.49121 0.976563 2.79297 1.40137 2.09961 2.09961C1.40137 2.79297 0.976562 3.49121 0.654297 4.31152C0.34668 5.10742 0.131836 6.01563 0.0732422 7.34375C0.0146484 8.68164 0 9.10645 0 12.5C0 15.8936 0.0146484 16.3184 0.0732422 17.6514C0.131836 18.9795 0.34668 19.8926 0.654297 20.6836C0.976562 21.5088 1.40137 22.207 2.09961 22.9004C2.79297 23.5938 3.49121 24.0234 4.31152 24.3408C5.10742 24.6484 6.01562 24.8633 7.34375 24.9219C8.67676 24.9805 9.10156 24.9951 12.4951 24.9951C15.8887 24.9951 16.3135 24.9805 17.6465 24.9219C18.9746 24.8633 19.8877 24.6484 20.6787 24.3408C21.499 24.0234 22.1973 23.5938 22.8906 22.9004C23.584 22.207 24.0137 21.5088 24.3311 20.6885C24.6387 19.8926 24.8535 18.9844 24.9121 17.6563C24.9707 16.3232 24.9854 15.8984 24.9854 12.5049C24.9854 9.11133 24.9707 8.68652 24.9121 7.35352C24.8535 6.02539 24.6387 5.11231 24.3311 4.32129C24.0234 3.49121 23.5986 2.79297 22.9004 2.09961C22.207 1.40625 21.5088 0.976563 20.6885 0.65918C19.8926 0.351563 18.9844 0.136719 17.6563 0.078125C16.3184 0.0146484 15.8936 0 12.5 0Z"
-														fill="#FDFDFD" />
-													<path
-														d="M12.5 6.0791C8.95508 6.0791 6.0791 8.95508 6.0791 12.5C6.0791 16.0449 8.95508 18.9209 12.5 18.9209C16.0449 18.9209 18.9209 16.0449 18.9209 12.5C18.9209 8.95508 16.0449 6.0791 12.5 6.0791ZM12.5 16.665C10.2002 16.665 8.33496 14.7998 8.33496 12.5C8.33496 10.2002 10.2002 8.33496 12.5 8.33496C14.7998 8.33496 16.665 10.2002 16.665 12.5C16.665 14.7998 14.7998 16.665 12.5 16.665Z"
-														fill="#FDFDFD" />
-													<path
-														d="M20.6738 5.8252C20.6738 6.65528 20 7.32422 19.1748 7.32422C18.3447 7.32422 17.6758 6.65039 17.6758 5.8252C17.6758 4.99512 18.3496 4.32617 19.1748 4.32617C20 4.32617 20.6738 5 20.6738 5.8252Z"
-														fill="#FDFDFD" />
-												</g>
-											</svg>
-										</a>
-									</div>
-									<div class="mini-grid-item">
-										<a href="#" class="about-social border-24">
-											<svg width="33" height="35" viewBox="0 0 33 35" fill="none"
-												xmlns="http://www.w3.org/2000/svg">
-												<g clip-path="url(#clip0_246_875)">
-													<path
-														d="M29.275 3.40502C28.4103 2.60459 24.916 0.0597521 17.1327 0.0251784C17.1327 0.0251784 7.95413 -0.530096 3.47974 3.58732C0.989035 6.08658 0.11285 9.74353 0.0204275 14.2774C-0.0719949 18.8113 -0.191571 27.308 7.9724 29.6119H7.98024L7.97501 33.1274C7.97501 33.1274 7.9228 34.5507 8.85694 34.8409C9.9869 35.1929 10.65 34.1112 11.7288 32.9451C12.321 32.305 13.1387 31.3647 13.7548 30.6459C19.3383 31.1174 23.6325 30.0399 24.1202 29.8806C25.2476 29.5139 31.6268 28.6941 32.6643 20.1979C33.7353 11.4408 32.1463 5.90166 29.275 3.40502ZM30.2211 19.5698C29.3455 26.6637 24.1714 27.1095 23.2174 27.4164C22.8117 27.5474 19.0401 28.4888 14.2973 28.1781C14.2973 28.1781 10.7634 32.4553 9.6595 33.5674C9.48719 33.7413 9.28459 33.8115 9.14935 33.777C8.95929 33.7303 8.90707 33.5046 8.90916 33.1745C8.91229 32.7031 8.93944 27.3326 8.93944 27.3326C2.03335 25.4091 2.43594 18.1774 2.51426 14.3905C2.59259 10.6037 3.30168 7.50148 5.40808 5.41501C9.19269 1.97597 16.9891 2.48986 16.9891 2.48986C23.573 2.51868 26.7279 4.50771 27.4594 5.17404C29.8885 7.26051 31.126 12.2533 30.2211 19.5677V19.5698Z"
-														fill="#FDFDFD" />
-													<path
-														d="M20.3367 14.0793C20.2511 12.3475 19.3742 11.4379 17.7061 11.3506"
-														stroke="#FDFDFD" stroke-linecap="round"
-														stroke-linejoin="round" />
-													<path
-														d="M22.5949 14.8389C22.6297 13.2254 22.1533 11.8774 21.1658 10.7948C20.1737 9.70833 18.8004 9.1101 17.0381 8.98071"
-														stroke="#FDFDFD" stroke-linecap="round"
-														stroke-linejoin="round" />
-													<path
-														d="M24.9071 15.7462C24.8859 12.9464 24.052 10.7414 22.4054 9.13105C20.7589 7.52076 18.7111 6.70705 16.2622 6.68994"
-														stroke="#FDFDFD" stroke-linecap="round"
-														stroke-linejoin="round" />
-													<path
-														d="M17.7932 19.9942C17.7932 19.9942 18.412 20.0466 18.7451 19.6348L19.3947 18.815C19.708 18.4085 20.464 18.1492 21.2045 18.5631C21.7593 18.8805 22.298 19.2256 22.8185 19.5971C23.3098 19.9596 24.316 20.802 24.3191 20.802C24.7985 21.2079 24.9092 21.8041 24.5828 22.4327C24.5828 22.4364 24.5802 22.4426 24.5802 22.4458C24.2208 23.0709 23.7645 23.6346 23.2284 24.1158C23.2221 24.1189 23.2221 24.1221 23.2163 24.1252C22.7506 24.5157 22.293 24.7376 21.8436 24.791C21.7774 24.8027 21.7102 24.8069 21.6431 24.8036C21.4449 24.8055 21.2477 24.7751 21.0593 24.7135L21.0447 24.692C20.3523 24.4961 19.1962 24.0058 17.271 22.9403C16.1569 22.331 15.0963 21.6281 14.1005 20.8392C13.6013 20.444 13.1252 20.0203 12.6745 19.5704L12.6264 19.5222L12.5784 19.474L12.5303 19.4253C12.5142 19.4096 12.4985 19.3933 12.4823 19.3771C12.0338 18.9249 11.6116 18.4472 11.2176 17.9465C10.4314 16.9475 9.73073 15.8837 9.12324 14.7662C8.06117 12.8343 7.57243 11.6756 7.37714 10.9799L7.35573 10.9652C7.29452 10.7761 7.26436 10.5783 7.26644 10.3796C7.26279 10.3123 7.26682 10.2448 7.27845 10.1784C7.3345 9.7286 7.55607 9.26936 7.94316 8.8007C7.94629 8.79494 7.94943 8.79494 7.95256 8.78865C8.43206 8.25083 8.994 7.79317 9.61721 7.43294C9.62034 7.43294 9.62661 7.4298 9.63026 7.4298C10.2569 7.1024 10.8511 7.21345 11.2552 7.69172C11.2584 7.69486 12.0964 8.70431 12.4562 9.19725C12.8265 9.71991 13.1705 10.2608 13.4869 10.818C13.8994 11.5603 13.641 12.3204 13.2358 12.6337L12.4186 13.2853C12.0061 13.6195 12.0604 14.2403 12.0604 14.2403C12.0604 14.2403 13.2708 18.836 17.7932 19.9942Z"
-														fill="#FDFDFD" />
-												</g>
-											</svg>
-										</a>
-									</div>
-									<div class="mini-grid-item">
-										<a href="#" class="about-social border-24">
-											<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M26.7004 9.91314V13.2472C26.7004 13.2472 25.1208 13.1853 23.951 12.8879C22.3183 12.4718 21.2683 11.8337 21.2683 11.8337C21.2683 11.8337 20.5439 11.3787 20.4853 11.3464V20.1364C20.4853 20.6258 20.3513 21.8484 19.9427 22.8672C19.4093 24.2012 18.5862 25.0764 18.4348 25.2553C18.4348 25.2553 17.4332 26.4384 15.6675 27.2352C14.076 27.9539 12.6783 27.9357 12.2599 27.9539C12.2599 27.9539 9.84424 28.0496 7.66946 26.6366L7.65861 26.6288C7.429 26.4064 7.21287 26.1717 7.01128 25.9257C6.31728 25.0795 5.89188 24.0789 5.78498 23.7934C5.7848 23.7922 5.7848 23.791 5.78498 23.7898C5.61298 23.2937 5.2516 22.1022 5.30098 20.9482C5.38834 18.9122 6.10458 17.6625 6.29395 17.3494C6.79549 16.4957 7.44779 15.7318 8.22184 15.0919C8.90489 14.5396 9.67911 14.1002 10.5127 13.7917C11.4139 13.4295 12.3789 13.2353 13.356 13.2197V16.5948C13.356 16.5948 11.5686 16.028 10.1383 17.0317C9.13831 17.7743 8.60763 18.4987 8.45136 19.7926C8.44485 20.7449 8.68848 22.0923 10.0249 22.991C10.1808 23.0898 10.3339 23.1775 10.484 23.2541C10.7175 23.5576 11.0016 23.8221 11.325 24.0368C12.6305 24.8632 13.7244 24.9209 15.1233 24.3842C16.056 24.0254 16.7582 23.2167 17.0837 22.3206C17.2883 21.7611 17.2856 21.1978 17.2856 20.6154V4.04639H20.5412C20.6758 4.81139 21.048 5.90039 22.0323 6.97898C22.4272 7.38624 22.8719 7.7463 23.3568 8.05134C23.5001 8.19955 24.2326 8.93231 25.1729 9.38216C25.6592 9.61469 26.1717 9.79285 26.7004 9.91314V9.91314Z" fill="white" />
-												<path d="M20.5438 4.04635H17.2881V20.6159C17.2881 21.1983 17.2881 21.76 17.0863 22.3211C16.7575 23.2167 16.058 24.0253 15.1258 24.3842C13.7265 24.923 12.6326 24.8632 11.3276 24.0368C11.0036 23.823 10.7187 23.5594 10.4844 23.2567C11.5962 23.8251 12.5913 23.8152 13.8241 23.341C14.7558 22.9821 15.4563 22.1734 15.784 21.2774C15.9891 20.7178 15.9864 20.1546 15.9864 19.5726V3H20.4819C20.4819 3 20.4315 3.41188 20.5438 4.04635ZM26.7002 8.99104V9.9131C26.1725 9.79263 25.6609 9.61447 25.1755 9.38213C24.2352 8.93228 23.5026 8.19952 23.3594 8.0513C23.5256 8.1559 23.6981 8.25106 23.8759 8.33629C25.0192 8.88339 26.1451 9.04669 26.7002 8.99104Z" fill="white" />
-											</svg>
-										</a>
-									</div>
+				<div class="faq-block__right">
+					<div class="faq">
+						<div class="faq__item">
+							<div class="faq__item-qustion question">
+								<div class="question__text">Защо закупуването на кола в САЩ ще бъде с 30-50% по-евтино?
 								</div>
-								<div class="info-item border-24">
-									<div class="info-item__count">
-										<span class="info-item__count-number">2</span>
-									</div>
-									<div class="info-item__bottom">
-										<div class="info-item__title">Офиса</div>
-										<div class="info-item__text">
-											Нашата цел е бързо и качествено да изберем точно това, което желаете.
-										</div>
-									</div>
-								</div>
+								<button class="question__btn">
+									<svg width="25" height="26" viewBox="0 0 25 26" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect y="12.2188" width="25" height="1.5625" fill="#4E4949" />
+										<rect x="13.2812" y="0.5" width="25" height="1.5625"
+											transform="rotate(90 13.2812 0.5)" fill="#4E4949" />
+									</svg>
+								</button>
 							</div>
-							<div class="wc-col">
-								<div class="info-item info-item--orange info-item--grow border-24">
-									<div class="info-item__count">
-										<span class="info-item__count-number">5</span>
-										<span>+</span>
-									</div>
-									<div class="info-item__bottom">
-										<div class="info-item__title">Пристанища в САЩ</div>
-										<div class="info-item__text">
-											Гъвкавост и широк спектър на възможности за доставка.
-										</div>
-									</div>
+							<div class="faq__item-answer">
+								САЩ скъпи ремонти, така че застрахователните компании дори след След лека катастрофа
+								първото нещо, което правят, е да пуснат колите на търг и да ги продадат на намалени
+								цени. Украйна има един от най-евтините ремонти в света. Ценоразписите за ремонти в САЩ и
+								Украйна се различават 10-20 пъти.
+							</div>
+						</div>
+						<div class="faq__item">
+							<div class="faq__item-qustion question">
+								<div class="question__text">Защо закупуването на кола в САЩ ще бъде с 30-50% по-евтино?
 								</div>
+								<button class="question__btn">
+									<svg width="25" height="26" viewBox="0 0 25 26" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect y="12.2188" width="25" height="1.5625" fill="#4E4949" />
+										<rect x="13.2812" y="0.5" width="25" height="1.5625"
+											transform="rotate(90 13.2812 0.5)" fill="#4E4949" />
+									</svg>
+								</button>
+							</div>
+							<div class="faq__item-answer">
+								САЩ скъпи ремонти, така че застрахователните компании дори след След лека катастрофа
+								първото нещо, което правят, е да пуснат колите на търг и да ги продадат на намалени
+								цени. Украйна има един от най-евтините ремонти в света. Ценоразписите за ремонти в САЩ и
+								Украйна се различават 10-20 пъти.
+							</div>
+						</div>
+						<div class="faq__item">
+							<div class="faq__item-qustion question">
+								<div class="question__text">Защо закупуването на кола в САЩ ще бъде с 30-50% по-евтино?
+								</div>
+								<button class="question__btn">
+									<svg width="25" height="26" viewBox="0 0 25 26" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect y="12.2188" width="25" height="1.5625" fill="#4E4949" />
+										<rect x="13.2812" y="0.5" width="25" height="1.5625"
+											transform="rotate(90 13.2812 0.5)" fill="#4E4949" />
+									</svg>
+								</button>
+							</div>
+							<div class="faq__item-answer">
+								САЩ скъпи ремонти, така че застрахователните компании дори след След лека катастрофа
+								първото нещо, което правят, е да пуснат колите на търг и да ги продадат на намалени
+								цени. Украйна има един от най-евтините ремонти в света. Ценоразписите за ремонти в САЩ и
+								Украйна се различават 10-20 пъти.
+							</div>
+						</div>
+						<div class="faq__item">
+							<div class="faq__item-qustion question">
+								<div class="question__text">Защо закупуването на кола в САЩ ще бъде с 30-50% по-евтино?
+								</div>
+								<button class="question__btn">
+									<svg width="25" height="26" viewBox="0 0 25 26" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect y="12.2188" width="25" height="1.5625" fill="#4E4949" />
+										<rect x="13.2812" y="0.5" width="25" height="1.5625"
+											transform="rotate(90 13.2812 0.5)" fill="#4E4949" />
+									</svg>
+								</button>
+							</div>
+							<div class="faq__item-answer">
+								САЩ скъпи ремонти, така че застрахователните компании дори след След лека катастрофа
+								първото нещо, което правят, е да пуснат колите на търг и да ги продадат на намалени
+								цени. Украйна има един от най-евтините ремонти в света. Ценоразписите за ремонти в САЩ и
+								Украйна се различават 10-20 пъти.
 							</div>
 						</div>
 					</div>
-					<div class="wc-col">
-						<div class="wc-row-2-538 mb-24">
-							<div class="wc-col">
-								<div class="info-item info-item--white info-item--grow border-24">
-									<div class="info-item__count">
-										<span class="info-item__count-number">80</span>
-										<span>+</span>
-									</div>
-									<div class="info-item__bottom">
-										<div class="info-item__title">Търга на ден</div>
-										<div class="info-item__text">
-											Осигурявайки ви богат избор и бързо изпълнение на поръчката. Доверете се на нашата експертиза и професионализъм!
-										</div>
-									</div>
-								</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Single form block -->
+		<div class="container">
+			<div class="single-form p-tb-30-44 align-center">
+				<h2 class="single-form__title">
+					Абонирайте се за актуализации на бъдете в крак с всички новини WINCARS
+				</h2>
+				<div class="single-form__text">
+					Получавайте ексклузивни оферти, последните новини за нови автомобили и полезни съвети директно във
+					вашата поща. Присъединете се към нашето семейство от доволни клиенти и не пропускайте нито една
+					възможност!
+				</div>
+				<div class="single-form__form align-center">
+					<div class="wpcf7 js" id="wpcf7-f168-o1" lang="en-US" dir="ltr">
+						<div class="screen-reader-response">
+							<p role="status" aria-live="polite" aria-atomic="true">One or more fields have an error.
+								Please check and try again.</p>
+							<ul>
+								<li id="wpcf7-f168-o1-ve-email">Please fill out this field.</li>
+							</ul>
+						</div>
+						<form action="/test-page/#wpcf7-f168-o1" method="post" class="wpcf7-form invalid"
+							aria-label="Contact form" novalidate="novalidate" data-status="invalid">
+							<div style="display: none;">
+								<input type="hidden" name="_wpcf7" value="168">
+								<input type="hidden" name="_wpcf7_version" value="5.9.6">
+								<input type="hidden" name="_wpcf7_locale" value="en_US">
+								<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f168-o1">
+								<input type="hidden" name="_wpcf7_container_post" value="0">
+								<input type="hidden" name="_wpcf7_posted_data_hash" value="">
 							</div>
-							<div class="wc-col">
-								<div class="info-item border-24 mb-24">
-									<div class="info-item__count">
-										<span class="info-item__count-number">1</span>
-									</div>
-									<div class="info-item__bottom">
-										<div class="info-item__title">Мисията</div>
-										<div class="info-item__text">
-											Превозим автомобили из США, воплощая вашу мечту в вашем гараже.
-										</div>
-									</div>
+							<div class="sf-row">
+								<span class="wpcf7-form-control-wrap" data-name="email">
+									<input size="10" maxlength="80"
+										class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email sf-email wpcf7-not-valid"
+										autocomplete="email" aria-required="true" aria-invalid="true"
+										placeholder="Въведете своя имейл" value="" type="email" name="email"
+										aria-describedby="wpcf7-f168-o1-ve-email">
+									<span class="wpcf7-not-valid-tip" aria-hidden="true">Please fill out this
+										field.</span>
+								</span>
+								<input class="wpcf7-form-control wpcf7-submit has-spinner sf-submit" type="submit"
+									value="Абонирай се"><span class="wpcf7-spinner"></span>
+							</div>
+							<div class="wpcf7-response-output" aria-hidden="true">One or more fields have an error.
+								Please check and try again.</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Faq block -->
+		<div class="container">
+			<div class="faq-block p-tb-30-44 align-center">
+				<div class="faq-block__left">
+					<div class="faq-block__left-lable">Support</div>
+					<h2 class="faq-block__left-title">FAQs</h2>
+					<div class="faq-block__left-text">
+						Защо закупуването на кола в САЩ ще бъде с 30-50% по-евтино?
+					</div>
+				</div>
+				<div class="faq-block__right">
+					<div class="faq">
+						<div class="faq__item">
+							<div class="faq__item-qustion question">
+								<div class="question__text">Защо закупуването на кола в САЩ ще бъде с 30-50% по-евтино?
 								</div>
-								<div class="info-item border-24">
-									<div class="info-item__count">
-										<span class="info-item__count-number">350</span>
-										<span>+</span>
-									</div>
-									<div class="info-item__bottom">
-										<div class="info-item__title">Доставки всяка година</div>
-										<div class="info-item__text">
-											Изпълняваме доставки всяка година.
-										</div>
-									</div>
-								</div>
+								<button class="question__btn">
+									<svg width="25" height="26" viewBox="0 0 25 26" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect y="12.2188" width="25" height="1.5625" fill="#4E4949" />
+										<rect x="13.2812" y="0.5" width="25" height="1.5625"
+											transform="rotate(90 13.2812 0.5)" fill="#4E4949" />
+									</svg>
+								</button>
+							</div>
+							<div class="faq__item-answer">
+								САЩ скъпи ремонти, така че застрахователните компании дори след След лека катастрофа
+								първото нещо, което правят, е да пуснат колите на търг и да ги продадат на намалени
+								цени. Украйна има един от най-евтините ремонти в света. Ценоразписите за ремонти в САЩ и
+								Украйна се различават 10-20 пъти.
 							</div>
 						</div>
-						<div class="info-grid-img cover-img border-24">
-							<img src="@img/about-us/about-img-2.jpg">
+						<div class="faq__item">
+							<div class="faq__item-qustion question">
+								<div class="question__text">Защо закупуването на кола в САЩ ще бъде с 30-50% по-евтино?
+								</div>
+								<button class="question__btn">
+									<svg width="25" height="26" viewBox="0 0 25 26" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect y="12.2188" width="25" height="1.5625" fill="#4E4949" />
+										<rect x="13.2812" y="0.5" width="25" height="1.5625"
+											transform="rotate(90 13.2812 0.5)" fill="#4E4949" />
+									</svg>
+								</button>
+							</div>
+							<div class="faq__item-answer">
+								САЩ скъпи ремонти, така че застрахователните компании дори след След лека катастрофа
+								първото нещо, което правят, е да пуснат колите на търг и да ги продадат на намалени
+								цени. Украйна има един от най-евтините ремонти в света. Ценоразписите за ремонти в САЩ и
+								Украйна се различават 10-20 пъти.
+							</div>
+						</div>
+						<div class="faq__item">
+							<div class="faq__item-qustion question">
+								<div class="question__text">Защо закупуването на кола в САЩ ще бъде с 30-50% по-евтино?
+								</div>
+								<button class="question__btn">
+									<svg width="25" height="26" viewBox="0 0 25 26" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect y="12.2188" width="25" height="1.5625" fill="#4E4949" />
+										<rect x="13.2812" y="0.5" width="25" height="1.5625"
+											transform="rotate(90 13.2812 0.5)" fill="#4E4949" />
+									</svg>
+								</button>
+							</div>
+							<div class="faq__item-answer">
+								САЩ скъпи ремонти, така че застрахователните компании дори след След лека катастрофа
+								първото нещо, което правят, е да пуснат колите на търг и да ги продадат на намалени
+								цени. Украйна има един от най-евтините ремонти в света. Ценоразписите за ремонти в САЩ и
+								Украйна се различават 10-20 пъти.
+							</div>
+						</div>
+						<div class="faq__item">
+							<div class="faq__item-qustion question">
+								<div class="question__text">Защо закупуването на кола в САЩ ще бъде с 30-50% по-евтино?
+								</div>
+								<button class="question__btn">
+									<svg width="25" height="26" viewBox="0 0 25 26" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect y="12.2188" width="25" height="1.5625" fill="#4E4949" />
+										<rect x="13.2812" y="0.5" width="25" height="1.5625"
+											transform="rotate(90 13.2812 0.5)" fill="#4E4949" />
+									</svg>
+								</button>
+							</div>
+							<div class="faq__item-answer">
+								САЩ скъпи ремонти, така че застрахователните компании дори след След лека катастрофа
+								първото нещо, което правят, е да пуснат колите на търг и да ги продадат на намалени
+								цени. Украйна има един от най-евтините ремонти в света. Ценоразписите за ремонти в САЩ и
+								Украйна се различават 10-20 пъти.
+							</div>
 						</div>
 					</div>
 				</div>
