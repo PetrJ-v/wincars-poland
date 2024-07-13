@@ -36,8 +36,10 @@ body {
 	margin-top: clamp(30px, vw(44), 44px);
 }
 .p-tb-20-35 {
-	padding-top: clamp(20px, vw(35), 35px);
-	padding-bottom: clamp(20px, vw(35), 35px);
+	padding-top: 35px;
+	padding-bottom: 35px;
+	// padding-top: clamp(20px, vw(35), 35px);
+	// padding-bottom: clamp(20px, vw(35), 35px);
 }
 .p-tb-30-44 {
 	padding-top: clamp(30px, vw(44), 44px);
