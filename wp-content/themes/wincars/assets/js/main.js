@@ -53,5 +53,53 @@
 			}
 		})
 
+		function toggleClassName(entry) {
+			let element = $(entry.target);
+			if (entry.isIntersecting) {
+				console.log('yes');
+
+				$(element).addClass('active');
+			}
+			else {
+				$(element).removeClass('active');
+				console.log('no');
+			}
+		};
+
+		/** Common animation loop based at IntersectionObserver browser API
+		**************************************************************/
+		window.animationOfEl = function () {
+			const options = {
+				root: null,
+				rootMargin: '0px',
+				threshold: 1
+			}
+			let animationAction = function (entries, observer) {
+
+				entries.forEach(entry => {
+
+					elFuncName = entry.target.function;
+
+					if (elFuncName) {
+						let elFunc = eval(elFuncName)
+						if (typeof elFunc == 'function') {
+							elFunc(entry);
+						}
+					}
+				})
+			}
+
+			let observer = new IntersectionObserver(animationAction, options);
+
+			let elToAnim = document.querySelectorAll('[data-anim]');
+
+			elToAnim.forEach(item => {
+				item.function = item.getAttribute('data-function');
+				observer.observe(item);
+			})
+		}
+
+		window.animationOfEl();
+
 	});
 })(jQuery);
