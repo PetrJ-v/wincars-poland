@@ -19,11 +19,38 @@
 		$('#top-btn').on('click', () => {
 			document.navigateFunc($('body'));
 		})
-		$('.cars .car').on('mouseenter', function(){
-			$(this).toggleClass('hover');
+		// Faq block
+		$('.question').on('click', (e) => {
+			let faqItem = $(e.currentTarget).closest('.faq__item'),
+				faqAnswer = faqItem.find('.faq__item-answer');
+
+			if (!faqItem.hasClass('faq__item--opened')) {
+				faqItem.addClass('faq__item--opened');
+				faqAnswer.slideDown(1000);
+			}
+			else {
+				faqItem.removeClass('faq__item--opened');
+				faqAnswer.slideUp(1000);
+			}
 		})
-		$('.cars .car').on('mouseleave', function(){
-			$(this).toggleClass('hover');
+		// Header menu
+		$('.header-menu-btn').on('click', () => {
+			if (!$('body').hasClass('menu-open')) {
+				$('body').addClass('menu-open');
+				setTimeout(() => {
+					$('.menu').addClass('menu--visible');
+				}, 500)
+				setTimeout(() => {
+					$('.header-menu').addClass('header-menu--opened');
+				}, 600)
+			}
+			else {
+				$('.header-menu').removeClass('header-menu--opened');
+				setTimeout(() => {
+					$('.menu').removeClass('menu--visible');
+					$('body').removeClass('menu-open');
+				}, 800)
+			}
 		})
 
 	});
