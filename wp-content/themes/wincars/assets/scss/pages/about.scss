@@ -19,7 +19,9 @@
 @font-face {
 	font-family: "Montserrat";
 	font-display: swap;
-	src: url("../../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../../fonts/Montserrat-SemiBold.woff") format("woff");
+	src:
+		url("../../fonts/Montserrat-SemiBold.woff2") format("woff2"),
+		url("../../fonts/Montserrat-SemiBold.woff") format("woff");
 	font-weight: 600;
 	font-style: normal;
 }
@@ -428,7 +430,8 @@
 		}
 	}
 	&__left {
-		min-width: 200px;
+		min-width: clamp(200px, vw(392), 392px);
+		max-width: clamp(200px, vw(392), 392px);
 		display: flex;
 		flex-direction: column;
 		@media (max-width: $breakMedium) {
@@ -465,12 +468,13 @@
 		}
 		.steps__vertical-line {
 			position: absolute;
-			content: '';
+			content: "";
 			top: 55px; // updated via js on load and resize in about.js file
 			left: 10px;
 			bottom: 50px; // updated via js on load and resize in about.js file
 			width: 1px;
 			background-color: var(--color-light-blue);
+			z-index: -1;
 		}
 	}
 	&__item {
@@ -484,7 +488,27 @@
 	align-items: flex-start;
 	column-gap: clamp(20px, vw(55), 55px);
 	font-weight: 700;
-	color: #fff;
+	cursor: pointer;
+	&.active {
+		.step__point::after {
+			background-color: var(--color-orange);
+		}
+		.step__number,
+		.step__content-title {
+			color: var(--color-orange);
+		}
+	}
+	@media (max-width: $breakMedium) {
+		&:hover {
+			.step__point::after {
+				background-color: var(--color-orange);
+			}
+			.step__number,
+			.step__content-title {
+				color: var(--color-orange);
+			}
+		}
+	}
 	&__point {
 		position: relative;
 		min-width: 20px;
@@ -492,9 +516,9 @@
 		font-size: clamp(24px, vw(48), 48px);
 		line-height: 1;
 		color: transparent;
-		&::after{
+		&::after {
 			position: absolute;
-			content: '';
+			content: "";
 			top: 50%;
 			left: 50%;
 			width: 20px;
@@ -502,23 +526,30 @@
 			border-radius: 50%;
 			background-color: var(--color-light-blue);
 			transform: translate(-50%, -50%);
+			transition: background-color 1s;
 		}
 	}
 	&__number {
 		margin-top: 32px;
 		font-size: clamp(24px, vw(48), 48px);
 		line-height: 1;
+		color: #fff;
+		transition: color 1s;
 	}
 	&__content-title {
 		margin-bottom: 24px;
 		font-size: clamp(18px, vw(24), 24px);
 		line-height: 1;
+		color: #fff;
+		transition: color 1s;
 	}
 	&__content-text {
 		font-weight: 300;
 	}
 	&__content-img {
+		// margin: 30px auto 0;
 		margin-top: 30px;
+		max-width: 250px;
 		display: none;
 	}
 }

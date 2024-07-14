@@ -15,6 +15,9 @@
 			return enableSlider();
 		}
 	};
+	document.sleep = function (ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	}
 	$(window).load(function () {
 		$('#top-btn').on('click', () => {
 			document.navigateFunc($('body'));
