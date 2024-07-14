@@ -46,7 +46,7 @@ body {
 	padding-bottom: clamp(30px, vw(44), 44px);
 }
 .border-24 {
-	border-radius: 24px;
+	border-radius: clamp(16px, vw(24), 24px);
 	overflow: hidden;
 }
 footer {
