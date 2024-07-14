@@ -2,9 +2,9 @@
 	font-family: "Montserrat";
 	font-display: swap;
 	src:
-		url("../../fonts/Montserrat-Bold.woff2") format("woff2"),
-		url("../../fonts/Montserrat-Bold.woff") format("woff");
-	font-weight: 700;
+		url("../../fonts/Montserrat-Light.woff2") format("woff2"),
+		url("../../fonts/Montserrat-Light.woff") format("woff");
+	font-weight: 300;
 	font-style: normal;
 }
 @font-face {
@@ -19,17 +19,23 @@
 @font-face {
 	font-family: "Montserrat";
 	font-display: swap;
+	src: url("../../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../../fonts/Montserrat-SemiBold.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Montserrat";
+	font-display: swap;
 	src:
-		url("../../fonts/Montserrat-Light.woff2") format("woff2"),
-		url("../../fonts/Montserrat-Light.woff") format("woff");
-	font-weight: 300;
+		url("../../fonts/Montserrat-Bold.woff2") format("woff2"),
+		url("../../fonts/Montserrat-Bold.woff") format("woff");
+	font-weight: 700;
 	font-style: normal;
 }
 @import "node_modules/reset-css/sass/reset";
 @import "../inc/vars";
 @import "../inc/mixins";
 @import "../inc/extends";
-@import "../inc/fonts";
 @import "../inc/default";
 @import "../inc/general";
 @import "../inc/layout";
@@ -406,4 +412,113 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	gap: $mb-row-gap;
+}
+.steps {
+	@media (min-width: $breakMedium) {
+		display: flex;
+		justify-content: space-between;
+		column-gap: clamp(50px, vw(108), 108px);
+	}
+	&__title-mobile {
+		max-width: 350px;
+		margin-bottom: 35px;
+		text-align: center;
+		@media (min-width: $breakMedium) {
+			display: none;
+		}
+	}
+	&__left {
+		min-width: 200px;
+		display: flex;
+		flex-direction: column;
+		@media (max-width: $breakMedium) {
+			display: none;
+		}
+	}
+	&__left-img-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex-grow: 1;
+	}
+	.steps-title {
+		font-weight: 600;
+		font-size: clamp(22px, vw(36), 36px);
+		line-height: calc(44 / 36);
+		color: #fff;
+	}
+	&__left-title {
+		margin-bottom: 30px;
+		max-width: 381px;
+	}
+	&__left-img {
+		display: none;
+		max-width: 393px;
+		&.active {
+			display: block;
+		}
+	}
+	&__right {
+		position: relative;
+		@media (min-width: $breakMedium) {
+			max-width: 686px;
+		}
+		.steps__vertical-line {
+			position: absolute;
+			content: '';
+			top: 55px;
+			left: 10px;
+			bottom: 50px;
+			width: 1px;
+			background-color: var(--color-light-blue);
+		}
+	}
+	&__item {
+		&:not(:first-child) {
+			margin-top: clamp(35px, vw(70), 70px);
+		}
+	}
+}
+.step {
+	display: flex;
+	align-items: flex-start;
+	column-gap: clamp(20px, vw(55), 55px);
+	font-weight: 700;
+	color: #fff;
+	&__point {
+		position: relative;
+		min-width: 20px;
+		margin-top: 32px;
+		font-size: clamp(24px, vw(48), 48px);
+		line-height: 1;
+		color: transparent;
+		&::after{
+			position: absolute;
+			content: '';
+			top: 50%;
+			left: 50%;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background-color: var(--color-light-blue);
+			transform: translate(-50%, -50%);
+		}
+	}
+	&__number {
+		margin-top: 32px;
+		font-size: clamp(24px, vw(48), 48px);
+		line-height: 1;
+	}
+	&__content-title {
+		margin-bottom: 24px;
+		font-size: clamp(18px, vw(24), 24px);
+		line-height: 1;
+	}
+	&__content-text {
+		font-weight: 300;
+	}
+	&__content-img {
+		margin-top: 30px;
+		display: none;
+	}
 }

@@ -56,13 +56,10 @@
 		function toggleClassName(entry) {
 			let element = $(entry.target);
 			if (entry.isIntersecting) {
-				console.log('yes');
-
 				$(element).addClass('active');
 			}
 			else {
 				$(element).removeClass('active');
-				console.log('no');
 			}
 		};
 
