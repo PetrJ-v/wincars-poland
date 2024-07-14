@@ -466,9 +466,9 @@
 		.steps__vertical-line {
 			position: absolute;
 			content: '';
-			top: 55px;
+			top: 55px; // updated via js on load and resize in about.js file
 			left: 10px;
-			bottom: 50px;
+			bottom: 50px; // updated via js on load and resize in about.js file
 			width: 1px;
 			background-color: var(--color-light-blue);
 		}

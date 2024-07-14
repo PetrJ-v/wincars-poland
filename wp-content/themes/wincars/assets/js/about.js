@@ -14,7 +14,7 @@
 		line.css('top', lineTop + 'px');
 	}
 	$(window).load(function () {
-
+		stepsVerticalLineCorrection();
 	});
 	$(window).resize(function () {
 		stepsVerticalLineCorrection();
