@@ -18,22 +18,14 @@
 
 		let nextNumber,
 			currentNumber,
-			inProgress = false;
-		$('.step').on('mouseenter', function () {
-			if ($('body').width() >= 768) {
-				showSelected = function (currentNumber, nextNumber) {
-					inProgress = true;
-					$('.steps__left-img').removeClass('active');
-					setTimeout(() => {
-						$('[data-img-number=' + nextNumber + ']').addClass('active');
-						inProgress = false;
-					}, 100)
-					// $('[data-img-number=' + currentNumber + ']').fadeOut(0, function () {
-					// 	$('[data-img-number=' + nextNumber + ']').fadeIn(500, () => {
-					// 		inProgress = false;
-					// 	});
-					// });
-				}
+			inProgress = false,
+			showSelected = function () {
+				inProgress = true;
+				$('[data-img-number=' + nextNumber + ']').fadeIn(500, function(){
+					inProgress = false;
+				});
+			},
+			menageActiveClass = function(clickedEl){
 				$('.step').each(function () {
 					$this = $(this);
 					if ($this.hasClass('active')) {
@@ -41,15 +33,22 @@
 					}
 					$this.removeClass('active');
 				})
-				$(this).addClass('active');
-				nextNumber = $(this).attr('data-number');
+				clickedEl.addClass('active');
+			}
+			$('.step').on('mouseenter', function () {
+			if ($('body').width() >= 768) {
+				$this = $(this);
+				nextNumber = $this.attr('data-number');
+				menageActiveClass($this);
 
-				if (inProgress) {
-					document.sleep(200).then(() => { showSelected(currentNumber, nextNumber) });
-				}
-				else {
-					showSelected(currentNumber, nextNumber);
-				}
+				$('[data-img-number=' + currentNumber + ']').fadeOut(300, function(){
+					if (inProgress) {
+						return;
+					}
+					else {
+						showSelected();
+					}
+				});
 			}
 		})
 		$('.step').on('click', function () {
