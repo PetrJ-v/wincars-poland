@@ -13,6 +13,7 @@
 		line.css('bottom', lineBottom + 'px');
 		line.css('top', lineTop + 'px');
 	}
+
 	$(window).load(function () {
 		stepsVerticalLineCorrection();
 
@@ -57,6 +58,8 @@
 				hiddenImage.slideToggle();
 			}
 		})
+
+
 	});
 	$(window).resize(function () {
 		stepsVerticalLineCorrection();

@@ -18,7 +18,45 @@
 	document.sleep = function (ms) {
 		return new Promise(resolve => setTimeout(resolve, ms));
 	}
+
+	function animateValue(element, duration) {
+		// const element = document.querySelector(`.${className}`);
+		if (!element) {
+			console.error(`Element with class ${className} not found.`);
+			return;
+		}
+
+		// const targetValue = parseInt(element.textContent, 10);
+		const targetValue = parseInt(element.getAttribute('data-target'), 10);
+		if (isNaN(targetValue)) {
+			console.error(`Element content is not a number.`);
+			return;
+		}
+
+		const startTime = performance.now();
+		const startValue = 1;
+
+		function updateValue(currentTime) {
+			const elapsedTime = currentTime - startTime;
+			const progress = Math.min(elapsedTime / duration, 1);
+			const currentValue = Math.floor(progress * (targetValue - startValue) + startValue);
+
+			element.textContent = currentValue;
+
+			if (progress < 1) {
+				requestAnimationFrame(updateValue);
+			}
+		}
+
+		requestAnimationFrame(updateValue);
+	}
+	// Example usage
+	// animateValue(element, 2000);
+
 	$(window).load(function () {
+		let infoItemAnimation = function(entry){
+			animateValue(entry.target, 2000);
+		}
 		$('#top-btn').on('click', () => {
 			document.navigateFunc($('body'));
 		})
