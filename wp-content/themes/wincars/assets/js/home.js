@@ -13,9 +13,12 @@
 				spaceBetween: 16,
 				slidesPerView: 1,
 				loop: true,
-				// autoplay: {
-				// 	delay: 2000,
-				// },
+				slideToClickedSlide: true,
+				centeredSlides: true,
+				autoplay: {
+					delay: 2000,
+					disableOnInteraction: true,
+				},
 				effect: 'coverflow',
 				keyboard: {
 					enabled: true,
