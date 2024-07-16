@@ -1,0 +1,97 @@
+@import "../inc/vars";
+@import "../inc/mixins";
+@import "../inc/extends";
+@font-face {
+	font-family: "Montserrat";
+	font-display: swap;
+	src:
+		url("../../fonts/Montserrat-Regular.woff2") format("woff2"),
+		url("../../fonts/Montserrat-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Poppins";
+	font-display: swap;
+	src:
+		url("../../fonts/Poppins-SemiBold.woff2") format("woff2"),
+		url("../../fonts/Poppins-SemiBold.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+}
+.promo-wrapper {
+	margin-top: 4%;
+	padding-top: clamp(30px, vw(44), 44px);
+	max-width: 1440px;
+	margin-inline: auto;
+	@media (max-width: $breakLarge) {
+		margin-top: 7%;
+	}
+	.promo {
+		position: relative;
+		&__deco {
+			position: absolute;
+			top: 0;
+			right: 0;
+			min-width: clamp(170px, vw(374), 374px);
+			max-width: clamp(170px, vw(374), 374px);
+			transform: translateY(-20%);
+			@media (max-width: 674px) {
+				top: initial;
+				bottom: 0
+			}
+		}
+	}
+	.promo-content {
+		@media (min-width: 674px) {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			max-width: clamp(200px, vw(459), 459px);
+			transform: translate(-35%, -70%);
+		}
+		@media (min-width: $breakLarge) {
+			transform: translate(-35%, -50%);
+		}
+		// @media (max-width: 674px) {
+		// 	max-width: 7;
+		// }
+		&__img {
+			margin-bottom: 20px;
+			@media (max-width: 674px) {
+				max-width: 300px;
+				margin-inline: auto;
+			}
+		}
+		&__text {
+			margin-bottom: 20px;
+			font-family: "Montserrat";
+			font-weight: 400;
+			font-size: clamp(13px, vw(16), 16px);
+			line-height: calc(20 / 16);
+			color: #fff;
+		}
+		&__btn {
+			min-width: clamp(200px, vw(278), 278px);
+			max-width: clamp(200px, vw(278), 278px);
+			height: clamp(35px, vw(59), 59px);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: "Poppins";
+			font-weight: 600;
+			font-size: clamp(13px, vw(16), 16px);
+			line-height: 1;
+			color: #fff;
+			background-color: var(--color-new-dark);
+			border-radius: 32px;
+			transition: 1s;
+			&:hover {
+				min-width: clamp(calc(200px * 1.11), calc(vw(278) * 1.11), calc(278px * 1.11));
+				max-width: clamp(calc(200px * 1.11), calc(vw(278) * 1.11), calc(278px * 1.11));
+				color: var(--color-black);
+				background-color: var(--color-orange);
+			}
+		}
+	}
+}
