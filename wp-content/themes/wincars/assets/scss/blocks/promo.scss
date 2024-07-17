@@ -34,6 +34,10 @@
 	@media (max-width: $breakLarge) {
 		margin-top: 7%;
 	}
+	@media (max-width: 673.98px) {
+		margin-top: clamp(30px, vw(44), 44px);
+		margin-top: 15px;
+	}
 	.promo {
 		position: relative;
 		@media (max-width: 673.98px) {
@@ -76,9 +80,6 @@
 		@media (min-width: $breakLarge) {
 			transform: translate(-35%, -50%);
 		}
-		@media (max-width: 673.98px) {
-			padding-inline: clamp(15px, calc(30 / 768 * 100vw), 30px);
-		};
 		&__img {
 			margin-bottom: 20px;
 			@media (max-width: 673.98px) {
@@ -95,6 +96,12 @@
 			color: #fff;
 			@media (max-width: 673.98px) {
 				font-size: 16px;
+				text-align: center;
+			}
+			&--desktop {
+				@media (max-width: 673px) {
+					display: none;
+				}
 			}
 		}
 		&__btn {
@@ -114,8 +121,13 @@
 			transition: 1s;
 			@media (max-width: 673.98px) {
 				color: var(--color-black);
-				transform: translateY(170%);
+				// transform: translateY(170%);
 				background-color: var(--color-orange);
+			}
+			&--desktop {
+				@media (max-width: 673px) {
+					display: none;
+				}
 			}
 			&:hover {
 				min-width: clamp(calc(200px * 1.11), calc(vw(278) * 1.11), calc(278px * 1.11));
@@ -125,9 +137,16 @@
 				@media (max-width: 673.98px) {
 					// color: #fff;
 					background-color: var(--color-orange-hover);
-					transform: translateY(170%);
+					// transform: translateY(170%);
 				}
 			}
+		}
+	}
+	.promo-content-mobile {
+		margin-top: 30px;
+		padding-inline: clamp(15px, calc(30 / 768 * 100vw), 30px);
+		@media (min-width: 673.98px) {
+			display: none;
 		}
 	}
 }
