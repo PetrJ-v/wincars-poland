@@ -1,0 +1,12 @@
+@import "../inc/vars";
+@import "../inc/mixins";
+@import "../inc/extends";
+
+.svg-map {
+	@media (min-width: $breakSmall) {
+		max-width: 85%;
+	}
+	@media (min-width: $breakExtra) {
+		max-width: 914px;
+	}
+}

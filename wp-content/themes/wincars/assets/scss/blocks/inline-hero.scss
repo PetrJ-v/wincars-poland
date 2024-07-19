@@ -1,0 +1,30 @@
+@import "../inc/vars";
+@import "../inc/mixins";
+@import "../inc/extends";
+
+.inline-hero {
+	font-family: "Montserrat";
+	@media (min-width: $breakMedium) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 50px;
+	}
+	&__left {
+		font-weight: 700;
+		font-size: clamp(30px, vw(60), 60px);
+		line-height: calc(72 / 60);
+		color: #fff;
+		@media (min-width: $breakMedium) {
+			min-width: clamp(200px, vw(654), 654px);
+			max-width: clamp(200px, vw(654), 654px);
+		}
+		@media (max-width: $breakMedium) {
+			margin-bottom: 25px;
+		}
+	}
+	&__text {
+		font-weight: 400;
+		@extend %text;
+	}
+}

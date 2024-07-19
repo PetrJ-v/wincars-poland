@@ -1,0 +1,60 @@
+@import "../inc/vars";
+@import "../inc/mixins";
+@import "../inc/extends";
+
+.info-3 {
+	font-family: "Montserrat";
+	max-width: 1240px;
+	display: flex;
+	justify-content: center;
+	column-gap: 32px;
+	flex-wrap: wrap;
+	&--32-356 {
+		gap: 32px;
+		.info-3__item {
+			min-width: 240px;
+			max-width: 356px;
+		}
+	}
+	&--44-384 {
+		gap: 44px;
+		.info-3__item {
+			max-width: 384px;
+		}
+	}
+}
+.info-3__item {
+	color: #fff;
+	text-align: center;
+	&-icon {
+		width: 16px;
+		margin-inline: auto;
+		margin-bottom: 12px;
+	}
+	&-title {
+		margin-bottom: 8px;
+		font-weight: 600;
+		font-size: clamp(20px, vw(24), 24px);
+		line-height: calc(29 / 24);
+	}
+	&-text {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: calc(20 / 16);
+	}
+	&-subtext {
+		display: block;
+		margin-top: 20px;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: calc(20 / 16);
+		color: #fff;
+	}
+}
+a.info-3__item-subtext {
+	transition: color 0.3s;
+	&:hover {
+		color: var(--color-orange);
+	}
+}
+

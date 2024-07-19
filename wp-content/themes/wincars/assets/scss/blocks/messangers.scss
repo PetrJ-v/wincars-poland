@@ -1,0 +1,77 @@
+@import "../inc/vars";
+@import "../inc/mixins";
+@import "../inc/extends";
+
+.messengers {
+	max-width: 1180px;
+	font-family: "Montserrat";
+	&__header {
+		margin-bottom: clamp(30px, vw(40), 40px);
+		text-align: center;
+	}
+	&__title {
+		margin-bottom: 13px;
+		font-weight: 600;
+		font-size: clamp(26px, vw(32), 32px);
+		line-height: calc(40 / 32);
+		color: var(--color-orange);
+	}
+	&__text {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: calc(20 / 16);
+		color: #fff;
+	}
+}
+.messengers-row {
+	display: flex;
+	justify-content: center;
+	gap: 28px;
+	flex-wrap: wrap;
+	@media (max-width: $breakSmall) {
+		justify-content: center;
+		gap: clamp(20px, vw(28), 28px) clamp(14px, vw(28), 28px);
+	}
+	.messenger {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 14px;
+		@media (min-width: $breakSmall) {
+			min-width: calc(100% / 3 - 62px / 3);
+			max-width: calc(100% / 3 - 62px / 3);
+			padding: clamp(14px, vw(48), 48px) 0;
+			border: 1px solid var(--color-medium-dark);
+			flex-grow: 1;
+		}
+		@media (max-width: $breakSmall) {
+			flex-direction: column;
+			min-width: 94px;
+			max-width: 94px;
+		}
+		&__icon {
+			min-width: clamp(50px, vw(83), 83px);
+			max-width: clamp(50px, vw(83), 83px);
+		}
+		&__info {
+			@media (max-width: $breakMedium) {
+				text-align: center;
+			}
+		}
+		&__title {
+			margin-bottom: 4px;
+			font-weight: 700;
+			font-size: clamp(14px, vw(24), 24px);
+			line-height: 1;
+		}
+		&__subtitle {
+			font-weight: 400;
+			font-size: clamp(12px, vw(16), 16px);
+			line-height: calc(20 / 16);
+			color: #fff;
+			@media (max-width: $breakSmall) {
+				display: none;
+			}
+		}
+	}
+}
