@@ -43,17 +43,27 @@
 			padding: clamp(14px, vw(48), 48px) 0;
 			border: 1px solid var(--color-medium-dark);
 			flex-grow: 1;
+			transition: border 1.5s;
+			&:hover {
+				border: 1px solid var(--color-orange);
+			}
 		}
 		@media (max-width: $breakSmall) {
 			flex-direction: column;
 			min-width: 94px;
 			max-width: 94px;
+			&:hover{
+				.messenger__title {
+					color: var(--color-orange);
+				}
+			}
 		}
 		&__icon {
-			min-width: clamp(50px, vw(83), 83px);
-			max-width: clamp(50px, vw(83), 83px);
+			min-width: clamp(50px, vw(85), 85px);
+			max-width: clamp(50px, vw(85), 85px);
 		}
 		&__info {
+			color: #fff;
 			@media (max-width: $breakMedium) {
 				text-align: center;
 			}
@@ -63,12 +73,13 @@
 			font-weight: 700;
 			font-size: clamp(14px, vw(24), 24px);
 			line-height: 1;
+			transition: color 0.2s;
 		}
 		&__subtitle {
 			font-weight: 400;
 			font-size: clamp(12px, vw(16), 16px);
 			line-height: calc(20 / 16);
-			color: #fff;
+			// color: #fff;
 			@media (max-width: $breakSmall) {
 				display: none;
 			}
