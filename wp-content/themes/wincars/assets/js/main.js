@@ -54,12 +54,38 @@
 	// animateValue(element, 2000);
 
 	$(window).load(function () {
-		let infoItemAnimation = function(entry){
+		let infoItemAnimation = function (entry) {
 			animateValue(entry.target, 2000);
 		}
 		$('#top-btn').on('click', () => {
 			document.navigateFunc($('body'));
 		})
+
+		// Video player
+		$('.play-btn').on('click', function () {
+			let button = $(this),
+				videoWrapper = button.closest('.video-wrapper'),
+				video = button.siblings('video').get(0);
+
+			videoWrapper.addClass('play')
+			setTimeout(() => {
+				video.play();
+				button.fadeOut();
+			}, 1000)
+		});
+
+		$('.video-wrapper video').on('click', function () {
+			let video = $(this).get(0),
+				videoWrapper = $(this).closest('.video-wrapper'),
+				button = $(this).siblings('.play-btn');
+
+			videoWrapper.removeClass('play');
+			setTimeout(() => {
+				video.pause();
+				button.fadeIn();
+			}, 1000);
+		});
+
 		// Faq block
 		$('.question').on('click', (e) => {
 			let faqItem = $(e.currentTarget).closest('.faq__item'),

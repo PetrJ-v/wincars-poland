@@ -12,15 +12,10 @@
 @import "../blocks/info-3";
 @import "../blocks/location";
 @import "../blocks/messangers";
+@import "../blocks/page-form";
 
 
 @import "../inc/footer";
-.page-template-contacts {
-	font-family: "Montserrat";
-
-
-
-}
 main {
 	margin-bottom: clamp(40px, vw(60), 60px);
 }
