@@ -9,206 +9,277 @@
 	<meta name='robots' content='noindex, nofollow' />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<link rel="stylesheet" href="css/base-styles.css" />
-	<link rel="stylesheet" href="css/first-screen/post-header.css" />
-	<link rel="stylesheet" href="libs/swiper/swiper.min.css" />
-	<link rel="stylesheet" href="css/single.css" />
+	<link rel="stylesheet" href="css/blog.css" />
+	<link rel="stylesheet" href="libs/wow/animate.min.css" />
 </head>
 
 <body class="post-template-default">
-	<header>
-		<div class="container">
-			<div class="hero align-center">
-				<div class="hero__subtitle">Публикувано на 20 януари 2022 г</div>
-				<h1 class="hero__title">Защо да изберете автомобил от САЩ?</h1>
-				<div class="hero__text text">Съвети и препоръки за успешен избор на автомобил от американския пазар.
-				</div>
-			</div>
-		</div>
 
-		<div class="container">
-			<div class="video-wrapper">
-				<video preload="none" muted="" playsinline="" loop="" poster="video/form-video-poster.jpg"
-					src="video/form-video.mp4"></video>
-				<button class="play-btn img-wrapper">
-					<svg width="54" height="55" viewBox="0 0 54 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<g filter="url(#filter0_b_337_498)">
-							<path fill-rule="evenodd" clip-rule="evenodd"
-								d="M26.8586 55C41.6921 55 53.7171 42.6878 53.7171 27.5C53.7171 12.3122 41.6921 0 26.8586 0C12.025 0 0 12.3122 0 27.5C0 42.6878 12.025 55 26.8586 55ZM22.6619 37.5871L37.7698 28.941C38.8889 28.3006 38.889 26.6994 37.7698 26.059L22.6619 17.4129C21.5428 16.7725 20.1439 17.573 20.1439 18.8539V36.1461C20.1439 37.427 21.5428 38.2275 22.6619 37.5871Z"
-								fill="white" fill-opacity="0.3" />
-						</g>
-					</svg>
-				</button>
-			</div>
-		</div>
-	</header>
+	@@include('components/header-page.html', {"img": "@img/blog/blog-header.jpg"})
 
 	<main>
+		<!-- Single form block -->
 		<div class="container">
-			<div class="post-content">
-
-				<p>Продажбата на автомобили от САЩ става все по-популярна в България и не е случайно. Автомобилите от
-					американския пазар предлагат редица предимства, които ги правят атрактивен избор за много български
-					шофьори. В тази статия ще разгледаме някои от основните причини, поради които да изберете автомобил
-					от САЩ.</p>
-
-				<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="903"
-						height="480" src="http://wincars.local/wp-content/uploads/2024/07/Image-1.jpg" alt=""
-						class="wp-image-174"
-						srcset="http://wincars.local/wp-content/uploads/2024/07/Image-1.jpg 903w, http://wincars.local/wp-content/uploads/2024/07/Image-1-576x306.jpg 576w, http://wincars.local/wp-content/uploads/2024/07/Image-1-768x408.jpg 768w"
-						sizes="(max-width: 903px) 100vw, 903px">
-					<figcaption class="wp-element-caption">Image courtesy of Fauxels via Pexels</figcaption>
-				</figure>
-
-				<h2 class="wp-block-heading">Голямо разнообразие от модели и марки</h2>
-
-				<p>Американският автомобилен пазар е един от най-големите и най-разнообразните в света. Това означава,
-					че имате възможност да избирате от широка гама модели и марки, включително луксозни и редки
-					автомобили, които трудно се намират в Европа. Независимо дали търсите спортен автомобил, SUV, или
-					икономичен градски модел, вероятността да го намерите в САЩ е голяма.</p>
-
-				<h2 class="wp-block-heading">Конкурентни цени</h2>
-
-				<p>Цените на автомобилите в САЩ често са по-ниски в сравнение с тези в Европа, дори след добавянето на
-					транспортни и митнически разходи. Това е резултат от големия пазар и конкуренцията между дилърите,
-					което позволява на купувачите да намерят изгодни оферти. Често можете да откриете автомобили в
-					отлично състояние на по-ниски цени от тези на европейския пазар.</p>
-
-				<h2 class="wp-block-heading">Високо качество и добро оборудване</h2>
-
-				<p>Американските автомобили обикновено са добре оборудвани и поддържани. Много от тях са снабдени с
-					най-новите технологии и удобства, което ги прави още по-привлекателни за купувачите. В допълнение,
-					стандартите за поддръжка и обслужване в САЩ са високи, което гарантира, че получавате качествено
-					превозно средство.</p>
-
-				<figure class="wp-block-image size-full"><img decoding="async" width="903" height="400"
-						src="http://wincars.local/wp-content/uploads/2024/07/Image-2.jpg" alt="" class="wp-image-175"
-						srcset="http://wincars.local/wp-content/uploads/2024/07/Image-2.jpg 903w, http://wincars.local/wp-content/uploads/2024/07/Image-2-576x255.jpg 576w, http://wincars.local/wp-content/uploads/2024/07/Image-2-768x340.jpg 768w"
-						sizes="(max-width: 903px) 100vw, 903px">
-					<figcaption class="wp-element-caption">Image courtesy of Michael Burrows via Pexels</figcaption>
-				</figure>
-
-				<h2 class="wp-block-heading">Подробна история на автомобила</h2>
-
-				<p>В САЩ е обичайно да се поддържа подробна история на автомобила, включваща информация за предишни
-					собственици, ремонти и инциденти. Това предоставя допълнителна сигурност на купувача, тъй като
-					можете да проследите миналото на автомобила и да направите информиран избор.</p>
-
-				<h2 class="wp-block-heading">Заключение</h2>
-
-				<p>Закупуването на автомобил от САЩ може да бъде изгодна и разумна инвестиция, особено ако търсите
-					разнообразие, качество и добри цени. С правилния партньор, процесът може да бъде бърз и
-					безпроблемен, което ви позволява да се насладите на новия си автомобил без излишни тревоги.</p>
+			<div class="single-form p-tb-30-44 align-center">
+				<div class="single-form__subtitle wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">Нашият блог</div>
+				<h2 class="single-form__title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+					Разкази и интервюта
+				</h2>
+				<div class="single-form__text wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+					Абонирайте се, за да научите за нови функции на продукта, най-новите технологии, решения и актуализации.
+				</div>
+				<div class="single-form__form align-center wow fadeInUp flipInY" data-wow-duration="1.5s" data-wow-delay="1s">
+					<div class="wpcf7 js" id="wpcf7-f168-o1" lang="en-US" dir="ltr">
+						<div class="screen-reader-response">
+							<p role="status" aria-live="polite" aria-atomic="true">One or more fields have an error.
+								Please check and try again.</p>
+							<ul>
+								<li id="wpcf7-f168-o1-ve-email">Please fill out this field.</li>
+							</ul>
+						</div>
+						<form action="/test-page/#wpcf7-f168-o1" method="post" class="wpcf7-form invalid"
+							aria-label="Contact form" novalidate="novalidate" data-status="invalid">
+							<div style="display: none;">
+								<input type="hidden" name="_wpcf7" value="168">
+								<input type="hidden" name="_wpcf7_version" value="5.9.6">
+								<input type="hidden" name="_wpcf7_locale" value="en_US">
+								<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f168-o1">
+								<input type="hidden" name="_wpcf7_container_post" value="0">
+								<input type="hidden" name="_wpcf7_posted_data_hash" value="">
+							</div>
+							<div class="sf-row">
+								<span class="wpcf7-form-control-wrap" data-name="email">
+									<input size="10" maxlength="80"
+										class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email sf-email wpcf7-not-valid"
+										autocomplete="email" aria-required="true" aria-invalid="true"
+										placeholder="Въведете своя имейл" value="" type="email" name="email"
+										aria-describedby="wpcf7-f168-o1-ve-email">
+									<span class="wpcf7-not-valid-tip" aria-hidden="true">Please fill out this
+										field.</span>
+								</span>
+								<input class="wpcf7-form-control wpcf7-submit has-spinner sf-submit" type="submit"
+									value="Абонирай се"><span class="wpcf7-spinner"></span>
+							</div>
+							<div class="wpcf7-response-output" aria-hidden="true">One or more fields have an error.
+								Please check and try again.</div>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 
-		<!-- Previews block -->
-		<div class="container p-tb-30-44">
-			<div class="last-post-header">
-				<div class="last-post-header__info">
-					<h2 class="last-post-header__info-title">Последни писания</h2>
-					<div class="last-post-header__info-description">Най-новите новини, технологии и ресурси от нашия
-						екип.</div>
+		<div class="container">
+			<div class="featured-post p-tb-20-35">
+				<!-- Здесь предусмотреть вместо видео возможность выводить изображение с классом featured-post__img для тех постов, у которых нет видео -->
+				<div class="video-wrapper">
+					<video preload="none" muted="" playsinline="" loop="" poster="video/form-video-poster.jpg"
+						src="video/form-video.mp4"></video>
+					<button class="play-btn img-wrapper">
+						<svg width="54" height="55" viewBox="0 0 54 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g filter="url(#filter0_b_337_498)">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M26.8586 55C41.6921 55 53.7171 42.6878 53.7171 27.5C53.7171 12.3122 41.6921 0 26.8586 0C12.025 0 0 12.3122 0 27.5C0 42.6878 12.025 55 26.8586 55ZM22.6619 37.5871L37.7698 28.941C38.8889 28.3006 38.889 26.6994 37.7698 26.059L22.6619 17.4129C21.5428 16.7725 20.1439 17.573 20.1439 18.8539V36.1461C20.1439 37.427 21.5428 38.2275 22.6619 37.5871Z"
+									fill="white" fill-opacity="0.3" />
+							</g>
+						</svg>
+					</button>
 				</div>
-				<a href="#" class="last-post-header__btn accent-btn at-md">Вижте всички публикации</a>
+				<div class="featured-post__preview preview">
+					<div class="preview__date">17 Jan 2022</div>
+					<h3 class="preview__title">
+						<a class="preview__title-link" href="#">Walsh leadership lessons</a>
+						<div class="preview__title-deco">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 11L11 1M11 1H1M11 1V11" stroke="#FDFDFD" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</div>
+					</h3>
+					<div class="preview__text">
+						Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning
+						Dynasty?
+					</div>
+				</div>
 			</div>
-			<div class='swiper previews-slider'>
-				<div class="slider-buttons">
-					<div class='swiper-button-prev'>
-						<img src="@img/icons/left-arrow.svg" alt="">
+		</div>
+
+		<div class="container">
+			<div class="posts-previews p-tb-20-35">
+				<div class="preview">
+					<div class="preview__img cover-img">
+						<img src="@img/previews/preview-1.jpg">
+						<div class="preview__img-deco">Прочети</div>
 					</div>
-					<div class='swiper-button-next'>
-						<img src="@img/icons/right-arrow.svg" alt="">
+					<div class="preview__date">17 януари 2022 г</div>
+					<h3 class="preview__title">
+						<a class="preview__title-link" href="#">Как да изберете автомобил</a>
+						<div class="preview__title-deco">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 11L11 1M11 1H1M11 1V11" stroke="#FDFDFD" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</div>
+					</h3>
+					<div class="preview__text">
+						Съвети и препоръки за успешен избор на автомобил от американския пазар.
 					</div>
 				</div>
-				<div class='swiper-wrapper'>
-					<div class='swiper-slide'>
-						<div class="preview">
-							<div class="preview__img cover-img">
-								<img src="@img/previews/preview-1.jpg">
-								<div class="preview__img-deco">Read post</div>
-							</div>
-							<div class="preview__date">17 Jan 2022</div>
-							<h3 class="preview__title">
-								<a class="preview__title-link" href="#">Walsh leadership lessons</a>
-								<div class="preview__title-deco">
-									<svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path d="M1 11L11 1M11 1H1M11 1V11" stroke="#FDFDFD" stroke-width="2"
-											stroke-linecap="round" stroke-linejoin="round" />
-									</svg>
-								</div>
-							</h3>
-							<div class="preview__text">
-								Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning
-								Dynasty?
-							</div>
-						</div>
+				<div class="preview">
+					<div class="preview__img cover-img">
+						<img src="@img/previews/preview-2.jpg">
+						<div class="preview__img-deco">Прочети</div>
 					</div>
-					<div class='swiper-slide'>
-						<div class="preview">
-							<div class="preview__img cover-img">
-								<img src="@img/previews/preview-2.jpg">
-								<div class="preview__img-deco">Read post</div>
-							</div>
-							<div class="preview__date">17 Jan 2022</div>
-							<h3 class="preview__title">
-								<a class="preview__title-link" href="#">Walsh leadership lessons</a>
-								<div class="preview__title-deco">
-									<svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path d="M1 11L11 1M11 1H1M11 1V11" stroke="#FDFDFD" stroke-width="2"
-											stroke-linecap="round" stroke-linejoin="round" />
-									</svg>
-								</div>
-							</h3>
-							<div class="preview__text">
-								Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning
-								Dynasty?
-							</div>
+					<div class="preview__date">03 декември 2022 г</div>
+					<h3 class="preview__title">
+						<a class="preview__title-link" href="#">Истории на доволни клиенти</a>
+						<div class="preview__title-deco">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 11L11 1M11 1H1M11 1V11" stroke="#FDFDFD" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
 						</div>
-					</div>
-					<div class='swiper-slide'>
-						<div class="preview">
-							<div class="preview__img cover-img">
-								<img src="@img/previews/preview-3.jpg">
-								<div class="preview__img-deco">Read post</div>
-							</div>
-							<div class="preview__date">17 Jan 2022</div>
-							<h3 class="preview__title">
-								<a class="preview__title-link" href="#">Walsh leadership lessons</a>
-								<div class="preview__title-deco">
-									<svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path d="M1 11L11 1M11 1H1M11 1V11" stroke="#FDFDFD" stroke-width="2"
-											stroke-linecap="round" stroke-linejoin="round" />
-									</svg>
-								</div>
-							</h3>
-							<div class="preview__text">
-								Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning
-								Dynasty?
-							</div>
-						</div>
+					</h3>
+					<div class="preview__text">
+						Истории на клиенти, които успешно закупиха автомобили от САЩ.
 					</div>
 				</div>
-				<div class='swiper-button-prev'></div>
-				<div class='swiper-button-next'></div>
+				<div class="preview">
+					<div class="preview__img cover-img">
+						<img src="@img/previews/preview-3.jpg">
+						<div class="preview__img-deco">Прочети</div>
+					</div>
+					<div class="preview__date">17 януари 2022 г</div>
+					<h3 class="preview__title">
+						<a class="preview__title-link" href="#">Финансиране на покупка </a>
+						<div class="preview__title-deco">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 11L11 1M11 1H1M11 1V11" stroke="#FDFDFD" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</div>
+					</h3>
+					<div class="preview__text">
+						Възможности за финансиране на покупка на автомобил от САЩ.
+					</div>
+				</div>
+				<div class="preview">
+					<div class="preview__img cover-img">
+						<img src="@img/previews/preview-4.jpg">
+						<div class="preview__img-deco">Прочети</div>
+					</div>
+					<div class="preview__date">03 декември 2022 г</div>
+					<h3 class="preview__title">
+						<a class="preview__title-link" href="#">Как да изберете автомобил</a>
+						<div class="preview__title-deco">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 11L11 1M11 1H1M11 1V11" stroke="#FDFDFD" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</div>
+					</h3>
+					<div class="preview__text">
+						Съвети и препоръки за успешен избор на автомобил от американския пазар.
+					</div>
+				</div>
+				<div class="preview">
+					<div class="preview__img cover-img">
+						<img src="@img/previews/preview-5.jpg">
+						<div class="preview__img-deco">Прочети</div>
+					</div>
+					<div class="preview__date">13 декември 2022 г</div>
+					<h3 class="preview__title">
+						<a class="preview__title-link" href="#">Финансиране на покупка </a>
+						<div class="preview__title-deco">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 11L11 1M11 1H1M11 1V11" stroke="#FDFDFD" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</div>
+					</h3>
+					<div class="preview__text">
+						Възможности за финансиране на покупка на автомобил от САЩ.
+					</div>
+				</div>
+				<div class="preview">
+					<div class="preview__img cover-img">
+						<img src="@img/previews/preview-6.jpg">
+						<div class="preview__img-deco">Прочети</div>
+					</div>
+					<div class="preview__date">27 декември 2022 г</div>
+					<h3 class="preview__title">
+						<a class="preview__title-link" href="#">Истории на доволни клиенти </a>
+						<div class="preview__title-deco">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 11L11 1M11 1H1M11 1V11" stroke="#FDFDFD" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</div>
+					</h3>
+					<div class="preview__text">
+						Истории на клиенти, които успешно закупиха автомобили от САЩ.
+					</div>
+				</div>
 			</div>
-			<a href="#" class="last-post-header__btn accent-btn undr-md">Вижте всички публикации</a>
+		</div>
+
+		<!-- Pagination -->
+		<div class="container">
+			<div class="site-pagination p-tb-30-44">
+				<div class="site-pagination__prev">
+					<a class="prev page-numbers" href="#">
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M15.8334 9.99999H4.16675M4.16675 9.99999L10.0001 15.8333M4.16675 9.99999L10.0001 4.16666"
+								stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<span>Previous</span>
+					</a>
+				</div>
+				<div class="site-pagination__links">
+					<a class="page-numbers current" href="#">1</a>
+					<span aria-current="page" class="page-numbers">2</span>
+					<a class="page-numbers" href="#">3</a>
+					<span class="page-numbers dots">…</span>
+					<a class="page-numbers" href="#">8</a>
+					<a class="page-numbers" href="#">9</a>
+					<a class="page-numbers" href="#">10</a>
+				</div>
+				<div class="site-pagination__next">
+					<a class="next page-numbers" href="#">
+						<span>Next</span>
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M4.16663 9.99999H15.8333M15.8333 9.99999L9.99996 4.16666M15.8333 9.99999L9.99996 15.8333"
+								stroke="#FDFDFD" stroke-width="1.66667" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+					</a>
+				</div>
+			</div>
 		</div>
 
 		<!-- Promo block -->
 		<div class="promo-wrapper">
 			<div class="promo img-wrapper">
 				<div class="promo-content">
-					<div class="promo-content__img img-wrapper wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0s">
+					<div class="promo-content__img img-wrapper wow fadeInUp" data-wow-duration="1.5s"
+						data-wow-delay="0s">
 						<img src="@img/promotion/promo-text.svg">
 					</div>
-					<div class="promo-content__text promo-content__text--desktop wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
+					<div class="promo-content__text promo-content__text--desktop wow fadeInUp" data-wow-duration="2s"
+						data-wow-delay="0.2s">
 						За да имаш повече шансове да спечелиш автомобила, бъди активен, споделяй постовете, коментирай,
 						добавяй повече хора выв viber групата!
 					</div>
-					<button class="promo-content__btn promo-content__btn--desktop wow fadeInUp flipInY" data-wow-duration="2.5s" data-wow-delay="0.4s">ОСТАВИ ЗАПИТВАНЕ</button>
+					<button class="promo-content__btn promo-content__btn--desktop wow fadeInUp flipInY"
+						data-wow-duration="2.5s" data-wow-delay="0.4s">ОСТАВИ ЗАПИТВАНЕ</button>
 				</div>
 				<img src="@img/promotion/banner.jpg">
 				<div class="promo__deco img-wrapper wow fadeIn" data-wow-duration="1.5s" data-wow-delay="3s">
@@ -220,11 +291,12 @@
 					За да имаш повече шансове да спечелиш автомобила, бъди активен, споделяй постовете, коментирай,
 					добавяй повече хора выв viber групата!
 				</div>
-				<button class="promo-content__btn align-center wow fadeInUp flipInY" data-wow-duration="2.5s" data-wow-delay="0.4s">ОСТАВИ ЗАПИТВАНЕ</button>
+				<button class="promo-content__btn align-center wow fadeInUp flipInY" data-wow-duration="2.5s"
+					data-wow-delay="0.4s">ОСТАВИ ЗАПИТВАНЕ</button>
 			</div>
 		</div>
-	</main>
 
+	</main>
 	<footer>
 		<div class="container">
 			<div class="footer">
@@ -394,11 +466,27 @@
 		</div>
 
 		<script src="libs/jquery/jquery.min.js"></script>
-		<script src="libs/swiper/swiper-bundle.min.js"></script>
-		<script src="@js/single.js"></script>
-		<!-- <script src="@js/main.js"></script> -->
+		<script src="libs/wow/wow.min.js"></script>
+		<script src="@js/main.js"></script>
 		<!-- <script src="@js/blocks/contact-form.js"></script> -->
 	</footer>
+	<div class="popup-wrapper popup-wrapper--main-form">
+		<div class="popup-inner">
+			<div class="popup">
+				<button class="popup__close img-wrapper" aria-label="close popup">
+					<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="9.3913" y="8.28638" width="25" height="1.5625"
+							transform="rotate(45 9.3913 8.28638)" fill="#4E4949" />
+						<rect x="27.069" y="9.39124" width="25" height="1.5625"
+							transform="rotate(135 27.069 9.39124)" fill="#4E4949" />
+					</svg>
+				</button>
+				<div class="main-form">
+					@@include('components/contact-form.html')
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

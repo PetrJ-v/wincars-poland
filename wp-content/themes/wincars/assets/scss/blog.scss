@@ -1,0 +1,61 @@
+@import "inc/vars";
+@import "inc/mixins";
+@import "inc/extends";
+
+@import "inc/header";
+@import "components/header-top-links";
+@import "components/header-media-common";
+@import "components/header-media-page";
+@import "components/header-menu";
+
+@import "blocks/single-form";
+
+.single-form {
+	margin-top: 16px;
+	.single-form__title {
+		margin-bottom: 20px;
+		font-weight: 700;
+		font-size: clamp(24px, vw(36), 36px);
+		line-height: calc(44 / 36);
+		color: #fff;
+	}
+}
+
+@import "components/video-wrapper";
+@import "components/preview";
+
+.featured-post {
+	.video-wrapper,
+	.featured-post__img {
+		margin-bottom: 28px;
+	}
+}
+
+.posts-previews {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 28px 20px;
+	@media (max-width: 533.98px) {
+		flex-direction: column;
+		gap: 28px;
+	}
+	.preview {
+		@media (min-width: 533.98px) {
+			min-width: calc(50% - 10px);
+			max-width: calc(50% - 10px);
+		}
+		@media (min-width: 899.98px) {
+			min-width: calc(100% / 3 - 40px / 3);
+			max-width: calc(100% / 3 - 40px / 3);
+		}
+	}
+}
+@import "components/pagination";
+@import "blocks/promo";
+
+@import "inc/footer";
+@import "components/contact-form";
+@import "components/popup";
+main {
+	margin-bottom: clamp(40px, vw(60), 60px);
+}

@@ -10,6 +10,8 @@
 @import "../blocks/faq";
 
 @import "../inc/footer";
+@import "../components/contact-form";
+@import "../components/popup";
 main {
 	margin-bottom: clamp(40px, vw(60), 60px);
 }

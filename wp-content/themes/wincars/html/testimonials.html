@@ -36,7 +36,7 @@
 									<a href="/html/faq.html">FAQ</a>
 								</li>
 								<li id="menu-item-1053" class="menu-item">
-									<a href="#">Контакти</a>
+									<a href="/html/contacts.html">Контакти</a>
 								</li>
 							</ul>
 						</nav>
@@ -56,7 +56,7 @@
 					</div>
 					<div class="header-media__cta">
 						<div class="header-media__cta-btn-wrapper">
-							<button class="header-media__cta-btn accent-btn">Остави запитване</button>
+							<button class="header-media__cta-btn accent-btn open-popup" data-target="main-form">Остави запитване</button>
 						</div>
 					</div>
 				</div>
@@ -575,6 +575,23 @@
 		<script src="@js/main.js"></script>
 		<script src="@js/testimonials.js"></script>
 	</footer>
+	<div class="popup-wrapper popup-wrapper--main-form">
+		<div class="popup-inner">
+			<div class="popup">
+				<button class="popup__close img-wrapper" aria-label="close popup">
+					<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="9.3913" y="8.28638" width="25" height="1.5625"
+							transform="rotate(45 9.3913 8.28638)" fill="#4E4949" />
+						<rect x="27.069" y="9.39124" width="25" height="1.5625"
+							transform="rotate(135 27.069 9.39124)" fill="#4E4949" />
+					</svg>
+				</button>
+				<div class="main-form">
+					@@include('components/contact-form.html')
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
