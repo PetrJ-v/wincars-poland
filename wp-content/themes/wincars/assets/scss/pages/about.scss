@@ -6,6 +6,9 @@
 @import "../components/header-media-common";
 @import "../components/header-media-page";
 @import "../components/header-menu";
+.header-menu-btn {
+	top: -1px;
+}
 
 @import "../inc/footer";
 .about {

@@ -76,6 +76,9 @@
 	.header-menu-btn {
 		background: url("../../img/header-menu-contur-black.svg") no-repeat;
 		background-size: contain;
+		&__inner {
+			top: 10px;
+		}
 	}
 	&__info {
 		height: 100%;

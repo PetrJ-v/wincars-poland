@@ -101,7 +101,7 @@
 			}
 		})
 		// Header menu
-		$('.header-menu-btn').on('click', () => {
+		$('.header-menu-btn').on('click', function() {
 			if (!$('body').hasClass('menu-open')) {
 				$('body').addClass('menu-open');
 				setTimeout(() => {
@@ -109,6 +109,7 @@
 				}, 500)
 				setTimeout(() => {
 					$('.header-menu').addClass('header-menu--opened');
+					$(this).addClass('opened');
 				}, 600)
 			}
 			else {
@@ -116,6 +117,7 @@
 				setTimeout(() => {
 					$('.menu').removeClass('menu--visible');
 					$('body').removeClass('menu-open');
+					$(this).removeClass('opened');
 				}, 800)
 			}
 		})
