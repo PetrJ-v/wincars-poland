@@ -176,5 +176,16 @@
 		)
 		wow.init();
 
+		$('.open-popup').on('click', function(){
+			let target = $(this).attr('data-target');
+			$(`.popup-wrapper--${target}`).fadeIn(500);
+			$('body').addClass('popup-open');
+		})
+		$('.popup__close').on('click', function(){
+			let popupWrapper = $(this).closest('.popup-wrapper');
+			popupWrapper.fadeOut(500);
+			$('body').removeClass('popup-open');
+		})
+
 	});
 })(jQuery);

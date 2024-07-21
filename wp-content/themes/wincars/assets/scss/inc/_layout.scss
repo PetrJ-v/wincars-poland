@@ -7,6 +7,14 @@ body {
 	color: #fff;
 	background-color: var(--global-bg-grey);
 	-webkit-font-smoothing: antialiased;
+	header, main {
+		transition: filter 1s;
+	}
+	&.popup-open {
+		header, main, footer {
+			filter: blur(10px);
+		}
+	}
 }
 .container {
 	max-width: 1440px;
