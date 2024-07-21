@@ -1,5 +1,8 @@
 .header {
-	.container {
+	.header-container {
+		max-width: 1440px;
+		margin-inline: auto;
+		padding-inline: 30px;
 		transition: padding 0.3s;
 		@media (max-width: $breakLarge) {
 			padding: 0;
