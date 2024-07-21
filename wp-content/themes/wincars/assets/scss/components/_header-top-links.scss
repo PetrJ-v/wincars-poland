@@ -4,7 +4,6 @@
 	display: flex;
 	align-items: center;
 	column-gap: 14px;
-	// animation: h-links-marqueue 16s linear 0s infinite;
 	@media (min-width: $breakSmall) {
 		padding-left: clamp(20px, vw(137), 137px);
 	}

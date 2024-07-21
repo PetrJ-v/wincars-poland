@@ -1,5 +1,6 @@
 @import "../inc/vars";
 @import "../inc/mixins";
+@import "../inc/extends";
 .single-features {
 	@media (min-width: $breakSmall) {
 		display: flex;
