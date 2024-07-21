@@ -38,8 +38,8 @@
 		align-items: center;
 		gap: 14px;
 		@media (min-width: $breakSmall) {
-			min-width: calc(100% / 3 - 62px / 3);
-			max-width: calc(100% / 3 - 62px / 3);
+			min-width: calc(100% / 3 - 56px / 3);
+			max-width: calc(100% / 3 - 56px / 3);
 			padding: clamp(14px, vw(48), 48px) 0;
 			border: 1px solid var(--color-medium-dark);
 			flex-grow: 1;

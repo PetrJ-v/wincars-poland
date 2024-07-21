@@ -28,11 +28,11 @@ function wincars_remove_large_image_sizes() {
 
 
 // Disable gutenberg
-add_filter('use_block_editor_for_post', 'my_disable_gutenberg', 10, 2);
-function my_disable_gutenberg($can_edit, $post)
-{
-	return false;
-}
+// add_filter('use_block_editor_for_post', 'my_disable_gutenberg', 10, 2);
+// function my_disable_gutenberg($can_edit, $post)
+// {
+// 	return false;
+// }
 // Disable classic editor
 add_action('admin_head', 'disable_wp_editor');
 function disable_wp_editor()
@@ -40,7 +40,7 @@ function disable_wp_editor()
 	if ((get_template_name() != 'default')) {
 		remove_post_type_support('page', 'editor');
 	}
-	remove_post_type_support('post', 'editor');
+	// remove_post_type_support('post', 'editor');
 	remove_post_type_support('pdf-price', 'editor');
 	remove_post_type_support('collage', 'editor');
 }

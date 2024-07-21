@@ -1,0 +1,226 @@
+.contact-form {
+	.wpcf7-form {
+		$checkboxSize: 20px;
+		$errorColor: #f55151;
+		position: relative;
+		font-family: "Montserrat";
+		label,
+		.wpcf7-form-control-wrap {
+			display: block;
+		}
+		.wpcf7-not-valid-tip {
+			display: block;
+			color: var(--color-orange);
+			color: $errorColor;
+		}
+		.phone-wrapper {
+			margin-top: 6px;
+			margin-bottom: 20px;
+			display: flex;
+			.phone-legend {
+				display: flex;
+				align-items: center;
+				position: relative;
+				padding-left: 14px;
+				padding-right: 15px;
+				font-weight: 400;
+				font-size: 16px;
+				color: #fff;
+				background-color: #303030;
+				border-radius: 8px 0 0 8px;
+				&::after {
+					position: absolute;
+					content: "";
+					top: 50%;
+					right: 0;
+					width: 12px;
+					height: 7px;
+					transform: translateY(-50%);
+					background: url("../../img/icons/tick-down.svg") no-repeat;
+					background-size: contain;
+				}
+			}
+			.wpcf7-form-control-wrap {
+				margin: 0;
+				input {
+					border-radius: 0 8px 8px 0 !important;
+				}
+				.wpcf7-not-valid-tip {
+					left: -52px;
+				}
+			}
+		}
+		label {
+			font-weight: 600;
+			font-size: 14px;
+			line-height: calc(17 / 14);
+			color: #fff;
+		}
+		input,
+		textarea {
+			font-family: inherit;
+			font-weight: 400;
+			&::placeholder {
+				color: var(--color-light-blue);
+				opacity: 1;
+			}
+			&:focus::placeholder {
+				opacity: 0.5;
+			}
+		}
+		.wpcf7-form-control-wrap {
+			position: relative;
+			margin-top: 6px;
+			margin-bottom: 20px;
+			width: 100%;
+			.wpcf7-not-valid-tip {
+				// display: none;
+				position: absolute;
+				left: 0;
+				bottom: -4px;
+				font-size: 12px;
+				line-height: 1;
+				transform: translateY(100%);
+			}
+			input:not([type="checkbox"]) {
+				width: 100%;
+				padding: 0 14px;
+				font-size: 14px;
+				line-height: 1;
+				height: 37px;
+				color: var(--color-orange);
+				background-color: #303030;
+				border-radius: 8px;
+				overflow: hidden;
+			}
+			textarea {
+				display: block;
+				width: 100%;
+				min-height: 134px;
+				padding: 12px 14px;
+				font-size: 14px;
+				line-height: 1;
+				color: var(--color-light-blue);
+				background-color: #303030;
+				border-radius: 8px;
+			}
+			input[type="checkbox"] {
+				display: none;
+			}
+			.policy {
+				display: block;
+				min-height: 20px;
+			}
+			.policy ~ .wpcf7-not-valid-tip {
+				display: none !important;
+			}
+			.policy label {
+				position: relative;
+				padding-left: 32px;
+				cursor: pointer;
+				.wpcf7-list-item-label {
+					font-weight: 300;
+					font-size: 14px;
+					color: var(--color-light-blue);
+				}
+				&::before,
+				&::after {
+					position: absolute;
+					content: "";
+					top: 50%;
+					transform: translateY(-50%);
+				}
+
+				&::before {
+					left: 0;
+					width: $checkboxSize;
+					height: $checkboxSize;
+					border-radius: 6px;
+					overflow: hidden;
+					border: 1px solid #fede93;
+					background-color: var(--color-light-blue);
+					transition: 0.5s;
+				}
+				&::after {
+					display: none;
+					left: calc($checkboxSize / 2);
+					width: 13px;
+					height: 11px;
+					background: url("../../img/icons/checkbox-tick.svg") no-repeat;
+					background-size: contain;
+					transform: translate(-50%, -50%);
+				}
+				&.checked {
+					&::before {
+						background-color: #fff4db;
+						border: 1px solid var(--color-orange);
+					}
+					&::after {
+						display: block;
+					}
+				}
+			}
+		}
+		.wpcf7-submit {
+			// $submitMaxWidth: 280px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			max-width: 250px;
+			height: 41px;
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 1;
+			color: var(--color-new-dark);
+			background-color: var(--color-orange);
+			border-radius: 60px;
+			overflow: hidden;
+			cursor: pointer;
+			transition:
+				max-width 1s,
+				background-color 1s;
+			&:hover {
+				background-color: var(--color-orange-hover);
+			}
+			@media (min-width: $breakSmall) {
+				max-width: 80%;
+				&:hover {
+					max-width: 90%;
+				}
+			}
+			@media (min-width: $breakExtra) {
+				max-width: 67%;
+				&:hover {
+					max-width: 90%;
+				}
+			}
+		}
+		.wpcf7-response-output {
+			position: absolute;
+			left: 0;
+			bottom: -7px;
+			font-size: 13px;
+			transform: translateY(100%);
+		}
+		&.invalid {
+			.policy label:not(.checked) {
+				&::before {
+					border: 2px solid var(--color-orange-hover);
+				}
+				&::after {
+					display: block;
+					left: calc($checkboxSize / 2);
+					width: 14px;
+					height: 4px;
+					background: url("../../img/icons/checkbox-minus.svg") no-repeat;
+					background-size: contain;
+					transform: translate(-50%, -50%);
+				}
+			}
+			.wpcf7-response-output {
+				color: $errorColor;
+			}
+		}
+	}
+}
