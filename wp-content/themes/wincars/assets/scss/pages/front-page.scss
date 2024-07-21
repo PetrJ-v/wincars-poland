@@ -5,16 +5,13 @@
 @import "../components/header-top-links";
 @import "../components/header-media-common";
 .header-media {
-	aspect-ratio: 1376 / 630;
-	transition: aspect-ratio 0.5s;
+	height: 630px;
+	transition: height 0.5s;
 	@media (max-width: $breakLarge) {
-		aspect-ratio: 1376 / 730;
+		height: 730px;
 	}
 	@media (max-width: $breakSmall) {
-		aspect-ratio: 428 / 340;
-	}
-	&.active {
-
+		height: 340px;
 	}
 }
 @import "../components/header-menu";

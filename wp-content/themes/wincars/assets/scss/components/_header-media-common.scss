@@ -3,7 +3,7 @@
 	position: relative;
 	border-radius: clamp(24px, vw(32), 32px);
 	overflow: hidden;
-	transition: aspect-ratio 1s;
+	transition: height 1s;
 	&__img {
 		position: absolute;
 		top: 50%;

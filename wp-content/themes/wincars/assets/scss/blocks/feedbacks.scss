@@ -27,6 +27,7 @@
 		}
 	}
 	@import "../components/slider-buttons";
+	@import "../components/feedback";
 }
 .feedbacks-header {
 	@media (min-width: $breakMedium) {
@@ -60,4 +61,3 @@
 		}
 	}
 }
-@import "../components/feedback";

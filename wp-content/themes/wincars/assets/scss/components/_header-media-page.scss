@@ -1,18 +1,18 @@
 .header-media {
-	aspect-ratio: 1376 / calc(450 * 0.6);
+	height: calc(450px * 0.6);
 	@media (max-width: $breakLarge) {
-		aspect-ratio: 1376 / calc(530 * 0.6);
+		height: calc(530px * 0.6);
 	}
 	@media (max-width: $breakSmall) {
-		aspect-ratio: 428 / calc(260 * 0.6);
+		height: calc(260px * 0.6);
 	}
 	&.active {
-		aspect-ratio: 1376 / 450;
+		height: 450px;
 		@media (max-width: $breakLarge) {
-			aspect-ratio: 1376 / 530;
+			height: 530px;
 		}
 		@media (max-width: $breakSmall) {
-			aspect-ratio: 428 / 260;
+			height: 260px;
 		}
 	}
 }
