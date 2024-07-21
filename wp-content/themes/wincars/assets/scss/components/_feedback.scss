@@ -5,6 +5,7 @@
 	color: var(--color-light-blue);
 }
 .feedback {
+	font-family: "Montserrat";
 	min-height: clamp(175px, vw(185), 185px);
 	padding: clamp(16px, vw(30), 30px);
 	background-color: var(--color-new-dark);
