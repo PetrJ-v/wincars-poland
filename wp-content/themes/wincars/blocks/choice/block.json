@@ -2,6 +2,7 @@
     "name": "acf/choice",
     "title": "Choice 3 speps",
     "description": "Three stages of choosing a car",
+	"style": "acf-block-choice",
     "category": "theme",
     "icon": "align-full-width",
     "keywords": ["choice"],

@@ -11,8 +11,6 @@ function wincars_assets()
 		wp_enqueue_style('swiper', get_stylesheet_directory_uri() . '/assets/libs/swiper/swiper.min.css', array(), '8.3.1');
 		wp_enqueue_script('wow', get_stylesheet_directory_uri() . '/assets/libs/wow/wow.min.js', array('jquery'), '1.1.3', true);
 		wp_enqueue_script('swiper', get_stylesheet_directory_uri() . '/assets/libs/swiper/swiper-bundle.min.js', array(), '8.3.1', true);
-		// wp_enqueue_script('wow', get_stylesheet_directory_uri() . '/assets/libs/wow/wow.min.js', array('jquery'), '1.1.3', true);
-		// wp_enqueue_script('main', get_stylesheet_directory_uri() . '/assets/js/main.js', array('wow'), '1.0.0', true);
 		wp_enqueue_script('front-page', get_stylesheet_directory_uri() . '/assets/js/front-page.js', array('wow', 'swiper'), '1.0.0', true);
 	}
 	// if (is_page_template('service-pages/all-pdf.php')) {

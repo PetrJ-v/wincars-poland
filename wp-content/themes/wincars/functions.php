@@ -1,4 +1,5 @@
 <?php
+require 'inc/constants.php';
 include_once 'inc/custom-functions.php';
 include_once 'inc/assets.php';
 include_once 'inc/settings.php';
