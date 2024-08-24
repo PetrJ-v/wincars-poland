@@ -1,0 +1,16 @@
+{
+    "name": "acf/choice",
+    "title": "Choice 3 speps",
+    "description": "Three stages of choosing a car",
+    "category": "theme",
+    "icon": "align-full-width",
+    "keywords": ["choice"],
+    "supports": {
+        "mode": false
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "choice.php"
+    },
+    "align": "full"
+}

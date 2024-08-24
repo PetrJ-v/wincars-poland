@@ -1,6 +1,16 @@
 (function ($) {
 	$(window).load(function () {
 
+		wow = new WOW(
+			{
+				boxClass: 'wow',      // default
+				animateClass: 'animated', // default
+				offset: 0,          // default
+				mobile: false,       // default
+				live: true        // default
+			}
+		)
+		wow.init();
 		// Cars block
 		$('.cars .car').on('mouseenter', function () {
 			$(this).toggleClass('hover');

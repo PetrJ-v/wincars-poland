@@ -48,3 +48,19 @@ function disable_wp_editor()
 // Disable contact form 7 styles and paragraths
 add_filter('wpcf7_autop_or_not', '__return_false');
 add_filter('wpcf7_load_css', '__return_false');
+
+// add_filter( 'should_load_separate_core_block_assets', 'wincars_should_load_separate_core_block_assets_filter' );
+
+// /**
+//  * Function for `should_load_separate_core_block_assets` filter-hook.
+//  *
+//  * @param bool $load_separate_assets Whether separate assets will be loaded.
+//  *
+//  * @return bool
+//  */
+// function wincars_should_load_separate_core_block_assets_filter( $load_separate_assets ){
+
+// 	// $load_separate_assets = true;
+// 	// filter...
+// 	return true;
+// }
