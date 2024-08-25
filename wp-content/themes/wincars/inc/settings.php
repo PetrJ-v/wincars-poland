@@ -6,10 +6,10 @@ function wincars_setup()
 
 	load_theme_textdomain('wincars', get_template_directory());
 
-	// register_nav_menus(array(
-	// 	'top' => 'Top Menu',
-	// 	'footer' => 'Footer Menu',
-	// ));
+	register_nav_menus(array(
+		'top' => 'Top Menu',
+		'footer' => 'Footer Menu',
+	));
 
 	if (function_exists('acf_add_options_page')) {
 		acf_add_options_page(['page_title' => __('Theme Settings')]);

@@ -4,9 +4,21 @@ function wincars_assets()
 
 	wp_enqueue_style('base', get_stylesheet_directory_uri() . '/assets/css/base-styles.css', array(), '1.0.0');
 	wp_enqueue_script('main', get_stylesheet_directory_uri() . '/assets/js/main.js', ['jquery'], '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
+	// wp_register_style(
+	// 	'swiper',
+	// 	get_template_directory_uri() . '/assets/libs/swiper/swiper.min.css',
+	// 	array(), // Зависимости
+	// 	'8.3.1', 'all'
+	// );
+	// wp_register_script(
+	// 	'swiper',
+	// 	get_template_directory_uri() . '/assets/libs/swiper/swiper-bundle.min.js',
+	// 	[], // Зависимости
+	// 	'8.3.1', true
+	// );
 
 	if (is_front_page()) {
-		wp_enqueue_style('front-page', get_stylesheet_directory_uri() . '/assets/css/pages/front-page.css', array(), '1.0.0');
+		wp_enqueue_style('front-page', get_stylesheet_directory_uri() . '/assets/css/pages/front-page.css', array('base'), '1.0.0');
 		wp_enqueue_style('animate', get_stylesheet_directory_uri() . '/assets/libs/wow/animate.min.css', array(), '3.5.1');
 		wp_enqueue_style('swiper', get_stylesheet_directory_uri() . '/assets/libs/swiper/swiper.min.css', array(), '8.3.1');
 		wp_enqueue_script('wow', get_stylesheet_directory_uri() . '/assets/libs/wow/wow.min.js', array('jquery'), '1.1.3', true);

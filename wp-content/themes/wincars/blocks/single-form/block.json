@@ -1,0 +1,17 @@
+{
+    "name": "acf/single-form",
+    "title": "Single form",
+    "description": "Single form",
+	"style": "acf-block-single-form",
+    "category": "theme",
+    "icon": "align-full-width",
+    "keywords": ["single", "form", "contact"],
+    "supports": {
+        "mode": false
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "single-form.php"
+    },
+    "align": "full"
+}

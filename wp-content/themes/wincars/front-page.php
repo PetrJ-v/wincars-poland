@@ -16,43 +16,30 @@
 
 				<div class="header-media">
 					<div class="header-menu-wrapper">
-						<button class="header-menu-btn" aria-label="menu button">
-							<span class="header-menu-btn__inner">
-								<span></span>
-								<span></span>
-								<span></span>
-							</span>
-						</button>
-
-						<nav class="header-menu">
-							<ul id="menu-main-navigation" class="menu">
-								<li class="menu-item current-menu-item current_page_item">
-									<a href="/html/front-page.html" aria-current="page">Главната</a>
-								</li>
-								<li class="menu-item menu-item-has-children">
-									<a href="#">Автомобили</a>
-								</li>
-								<li id="menu-item-1052" class="menu-item menu-item-has-children">
-									<a href="/html/about.html">За нас</a>
-								</li>
-								<li id="menu-item-1053" class="menu-item">
-									<a href="/html/faq.html">FAQ</a>
-								</li>
-								<li id="menu-item-1053" class="menu-item">
-									<a href="/html/contacts.html">Контакти</a>
-								</li>
-							</ul>
-						</nav>
+						<?php get_template_part('template-parts/header-menu-btn'); ?>
+						<?php
+							wp_nav_menu([
+								'theme_location'  => 'top',
+								'container'       => 'nav',
+								'container_class' => 'header-menu',
+								'echo'            => true,
+								'fallback_cb'     => 'wp_page_menu',
+								'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+								'depth'           => 1,
+							]);
+							?>
 					</div>
-					<div class="header-media__img">
-						<!-- autoplay="" -->
-						<video preload="none" muted=""  playsinline="" loop="" poster="<?php echo get_template_directory_uri(); ?>/assets/video/ford-poster.jpg" src="<?php echo get_template_directory_uri(); ?>/assets/video/ford-mustang-short.mp4"></video>
-						<!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/header-img.jpg"> -->
-					</div>
+					<?php if (get_field('video_poster')) : ?>
+						<?php $video_poster = get_field('video_poster'); ?>
+						<div class="header-media__img">
+							<!-- autoplay="" -->
+							<video preload="none" muted="" playsinline="" loop="" poster="<?php echo $video_poster; ?>" src="<?php the_field('video'); ?>"></video>
+						</div>
+					<?php endif; ?>
+					<?php $cta_button_text = (get_field('cta_button_text')) ? get_field('cta_button_text') : 'Остави запитване'; ?>
 					<div class="header-media__cta">
 						<div class="header-media__cta-btn-wrapper">
-							<button class="header-media__cta-btn accent-btn open-popup" data-target="main-form">Остави
-								запитване</button>
+							<button class="header-media__cta-btn accent-btn open-popup" data-target="main-form"><?php echo esc_html($cta_button_text); ?></button>
 						</div>
 					</div>
 				</div>
@@ -228,191 +215,10 @@
 			</div>
 		</div>
 
-		<!-- Why we block -->
-		<div class="container">
-			<div class="why-we p-tb-30-44">
-				<div class="why-we__title">Защо партньорите ни избират?</div>
-				<div class='swiper why-we__slider'>
-					<div class='swiper-wrapper'>
-						<div class='swiper-slide'>
-							<div class="why-we__item">
-								<div class="why-we__item-title">Гаранция за качество!</div>
-								<div class="why-we__card">
-									<div class="why-we__card-img img-wrapper">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/why-we/why-1.jpg">
-									</div>
-									<div class="why-we__card-text">
-										Преди закупуване, ние внимателно проверяваме историята на автомобила чрез
-										различни инструменти.
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class='swiper-slide'>
-							<div class="why-we__item">
-								<div class="why-we__item-title">Спестявате пари</div>
-								<div class="why-we__card">
-									<div class="why-we__card-img img-wrapper">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/why-we/why-2.jpg">
-									</div>
-									<div class="why-we__card-text">
-										Възможност да спестите от 30% от пазарната стойност. Още преди покупката
-										може да изчислите печалбата!
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class='swiper-slide'>
-							<div class="why-we__item">
-								<div class="why-we__item-title">Бърза доставка</div>
-								<div class="why-we__card">
-									<div class="why-we__card-img img-wrapper">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/why-we/why-3.jpg">
-									</div>
-									<div class="why-we__card-text">
-										Проверени с години морски линии с най-бързи маршрути.
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class='swiper-slide'>
-							<div class="why-we__item">
-								<div class="why-we__item-title">Поддържка 24/7</div>
-								<div class="why-we__card">
-									<div class="why-we__card-img img-wrapper">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/why-we/why-4.jpg">
-									</div>
-									<div class="why-we__card-text">
-										Нашите мениджъри предоставят пълна гама поддръжка на автомобила.
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class='swiper-slide'>
-							<div class="why-we__item">
-								<div class="why-we__item-title">Голям избор</div>
-								<div class="why-we__card">
-									<div class="why-we__card-img img-wrapper">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/why-we/why-5.jpg">
-									</div>
-									<div class="why-we__card-text">
-										Около 600 000 автомобила са на търг едновременно. Ние знаем най-изгодните
-										предложения от тях.
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class='swiper-slide'>
-							<div class="why-we__item">
-								<div class="why-we__item-title">Изгодни тарифи</div>
-								<div class="why-we__card">
-									<div class="why-we__card-img img-wrapper">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/why-we/why-6.jpg">
-									</div>
-									<div class="why-we__card-text">
-										Тук ще намерите най-ниските тарифи за местна доставка в САЩ и товари.
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Choice block -->
-		 <?php the_content(); ?>
-		<!-- <div class="container">
-			<div class="choice align-center p-tb-30-44">
-				<div class="choice__left wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0s">
-					<div class="choice-content">
-						<h2 class="choice-content__title">Избор на автомобил в 3 стъпки</h2>
-						<div class="choice-content__text">
-							Нашата цел е бързо и качествено да изберем точно това, което желаете. За това имаме нужда от
-						</div>
-						<ul class="choice-content__list">
-							<li>Избор на времеви рамки</li>
-							<li>Определяне на характеристиките</li>
-							<li>Подписването на договора</li>
-						</ul>
-					</div>
-				</div>
-				<div class="choice__right wow fadeInRight" data-function="toggleClassName" data-anim="true" data-wow-duration="1s" data-wow-delay="0s">
-					<div class="choice__right-bg img-wrapper">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/choice/car-bg.jpg">
-					</div>
-					<div class="choice__right-img choice__right-img--right img-wrapper">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/choice/car-orange.png">
-					</div>
-					<div class="choice__right-img choice__right-img--left img-wrapper">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/choice/car-green.png">
-					</div>
-				</div>
-			</div>
-			<div class="choice-bottom align-center">
-				<div class="choice-bottom__img img-wrapper wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/choice/choise-img.png">
-				</div>
-				<div class="choice-bottom__content wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-					<div class="choice-content">
-						<h2 class="choice-content__title">Най-популярните<br>аукциони в САЩ</h2>
-						<ul class="choice-content__list">
-							<li>Избор от над 650 000 партиди на пазара</li>
-							<li>Най-ниска комисионна за наддаване</li>
-							<li>Проверка на автомобила чрез Carfax</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div> -->
-
-		<!-- Single form block -->
-		<div class="container">
-			<div class="single-form p-tb-30-44 align-center">
-				<h2 class="single-form__title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-					Абонирайте се за актуализации на бъдете в крак с всички новини WINCARS
-				</h2>
-				<div class="single-form__text wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-					Получавайте ексклузивни оферти, последните новини за нови автомобили и полезни съвети директно във
-					вашата поща. Присъединете се към нашето семейство от доволни клиенти и не пропускайте нито една
-					възможност!
-				</div>
-				<div class="single-form__form align-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-					<div class="wpcf7 js" id="wpcf7-f168-o1" lang="en-US" dir="ltr">
-						<div class="screen-reader-response">
-							<p role="status" aria-live="polite" aria-atomic="true">One or more fields have an error.
-								Please check and try again.</p>
-							<ul>
-								<li id="wpcf7-f168-o1-ve-email">Please fill out this field.</li>
-							</ul>
-						</div>
-						<form action="/test-page/#wpcf7-f168-o1" method="post" class="wpcf7-form invalid" aria-label="Contact form" novalidate="novalidate" data-status="invalid">
-							<div style="display: none;">
-								<input type="hidden" name="_wpcf7" value="168">
-								<input type="hidden" name="_wpcf7_version" value="5.9.6">
-								<input type="hidden" name="_wpcf7_locale" value="en_US">
-								<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f168-o1">
-								<input type="hidden" name="_wpcf7_container_post" value="0">
-								<input type="hidden" name="_wpcf7_posted_data_hash" value="">
-							</div>
-							<div class="sf-row">
-								<span class="wpcf7-form-control-wrap" data-name="email">
-									<input size="10" maxlength="80" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email sf-email wpcf7-not-valid" autocomplete="email" aria-required="true" aria-invalid="true" placeholder="Въведете своя имейл" value="" type="email" name="email" aria-describedby="wpcf7-f168-o1-ve-email">
-									<span class="wpcf7-not-valid-tip" aria-hidden="true">Please fill out this
-										field.</span>
-								</span>
-								<input class="wpcf7-form-control wpcf7-submit has-spinner sf-submit" type="submit" value="Абонирай се"><span class="wpcf7-spinner"></span>
-							</div>
-							<div class="wpcf7-response-output" aria-hidden="true">One or more fields have an error.
-								Please check and try again.</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php the_content(); ?>
 
 		<!-- Faq block -->
-		<div class="container">
+		<!-- <div class="container">
 			<div class="faq-block p-tb-30-44 align-center">
 				<div class="faq-block__left wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0s">
 					<div class="faq-block__left-lable">Support</div>
@@ -498,7 +304,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<!-- Feedbacks block -->
 		<div class="container container--feedbacks">

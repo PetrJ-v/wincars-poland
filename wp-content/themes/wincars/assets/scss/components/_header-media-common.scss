@@ -1,9 +1,9 @@
 // Fonts
 .header-media {
 	position: relative;
-	border-radius: clamp(24px, vw(32), 32px);
-	overflow: hidden;
-	transition: height 1s;
+	// border-radius: clamp(24px, vw(32), 32px);
+	// overflow: hidden;
+	// transition: height 1s;
 	&__img {
 		position: absolute;
 		top: 50%;
@@ -11,6 +11,8 @@
 		width: 100%;
 		height: 100%;
 		transform: translate(-50%, -50%);
+		border-radius: clamp(24px, vw(32), 32px);
+		overflow: hidden;
 		img, video {
 			width: 100%;
 			height: 100%;

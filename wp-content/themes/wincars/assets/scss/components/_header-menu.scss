@@ -21,8 +21,8 @@
 }
 .header-menu-btn {
 	position: relative;
-	top: -1px;
-	left: -1px;
+	top: 0;
+	left: 0;
 	min-width: 72px;
 	max-width: 72px;
 	min-height: 64px;
@@ -32,6 +32,7 @@
 	align-items: flex-start;
 	background: url("../../img/header-menu-contur.svg") no-repeat;
 	background-size: contain;
+	background-position: -1px -1px;
 	&__inner {
 		position: relative;
 		top: 7px;

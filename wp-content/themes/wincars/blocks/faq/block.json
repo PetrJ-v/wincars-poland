@@ -1,0 +1,18 @@
+{
+    "name": "acf/faq",
+    "title": "FAQ",
+    "description": "Frequently asked questions",
+	"style": "acf-block-faq",
+	"viewScript": "acf-block-faq",
+    "category": "theme",
+    "icon": "align-full-width",
+    "keywords": ["faq"],
+    "supports": {
+        "mode": false
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "faq.php"
+    },
+    "align": "full"
+}

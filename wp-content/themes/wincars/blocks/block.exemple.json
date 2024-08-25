@@ -2,7 +2,7 @@
     "name": "acf/choice",
     "title": "Choice 3 speps",
     "description": "Three stages of choosing a car",
-    "style": ["file:./../../../assets/css/blocks/choice.css"],
+    "style": ["file:./../../assets/css/blocks/choice.css"],
     "editorStyle": ["file:./choice.css"],
     "category": "theme",
     "icon": "align-full-width",
