@@ -33,6 +33,7 @@
 	background: url("../../img/header-menu-contur.svg") no-repeat;
 	background-size: contain;
 	background-position: -1px -1px;
+	cursor: pointer;
 	&__inner {
 		position: relative;
 		top: 7px;
@@ -175,6 +176,13 @@ body.menu-open {
 		}
 		@media (max-width: 400px) {
 			top: 36px;
+		}
+	}
+	.simple-menu-wrapper {
+		.header-menu-wrapper {
+			padding-top: 20px;
+			background-color: var(--global-bg-grey);
+			top: 0;
 		}
 	}
 	.header-top-links::after {

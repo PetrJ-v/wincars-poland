@@ -5,27 +5,13 @@
 // @import "components/header-top-links";
 // @import "components/header-menu";
 
-// .post-top-line {
-// 	display: flex;
-// 	justify-content: space-between;
-// }
-// .header-menu-wrapper {
-// 	position: initial;
-// 	top: initial;
-// 	left: initial;
-// 	z-index: initial;
-// }
-// .header-menu-btn {
-// 	background: url("../../img/header-menu-contur-black.svg") no-repeat;
-// }
-
 .post-template-default {
 	margin-top: 20px;
 	font-family: "Montserrat";
 	.simple-menu-wrapper {
 		margin-bottom: 47px;
 		@media (max-width: $breakLarge) {
-			margin-bottom: 35px;
+			margin-bottom: 15px;
 		}
 	}
 }
