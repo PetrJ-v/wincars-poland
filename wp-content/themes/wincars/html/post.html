@@ -17,32 +17,90 @@
 
 <body class="post-template-default">
 	<header>
-		<div class="container">
-			<div class="hero align-center">
-				<div class="hero__subtitle">Публикувано на 20 януари 2022 г</div>
-				<h1 class="hero__title">Защо да изберете автомобил от САЩ?</h1>
-				<div class="hero__text text">Съвети и препоръки за успешен избор на автомобил от американския пазар.
+		<div class="header">
+			<div class="simple-menu-wrapper">
+				<div class="header-media">
+					<div class="header-menu-wrapper">
+						@@include('components/menu-btn.html')
+						<nav class="header-menu">
+							<ul id="menu-main-navigation" class="menu">
+								<li class="menu-item current-menu-item current_page_item">
+									<a href="/html/front-page.html" aria-current="page">Главната</a>
+								</li>
+								<li class="menu-item menu-item-has-children">
+									<a href="#">Автомобили</a>
+								</li>
+								<li id="menu-item-1052" class="menu-item menu-item-has-children">
+									<a href="/html/about.html">За нас</a>
+								</li>
+								<li id="menu-item-1053" class="menu-item">
+									<a href="/html/faq.html">FAQ</a>
+								</li>
+								<li id="menu-item-1053" class="menu-item">
+									<a href="/html/contacts.html">Контакти</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header-media__cta">
+						<div class="header-media__cta-btn-wrapper">
+							<button class="header-media__cta-btn accent-btn open-popup" data-target="main-form">Остави
+								запитване</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<!-- <div class="top-menu">
+					<div class="header-menu-wrapper">
+						@@include('components/menu-btn.html')
+						<nav class="header-menu">
+							<ul id="menu-main-navigation" class="menu">
+								<li class="menu-item current-menu-item current_page_item">
+									<a href="/html/front-page.html" aria-current="page">Главната</a>
+								</li>
+								<li class="menu-item menu-item-has-children">
+									<a href="#">Автомобили</a>
+								</li>
+								<li id="menu-item-1052" class="menu-item menu-item-has-children">
+									<a href="/html/about.html">За нас</a>
+								</li>
+								<li id="menu-item-1053" class="menu-item">
+									<a href="/html/faq.html">FAQ</a>
+								</li>
+								<li id="menu-item-1053" class="menu-item">
+									<a href="/html/contacts.html">Контакти</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<button class="header-menu-cta-btn accent-btn open-popup" data-target="main-form">ОСТАВИ
+						ЗАПИТВАНЕ</button>
+				</div> -->
+				<div class="hero align-center">
+					<div class="hero__subtitle">Публикувано на 20 януари 2022 г</div>
+					<h1 class="hero__title">Защо да изберете автомобил от САЩ?</h1>
+					<div class="hero__text text">Съвети и препоръки за успешен избор на автомобил от американския пазар.
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="video-wrapper">
+					<video preload="none" muted="" playsinline="" loop="" poster="video/form-video-poster.jpg"
+						src="video/form-video.mp4"></video>
+					<button class="play-btn img-wrapper">
+						<svg width="54" height="55" viewBox="0 0 54 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g filter="url(#filter0_b_337_498)">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M26.8586 55C41.6921 55 53.7171 42.6878 53.7171 27.5C53.7171 12.3122 41.6921 0 26.8586 0C12.025 0 0 12.3122 0 27.5C0 42.6878 12.025 55 26.8586 55ZM22.6619 37.5871L37.7698 28.941C38.8889 28.3006 38.889 26.6994 37.7698 26.059L22.6619 17.4129C21.5428 16.7725 20.1439 17.573 20.1439 18.8539V36.1461C20.1439 37.427 21.5428 38.2275 22.6619 37.5871Z"
+									fill="white" fill-opacity="0.3" />
+							</g>
+						</svg>
+					</button>
 				</div>
 			</div>
 		</div>
-
-		<div class="container">
-			<div class="video-wrapper">
-				<video preload="none" muted="" playsinline="" loop="" poster="video/form-video-poster.jpg"
-					src="video/form-video.mp4"></video>
-				<button class="play-btn img-wrapper">
-					<svg width="54" height="55" viewBox="0 0 54 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<g filter="url(#filter0_b_337_498)">
-							<path fill-rule="evenodd" clip-rule="evenodd"
-								d="M26.8586 55C41.6921 55 53.7171 42.6878 53.7171 27.5C53.7171 12.3122 41.6921 0 26.8586 0C12.025 0 0 12.3122 0 27.5C0 42.6878 12.025 55 26.8586 55ZM22.6619 37.5871L37.7698 28.941C38.8889 28.3006 38.889 26.6994 37.7698 26.059L22.6619 17.4129C21.5428 16.7725 20.1439 17.573 20.1439 18.8539V36.1461C20.1439 37.427 21.5428 38.2275 22.6619 37.5871Z"
-								fill="white" fill-opacity="0.3" />
-						</g>
-					</svg>
-				</button>
-			</div>
-		</div>
 	</header>
-
 	<main>
 		<div class="container">
 			<div class="post-content">
@@ -197,14 +255,17 @@
 		<div class="promo-wrapper">
 			<div class="promo img-wrapper">
 				<div class="promo-content">
-					<div class="promo-content__img img-wrapper wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0s">
+					<div class="promo-content__img img-wrapper wow fadeInUp" data-wow-duration="1.5s"
+						data-wow-delay="0s">
 						<img src="@img/promotion/promo-text.svg">
 					</div>
-					<div class="promo-content__text promo-content__text--desktop wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
+					<div class="promo-content__text promo-content__text--desktop wow fadeInUp" data-wow-duration="2s"
+						data-wow-delay="0.2s">
 						За да имаш повече шансове да спечелиш автомобила, бъди активен, споделяй постовете, коментирай,
 						добавяй повече хора выв viber групата!
 					</div>
-					<button class="promo-content__btn promo-content__btn--desktop wow fadeInUp flipInY" data-wow-duration="2.5s" data-wow-delay="0.4s">ОСТАВИ ЗАПИТВАНЕ</button>
+					<button class="promo-content__btn promo-content__btn--desktop wow fadeInUp flipInY"
+						data-wow-duration="2.5s" data-wow-delay="0.4s">ОСТАВИ ЗАПИТВАНЕ</button>
 				</div>
 				<img src="@img/promotion/banner.jpg">
 				<div class="promo__deco img-wrapper wow fadeIn" data-wow-duration="1.5s" data-wow-delay="3s">
@@ -216,7 +277,8 @@
 					За да имаш повече шансове да спечелиш автомобила, бъди активен, споделяй постовете, коментирай,
 					добавяй повече хора выв viber групата!
 				</div>
-				<button class="promo-content__btn align-center wow fadeInUp flipInY" data-wow-duration="2.5s" data-wow-delay="0.4s">ОСТАВИ ЗАПИТВАНЕ</button>
+				<button class="promo-content__btn align-center wow fadeInUp flipInY" data-wow-duration="2.5s"
+					data-wow-delay="0.4s">ОСТАВИ ЗАПИТВАНЕ</button>
 			</div>
 		</div>
 	</main>

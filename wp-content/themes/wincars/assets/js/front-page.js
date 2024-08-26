@@ -66,41 +66,33 @@
 			let fbText = $(this).find('.feedback__content');
 			fbText.slideUp(500);
 		})
-		if ($('.feedbacks-slider')) {
-			var feedbacksSlider = new Swiper(".feedbacks-slider", {
-				spaceBetween: 20,
-				slidesPerView: 1,
-				centeredSlides: true,
-				initialSlide: 2,
-				navigation: {
-					nextEl: ".swiper-button-next",
-					prevEl: ".swiper-button-prev",
-				},
-				// loop: true,
-				// autoplay: {
-				// 	delay: 2000,
-				// },
-				// effect: 'coverflow',
-				keyboard: {
-					enabled: true,
-					onlyInViewport: true,
-				},
-				breakpoints: {
-					499.98: {
-						slidesPerView: 1.5,
-					},
-					640.98: {
-						slidesPerView: 2,
-					},
-					839.98: {
-						slidesPerView: 2.5,
-					},
-					1139.98: {
-						slidesPerView: 3,
-					},
-				},
-			});
-		}
+		// if ($('.feedbacks-slider')) {
+		// 	var feedbacksSlider = new Swiper(".feedbacks-slider", {
+		// 		spaceBetween: 20,
+		// 		slidesPerView: 1,
+		// 		watchOverflow: true,
+		// 		// centeredSlides: true,
+		// 		// initialSlide: 2,
+		// 		navigation: {
+		// 			nextEl: ".swiper-button-next",
+		// 			prevEl: ".swiper-button-prev",
+		// 		},
+		// 		breakpoints: {
+		// 			499.98: {
+		// 				slidesPerView: 1.5,
+		// 			},
+		// 			640.98: {
+		// 				slidesPerView: 2,
+		// 			},
+		// 			839.98: {
+		// 				slidesPerView: 2.5,
+		// 			},
+		// 			1139.98: {
+		// 				slidesPerView: 3,
+		// 			},
+		// 		},
+		// 	});
+		// }
 
 		$('.cars .car').on('mouseenter', function () {
 			$(this).toggleClass('hover');

@@ -1,0 +1,37 @@
+.simple-menu-wrapper {
+	@media (min-width: $breakLarge) {
+		padding-inline: 30px;
+	}
+	.header-media {
+		height: 64px;
+		display: flex;
+		justify-content: space-between;
+		@media (min-width: $breakLarge) {
+			align-items: center;
+			height: 69px;
+			border: 1px solid var(--color-orange);
+			border-radius: 40px;
+		}
+	}
+	.header-menu-wrapper {
+		top: unset;
+		position: unset;
+	}
+	.header-media__cta {
+		aspect-ratio: unset;
+		height: 41px;
+		top: 0;
+		right: 0;
+		@media (min-width: $breakLarge) {
+			position: relative;
+			top: unset;
+			right: unset;
+		}
+	}
+	.header-media__cta-btn {
+		top: 0;
+	}
+	.header-menu-btn {
+		background: url("../../img/header-menu-contur-black.svg") no-repeat;
+	}
+}
