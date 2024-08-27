@@ -1,3 +1,6 @@
+@import "../inc/vars";
+@import "../inc/mixins";
+@import "../inc/extends";
 .last-post-header {
 	margin-bottom: 32px;
 	display: flex;
@@ -37,20 +40,20 @@
 			margin-top: 35px;
 			display: inline-flex;
 		}
-	}
-	.at-md {
-		@media (max-width: $breakMedium) {
-			display: none;
+		&.at-md {
+			@media (max-width: $breakMedium) {
+				display: none;
+			}
 		}
-	}
-	.undr-md {
-		@media (min-width: $breakMedium) {
-			display: none;
+		&.undr-md {
+			@media (min-width: $breakMedium) {
+				display: none;
+			}
 		}
 	}
 }
 .previews-slider {
-	@import "slider-buttons";
+	@import "../components/slider-buttons";
 	.slider-buttons {
 		margin-top: 0;
 	}
@@ -72,5 +75,5 @@
 	// 		max-width: calc(100% / 3 - 40px / 3);
 	// 	}
 	// }
-	@import "preview";
+	@import "../components/preview";
 }

@@ -70,7 +70,6 @@ $block_description = get_field('block_description');
 					<?php endforeach; ?>
 				</div>
 			</div>
-			<?php wp_reset_postdata(); ?>
 		<?php endif; ?>
 	</div>
 </div>

@@ -140,6 +140,7 @@
 			</button>
 			<div class="main-form">
 				<div class="contact-form">
+					<?php do_shortcode('[contact-form-7 id="d4872aa" title="Page form"]'); ?>
 					<div class="wpcf7 js" id="wpcf7-f171-o1" lang="en-US" dir="ltr">
 						<div class="screen-reader-response">
 							<p role="status" aria-live="polite" aria-atomic="true">One or more fields have an

@@ -1,3 +1,6 @@
+@import "../inc/vars";
+@import "../inc/mixins";
+@import "../inc/extends";
 .preview {
 	font-family: "Montserrat";
 	cursor: pointer;
@@ -57,10 +60,12 @@
 .preview__title {
 	display: flex;
 	justify-content: space-between;
-	column-gap: 10px;
-	margin-bottom: 8px;
+	column-gap: 15px;
+	margin-bottom: 12px;
 	&-link {
 		font-weight: 700;
+		font-size: clamp(16px, vw(24), 24px);
+		line-height: 1.2;
 		color: #fff;
 		transition: color 1s;
 	}

@@ -1,0 +1,18 @@
+{
+    "name": "acf/previews",
+    "title": "Previews",
+    "description": "Previews",
+	"style": "acf-block-previews",
+	"viewScript": "acf-block-previews",
+    "category": "theme",
+    "icon": "align-full-width",
+    "keywords": ["preview"],
+    "supports": {
+        "mode": false
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "previews.php"
+    },
+    "align": "full"
+}
