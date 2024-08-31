@@ -22,6 +22,10 @@ function wincars_assets()
 		wp_enqueue_script('swiper');
 		wp_enqueue_script('single', _TEMPLATEPATH . '/assets/js/single.js', array('jquery', 'swiper'), '1.0.0', true);
 	}
+	if (is_page_template('templates/about.php')) {
+		wp_enqueue_style('about-page', _TEMPLATEPATH . '/assets/css/pages/about.css', array('base'), '1.0.0');
+		wp_enqueue_script('about-page', _TEMPLATEPATH . '/assets/js/about.js', array('main'), '1.0.0', true);
+	}
 	// if (is_page_template('service-pages/all-pdf.php')) {
 	// 	wp_enqueue_style('all-pdf', _TEMPLATEPATH . '/assets/css/all-pdf.css', array(), '1.0.3');
 	// }
