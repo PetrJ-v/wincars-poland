@@ -353,7 +353,7 @@
 										$member_name = get_sub_field('name');
 										$member_role = get_sub_field('role');
 										?>
-										<div class="member member--employee <?php if($member_back_img) echo 'member--with-hover'; ?>">
+										<div class="member member--employee <?php if ($member_back_img) echo ' member--with-hover'; ?>">
 											<?php if ($member_front_img) : ?>
 												<div class="member__img">
 													<div class="member__img-front cover-img">
@@ -386,110 +386,73 @@
 				</div>
 			</div>
 		<?php endif; ?>
-		<div class="container">
-			<div class="steps p-tb-20-35">
-				<h2 class="steps__title-mobile steps-title align-center">6 стъпки от заявка до издаване на ключ</h2>
-				<div class="steps__left">
-					<h2 class="steps__left-title steps-title">6 стъпки от заявка до издаване на ключ</h2>
-					<div class="steps__left-img-wrapper">
-						<div class="steps__left-img border-24 img-wrapper active" data-img-number="1">
-							<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/about-us/step-1.jpg">
+
+		<?php $steps_title = get_field('steps_title'); ?>
+		<?php if ($steps_title || have_rows('about_step')) : ?>
+			<div class="container">
+				<div class="steps p-tb-20-35">
+					<?php if ($steps_title) : ?>
+						<h2 class="steps__title-mobile steps-title align-center"><?php echo esc_html($steps_title); ?></h2>
+					<?php endif; ?>
+
+					<?php if (have_rows('about_step') || $steps_title) : ?>
+						<div class="steps__left">
+							<?php if ($steps_title) : ?>
+								<h2 class="steps__left-title steps-title"><?php echo esc_html($steps_title); ?></h2>
+							<?php endif; ?>
+
+							<?php if (have_rows('about_step')) : ?>
+								<div class="steps__left-img-wrapper">
+									<?php $left_counter = 1; ?>
+									<?php while (have_rows('about_step')) : the_row(); ?>
+										<?php $step_img = get_sub_field('image'); ?>
+										<?php if ($step_img) : ?>
+											<div class="steps__left-img border-24 img-wrapper <?php if ($left_counter === 1) echo ' active'; ?>" data-img-number="<?php echo $left_counter; ?>">
+												<?php echo wp_get_attachment_image($step_img, 'full'); ?>
+											</div>
+										<?php endif; ?>
+										<?php $left_counter++; ?>
+									<?php endwhile; ?>
+								</div>
+							<?php endif; ?>
 						</div>
-						<div class="steps__left-img border-24 img-wrapper" data-img-number="2">
-							<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/about-us/step-2.jpg">
-						</div>
-						<div class="steps__left-img border-24 img-wrapper" data-img-number="3">
-							<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/about-us/step-3.jpg">
-						</div>
-						<div class="steps__left-img border-24 img-wrapper" data-img-number="4">
-							<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/about-us/step-4.jpg">
-						</div>
-						<div class="steps__left-img border-24 img-wrapper" data-img-number="5">
-							<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/about-us/step-5.jpg">
-						</div>
-						<div class="steps__left-img border-24 img-wrapper" data-img-number="6">
-							<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/about-us/step-6.jpg">
-						</div>
-					</div>
+
+						<?php if (have_rows('about_step')) : ?>
+							<ul class="steps__right">
+								<?php $step_number = 1; ?>
+								<?php while (have_rows('about_step')) : the_row(); ?>
+
+									<?php
+									$step_title = get_sub_field('title');
+									$step_text = get_sub_field('text');
+									$step_image = get_sub_field('image');
+									?>
+									<li class="steps__item step <?php if ($step_number === 1) echo ' active'; ?>" data-number="<?php echo $step_number; ?>">
+										<div class="step__point"><?php echo $step_number; ?></div>
+										<div class="step__number"><?php echo $step_number; ?></div>
+										<div class="step__content">
+											<?php if ($step_title) : ?>
+												<div class="step__content-title"><?php echo esc_html($step_title); ?></div>
+											<?php endif; ?>
+											<?php if ($step_text) : ?>
+												<div class="step__content-text text"><?php echo esc_html($step_text); ?></div>
+											<?php endif; ?>
+											<?php if ($step_image) : ?>
+												<div class="step__content-img border-24 cover-img">
+													<?php wp_get_attachment_image($step_image, 'full'); ?>
+												</div>
+											<?php endif; ?>
+										</div>
+									</li>
+									<?php $step_number++; ?>
+								<?php endwhile; ?>
+								<div class="steps__vertical-line"></div>
+							</ul>
+						<?php endif; ?>
+					<?php endif; ?>
 				</div>
-				<ul class="steps__right">
-					<li class="steps__item step active" data-number="1">
-						<div class="step__point">1</div>
-						<div class="step__number">1</div>
-						<div class="step__content">
-							<div class="step__content-title">Депозит</div>
-							<div class="step__content-text text">Ние сключваме договор, в който посочваме всички етапи
-								от покупката до доставката до вратата</div>
-							<div class="step__content-img border-24 cover-img">
-								<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/about-us/step-1.jpg">
-							</div>
-						</div>
-					</li>
-					<li class="steps__item step" data-number="2">
-						<div class="step__point">2</div>
-						<div class="step__number">2</div>
-						<div class="step__content">
-							<div class="step__content-title">Търгове</div>
-							<div class="step__content-text text">Мениджърът следи пазара за съществуващи оферти 24/7 и
-								търси нови. За да намерите оферта в бюджета си</div>
-							<div class="step__content-img border-24 cover-img">
-								<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/about-us/step-2.jpg">
-							</div>
-						</div>
-					</li>
-					<li class="steps__item step" data-number="3">
-						<div class="step__point">3</div>
-						<div class="step__number">3</div>
-						<div class="step__content">
-							<div class="step__content-title">Плащане за автомобил</div>
-							<div class="step__content-text text">След като печелим лота на аукциона Вие плащате само
-								фактическата стойност на автомобила</div>
-							<div class="step__content-img border-24 cover-img">
-								<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/about-us/step-3.jpg">
-							</div>
-						</div>
-					</li>
-					<li class="steps__item step" data-number="4">
-						<div class="step__point">4</div>
-						<div class="step__number">4</div>
-						<div class="step__content">
-							<div class="step__content-title">Логистика</div>
-							<div class="step__content-text text">Ние контролираме доставката на всички етапи и вече
-								когато колата е на подхода към пристанището, Вие плащате за доставката и нашите услуги
-							</div>
-							<div class="step__content-img border-24 cover-img">
-								<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/about-us/step-4.jpg">
-							</div>
-						</div>
-					</li>
-					<li class="steps__item step" data-number="5">
-						<div class="step__point">5</div>
-						<div class="step__number">5</div>
-						<div class="step__content">
-							<div class="step__content-title">Обмитяване</div>
-							<div class="step__content-text text">Помагаме при митническо освобождаване и регистрация.
-								Разполагаме с богат избор от сервизи. Доставка до всяка точка на страната</div>
-							<div class="step__content-img border-24 cover-img">
-								<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/about-us/step-5.jpg">
-							</div>
-						</div>
-					</li>
-					<li class="steps__item step" data-number="6">
-						<div class="step__point">6</div>
-						<div class="step__number">6</div>
-						<div class="step__content">
-							<div class="step__content-title">Рапатрак </div>
-							<div class="step__content-text text">Нашата компания предоставя услуги за доставка от
-								пристанището до всяко кътче на страната до Вашия дом на най-демократичните цени</div>
-							<div class="step__content-img border-24 cover-img">
-								<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/about-us/step-6.jpg">
-							</div>
-						</div>
-					</li>
-					<div class="steps__vertical-line"></div>
-				</ul>
 			</div>
-		</div>
+		<?php endif; ?>
 	</main>
 	<?php get_footer(); ?>
 </body>
