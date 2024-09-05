@@ -1,0 +1,31 @@
+@import "../inc/vars";
+@import "../inc/mixins";
+@import "../inc/extends";
+@import "../inc/header";
+@import "../components/header-top-links";
+@import "../components/header-media-common";
+.header-media {
+	height: 630px;
+	transition: height 0.5s;
+	@media (max-width: $breakLarge) {
+		height: 730px;
+	}
+	@media (max-width: $breakSmall) {
+		height: 340px;
+	}
+}
+@import "../components/header-menu";
+@import "../components/hp-tracking";
+// @import "../blocks/single-features";
+@import "../blocks/cars-table";
+// @import "../blocks/why-we";
+// @import "../blocks/choice";
+// @import "../blocks/single-form";
+// @import "../blocks/faq";
+@import "../blocks/feedbacks";
+
+@import "../blocks/previews";
+@import "../inc/footer";
+main {
+	margin-bottom: clamp(40px, vw(60), 60px);
+}
