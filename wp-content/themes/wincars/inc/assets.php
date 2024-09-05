@@ -8,22 +8,28 @@ function wincars_assets()
 	wp_register_script('swiper', _TEMPLATEPATH . '/assets/libs/swiper/swiper-bundle.min.js', array(), '8.3.1', true);
 
 	if (is_front_page()) {
-		wp_enqueue_style('front-page', _TEMPLATEPATH . '/assets/css/pages/front-page.css', array('base'), '1.0.0');
+		wp_enqueue_style('front-page', _TEMPLATEPATH . '/assets/css/templates/front-page.css', array('base'), '1.0.0');
 		wp_enqueue_style('animate', _TEMPLATEPATH . '/assets/libs/wow/animate.min.css', array(), '3.5.1');
 		wp_enqueue_style('swiper');
 		wp_enqueue_script('wow', _TEMPLATEPATH . '/assets/libs/wow/wow.min.js', array('jquery'), '1.1.3', true);
 		wp_enqueue_script('swiper');
 		wp_enqueue_script('front-page', _TEMPLATEPATH . '/assets/js/front-page.js', array('wow', 'swiper'), '1.0.0', true);
 	}
-	if (is_single()) {
+	if (is_single() && (get_post_type() != 'car')) {
 		wp_enqueue_style('single-header', _TEMPLATEPATH . '/assets/css/first-screen/post-header.css', array('base'), '1.0.0');
 		wp_enqueue_style('single', _TEMPLATEPATH . '/assets/css/single.css', array('base', 'single-header'), '1.0.0');
 		wp_enqueue_style('swiper');
 		wp_enqueue_script('swiper');
 		wp_enqueue_script('single', _TEMPLATEPATH . '/assets/js/single.js', array('jquery', 'swiper'), '1.0.0', true);
 	}
+	if (get_post_type() === 'car') {
+		wp_enqueue_style('single-car', _TEMPLATEPATH . '/assets/css/templates/single-car.css', array('base'), '1.0.0');
+		wp_enqueue_style('swiper');
+		wp_enqueue_script('swiper');
+		wp_enqueue_script('single-car', _TEMPLATEPATH . '/assets/js/single-car.js', array('jquery', 'swiper'), '1.0.0', true);
+	}
 	if (is_page_template('templates/about.php')) {
-		wp_enqueue_style('about-page', _TEMPLATEPATH . '/assets/css/pages/about.css', array('base'), '1.0.0');
+		wp_enqueue_style('about-page', _TEMPLATEPATH . '/assets/css/templates/about.css', array('base'), '1.0.0');
 		wp_enqueue_script('about-page', _TEMPLATEPATH . '/assets/js/about.js', array('main'), '1.0.0', true);
 	}
 	// if (is_page_template('service-pages/all-pdf.php')) {
