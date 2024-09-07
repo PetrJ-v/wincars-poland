@@ -32,6 +32,13 @@ function wincars_assets()
 		wp_enqueue_style('about-page', _TEMPLATEPATH . '/assets/css/templates/about.css', array('base'), '1.0.0');
 		wp_enqueue_script('about-page', _TEMPLATEPATH . '/assets/js/about.js', array('main'), '1.0.0', true);
 	}
+	if (is_page_template('templates/contacts.php')) {
+		wp_enqueue_style('contacts-page', _TEMPLATEPATH . '/assets/css/templates/contacts.css', array('base'), '1.0.0');
+		wp_enqueue_style('animate', _TEMPLATEPATH . '/assets/libs/wow/animate.min.css', array(), '3.5.1');
+		wp_enqueue_script('wow', _TEMPLATEPATH . '/assets/libs/wow/wow.min.js', array('jquery'), '1.1.3', true);
+		wp_enqueue_script('contacts-page', _TEMPLATEPATH . '/assets/js/contacts.js', array('jquery', 'wow'), '1.0.0', true);
+		wp_enqueue_script('contact-form', _TEMPLATEPATH . '/assets/js/blocks/contact-form.js', array(), '1.0.0', true);
+	}
 	// if (is_page_template('service-pages/all-pdf.php')) {
 	// 	wp_enqueue_style('all-pdf', _TEMPLATEPATH . '/assets/css/all-pdf.css', array(), '1.0.3');
 	// }

@@ -43,8 +43,19 @@ function disable_wp_editor()
 	// remove_post_type_support('post', 'editor');
 	remove_post_type_support('pdf-price', 'editor');
 	remove_post_type_support('collage', 'editor');
+	remove_post_type_support('car', 'editor');
 }
 
 // Disable contact form 7 styles and paragraths
 add_filter('wpcf7_autop_or_not', '__return_false');
 add_filter('wpcf7_load_css', '__return_false');
+
+function scalato_disable_gutenberg($use_block_editor, $post)
+{
+	if (get_post_type() === 'car') {
+		return false;
+	}
+	// return
+	return $use_block_editor; // for exludes
+}
+add_filter('use_block_editor_for_post', 'scalato_disable_gutenberg', 10, 2);

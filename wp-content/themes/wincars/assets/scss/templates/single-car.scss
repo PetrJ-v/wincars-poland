@@ -249,7 +249,9 @@
 			font-size: 14px;
 			text-align: center;
 			color: var(--color-black);
-			background-color: var(--color-orange);
+			&:hover {
+				padding: 10px 35px;
+			}
 		}
 		&__left {
 			padding: clamp(20px, vw(44), 44px) 0;

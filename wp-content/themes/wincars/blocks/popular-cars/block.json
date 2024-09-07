@@ -1,0 +1,17 @@
+{
+    "name": "acf/popular-cars",
+    "title": "Popular cars",
+    "description": "Popular cars",
+	"style": "acf-block-choice",
+    "category": "theme",
+    "icon": "align-full-width",
+    "keywords": ["popular", "cars"],
+    "supports": {
+        "mode": false
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "popular-cars.php"
+    },
+    "align": "full"
+}

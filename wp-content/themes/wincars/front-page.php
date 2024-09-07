@@ -81,7 +81,7 @@
 		</div> -->
 
 		<!-- Cars-wrapper block -->
-		<div class="container">
+		<!-- <div class="container">
 			<div class="cars-wrapper p-tb-30-44">
 				<h2 class="cars-wrapper__title">Най-печелившите коли от Америка</h2>
 				<div class="cars">
@@ -213,7 +213,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<?php the_content(); ?>
 

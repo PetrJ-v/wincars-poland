@@ -103,6 +103,54 @@ $hero_text = get_field('small_intro_text');
 					</div>
 				</div>
 			<?php endif; ?>
+
+			<?php $lot_number = get_field('lot_number'); ?>
+			<?php if ($lot_number || have_rows('lot_info')) : ?>
+				<div class="lot">
+					<div class="lot__left">
+						<?php if ($lot_number) : ?>
+							<div class="lot__title">Търг <?php echo esc_html($lot_number); ?></div>
+						<?php endif; ?>
+
+						<?php if (have_rows('lot_info')) : ?>
+
+							<?php while (have_rows('lot_info')) : the_row(); ?>
+
+								<?php
+								$info_name = get_sub_field('name');
+								$info_value = get_sub_field('value');
+								$is_active = get_sub_field('active');
+								?>
+								<?php if ($info_name || $info_value) : ?>
+									<div class="lot-info">
+										<?php if ($info_name) : ?>
+											<div class="lot-info__name"><?php echo esc_html($info_name); ?></div>
+										<?php endif; ?>
+										<?php if ($info_value) : ?>
+											<div class="lot-info__value <?php if($is_active) echo 'lot-info__value--active'; ?>"><?php echo esc_html($info_value); ?></div>
+										<?php endif; ?>
+									</div>
+								<?php endif; ?>
+
+							<?php endwhile; ?>
+
+						<?php endif; ?>
+
+					</div>
+					<div class="lot__right">
+						<div class="lot-subscribe">
+							<div class="lot-subscribe__left">
+								<div class="lot-subscribe__title">Харесваш автомобила?</div>
+								<div class="lot-subscribe__info">Оставете заявка и ние ще се свържем с вас, за да предоставим цялата необходима информация</div>
+								<div class="lot-subscribe__btn accent-btn open-popup" data-target="main-form">Получите оферта</div>
+							</div>
+							<div class="lot-subscribe__right">
+								<video preload="none" muted="" playsinline="" loop="" poster="<?php echo _TEMPLATEPATH; ?>/assets/video/form-video-poster.jpg" src="<?php echo _TEMPLATEPATH; ?>/assets/video/form-video.mp4"></video>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php endif; ?>
 		</div>
 	</main>
 
