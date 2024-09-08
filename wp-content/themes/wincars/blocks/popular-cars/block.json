@@ -2,7 +2,7 @@
     "name": "acf/popular-cars",
     "title": "Popular cars",
     "description": "Popular cars",
-	"style": "acf-block-choice",
+	"style": "acf-block-popular-cars",
     "category": "theme",
     "icon": "align-full-width",
     "keywords": ["popular", "cars"],

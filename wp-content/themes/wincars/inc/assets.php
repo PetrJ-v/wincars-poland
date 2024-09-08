@@ -39,6 +39,18 @@ function wincars_assets()
 		wp_enqueue_script('contacts-page', _TEMPLATEPATH . '/assets/js/contacts.js', array('jquery', 'wow'), '1.0.0', true);
 		wp_enqueue_script('contact-form', _TEMPLATEPATH . '/assets/js/blocks/contact-form.js', array(), '1.0.0', true);
 	}
+	if (is_page_template('templates/faq.php')) {
+		wp_enqueue_style('faq-page', _TEMPLATEPATH . '/assets/css/templates/faq.css', array('base'), '1.0.0');
+		wp_enqueue_style('animate', _TEMPLATEPATH . '/assets/libs/wow/animate.min.css', array(), '3.5.1');
+		wp_enqueue_script('wow', _TEMPLATEPATH . '/assets/libs/wow/wow.min.js', array('jquery'), '1.1.3', true);
+		wp_enqueue_script('contacts-page', _TEMPLATEPATH . '/assets/js/faq.js', array('jquery', 'wow'), '1.0.0', true);
+	}
+	if (is_page_template('templates/blog.php')) {
+		wp_enqueue_style('blog', _TEMPLATEPATH . '/assets/css/blog.css', array('base'), '1.0.0');
+		wp_enqueue_style('animate', _TEMPLATEPATH . '/assets/libs/wow/animate.min.css', array(), '3.5.1');
+		wp_enqueue_script('wow', _TEMPLATEPATH . '/assets/libs/wow/wow.min.js', array('jquery'), '1.1.3', true);
+		wp_enqueue_script('contacts-page', _TEMPLATEPATH . '/assets/js/blog.js', array('jquery', 'wow'), '1.0.0', true);
+	}
 	// if (is_page_template('service-pages/all-pdf.php')) {
 	// 	wp_enqueue_style('all-pdf', _TEMPLATEPATH . '/assets/css/all-pdf.css', array(), '1.0.3');
 	// }
