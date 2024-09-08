@@ -1,40 +1,41 @@
 .site-pagination {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	font-family: "Montserrat";
-	&__links {
+	.page-numbers {
+		margin: 4px;
 		display: flex;
-		column-gap: 4px;
-		.page-numbers {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			min-width: clamp(34px, vw(40), 40px);
-			max-width: clamp(34px, vw(40), 40px);
-			height: clamp(34px, vw(40), 40px);
-			font-weight: 400;
-			font-size: 14px;
-			color: #fff;
-			line-height: 1;
-			border-radius: 8px;
-			background-color: transparent;
-			transition: background-color 0.3s;
-			&:hover, &.current {
-				background-color: #303030;
-			}
-			&.dots {
-				pointer-events: none;
-			}
+		justify-content: center;
+		align-items: center;
+		min-width: clamp(34px, vw(40), 40px);
+		max-width: clamp(34px, vw(40), 40px);
+		height: clamp(34px, vw(40), 40px);
+		font-weight: 400;
+		font-size: 14px;
+		color: #fff;
+		line-height: 1;
+		border-radius: 8px;
+		background-color: transparent;
+		transition: background-color 0.3s;
+		&:hover, &.current {
+			background-color: #303030;
+		}
+		&.dots {
+			pointer-events: none;
 		}
 	}
 	.prev, .next {
+		max-width: 100%;
 		display: flex;
 		align-items: center;
 		column-gap: 8px;
 		color: #fff;
 		opacity: 0.8;
 		transition: opacity 0.3s;
+		// svg {
+		// 	min-width: 20px;
+		// }
 		span {
 			font-weight: 600;
 			@media (max-width: $breakSmall) {
@@ -42,6 +43,7 @@
 			}
 		}
 		&:hover {
+			background: none;
 			opacity: 1;
 		}
 	}
