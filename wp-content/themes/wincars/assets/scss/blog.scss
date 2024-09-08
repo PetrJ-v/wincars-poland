@@ -24,13 +24,6 @@
 @import "components/video-wrapper";
 @import "blocks/previews";
 
-.featured-post {
-	.video-wrapper,
-	.featured-post__img {
-		margin-bottom: 28px;
-	}
-}
-
 .posts-previews {
 	display: flex;
 	flex-wrap: wrap;

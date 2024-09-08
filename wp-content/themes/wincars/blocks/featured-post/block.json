@@ -1,0 +1,17 @@
+{
+    "name": "acf/featured-post",
+    "title": "Featured post",
+    "description": "Insert featured post",
+	"style": "acf-block-featured-post",
+    "category": "theme",
+    "icon": "align-full-width",
+    "keywords": ["featured", "post"],
+    "supports": {
+        "mode": false
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "featured-post.php"
+    },
+    "align": "full"
+}
