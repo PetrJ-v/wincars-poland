@@ -28,12 +28,15 @@
 							'depth'           => 1,
 						]);
 						?>
+						<a href="<?php echo get_home_url(); ?>" class="header-logo img-wrapper">
+							<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/logo-orange.svg" alt="Wincars logo">
+						</a>
 					</div>
 					<?php if (get_field('video_poster')) : ?>
 						<?php $video_poster = get_field('video_poster'); ?>
 						<div class="header-media__img">
 							<!-- autoplay="" -->
-							<video preload="none" muted="" playsinline="" loop="" poster="<?php echo $video_poster; ?>" src="<?php the_field('video'); ?>"></video>
+							<video preload="none" autoplay="" muted="" playsinline="" loop="" poster="<?php echo $video_poster; ?>" src="<?php the_field('video'); ?>"></video>
 						</div>
 					<?php endif; ?>
 					<?php $cta_button_text = (get_field('cta_button_text')) ? get_field('cta_button_text') : 'Остави запитване'; ?>

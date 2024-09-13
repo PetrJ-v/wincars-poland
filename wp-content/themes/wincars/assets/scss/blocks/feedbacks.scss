@@ -61,3 +61,25 @@
 	}
 }
 @import "../components/feedback";
+.testimonials {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 20px;
+	@media (max-width: $breakSmall) {
+		flex-direction: column;
+	}
+
+	.feedback {
+		min-width: 100%;
+		max-width: 100%;
+		@media (min-width: $breakSmall) {
+			min-width: calc(50% - 10px);
+			max-width: calc(50% - 10px);
+		}
+		@media (min-width: $breakMedium) {
+			min-width: calc(100% / 3 - 40px / 3);
+			max-width: calc(100% / 3 - 40px / 3);
+		}
+	}
+}

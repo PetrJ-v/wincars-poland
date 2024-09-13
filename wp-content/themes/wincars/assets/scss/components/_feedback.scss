@@ -60,4 +60,13 @@
 		min-height: 51px;
 		@extend %feedback-content;
 	}
+	&__content-link {
+		margin-top: 5px;
+		display: block;
+		color: var(--color-orange);
+		text-decoration: none;
+		&:hover {
+			color: var(--color-orange-hover);
+		}
+	}
 }

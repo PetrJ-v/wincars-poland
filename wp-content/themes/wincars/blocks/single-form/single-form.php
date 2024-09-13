@@ -12,19 +12,19 @@ $single_form_shortcode = get_field('single_form_shortcode');
 				<div class="single-form__subtitle wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s"><?php echo esc_html($single_form_subtitle); ?></div>
 			<?php endif; ?>
 			<?php if ($single_form_title) : ?>
-				<h2 class="single-form__title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+				<h2 class="single-form__title wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
 					<?php echo esc_html($single_form_title); ?>
 				</h2>
 			<?php endif; ?>
 
 			<?php if ($single_form_text) : ?>
-				<div class="single-form__text wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+				<div class="single-form__text wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
 					<?php echo $single_form_text; ?>
 				</div>
 			<?php endif; ?>
 
 			<?php if ($single_form_shortcode) : ?>
-				<div class="single-form__form align-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+				<div class="single-form__form align-center wow fadeInUp flipInY" data-wow-duration="1.5s" data-wow-delay="1.5s">
 					<?php echo do_shortcode($single_form_shortcode); ?>
 				</div>
 			<?php endif; ?>

@@ -17,8 +17,8 @@
 	<header>
 		<div class="header">
 			<div class="header-container">
-				@@include('components/header-top-links.html')
-				<div class="header-media active" data-function="toggleClassName" data-anim="true">
+				<!-- @@include('components/header-top-links.html') -->
+				<div class="header-media">
 					<div class="header-menu-wrapper">
 						@@include('components/menu-btn.html')
 						<nav class="header-menu">
@@ -50,7 +50,7 @@
 								Гордеем се, че надминахме техните очаквания!
 							</div>
 						</div>
-						<div class="header-media__info-img cover-img">
+						<div class="header-media__info-img cover-img active" data-function="toggleClassName" data-anim="true">
 							<img src="@img/testimonials/testimonials-header.jpg">
 						</div>
 					</div>
@@ -288,42 +288,6 @@
 			</div>
 		</div>
 
-		<!-- Pagination -->
-		<div class="container">
-			<div class="site-pagination p-tb-30-44">
-				<div class="site-pagination__prev">
-					<a class="prev page-numbers" href="#">
-						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M15.8334 9.99999H4.16675M4.16675 9.99999L10.0001 15.8333M4.16675 9.99999L10.0001 4.16666"
-								stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-						</svg>
-						<span>Previous</span>
-					</a>
-				</div>
-				<div class="site-pagination__links">
-					<a class="page-numbers" href="#">1</a>
-					<span aria-current="page" class="page-numbers current">2</span>
-					<a class="page-numbers" href="#">3</a>
-					<span class="page-numbers dots">…</span>
-					<a class="page-numbers" href="#">8</a>
-					<a class="page-numbers" href="#">9</a>
-					<a class="page-numbers" href="#">10</a>
-				</div>
-				<div class="site-pagination__next">
-					<a class="next page-numbers" href="#">
-						<span>Next</span>
-						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M4.16663 9.99999H15.8333M15.8333 9.99999L9.99996 4.16666M15.8333 9.99999L9.99996 15.8333"
-								stroke="#FDFDFD" stroke-width="1.66667" stroke-linecap="round"
-								stroke-linejoin="round" />
-						</svg>
-					</a>
-				</div>
-			</div>
-		</div>
-
 		<!-- Single form block -->
 		<div class="container">
 			<div class="single-form p-tb-30-44 align-center">
@@ -331,9 +295,7 @@
 					Абонирайте се за актуализации на бъдете в крак с всички новини WINCARS
 				</h2>
 				<div class="single-form__text wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
-					Получавайте ексклузивни оферти, последните новини за нови автомобили и полезни съвети директно във
-					вашата поща. Присъединете се към нашето семейство от доволни клиенти и не пропускайте нито една
-					възможност!
+					Получавайте ексклузивни оферти, последните новини за нови автомобили и полезни съвети директно във вашата поща. Присъединете се към нашето семейство от доволни клиенти и не пропускайте нито една възможност!
 				</div>
 				<div class="single-form__form align-center wow fadeInUp flipInY" data-wow-duration="1.5s" data-wow-delay="1.5s">
 					<div class="wpcf7 js" id="wpcf7-f168-o1" lang="en-US" dir="ltr">
@@ -376,7 +338,7 @@
 		</div>
 
 		<!-- Promo block -->
-		<div class="promo-wrapper">
+		<!-- <div class="promo-wrapper">
 			<div class="promo img-wrapper">
 				<div class="promo-content">
 					<div class="promo-content__img img-wrapper wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0s">
@@ -400,7 +362,7 @@
 				</div>
 				<button class="promo-content__btn align-center wow fadeInUp flipInY" data-wow-duration="2.5s" data-wow-delay="0.4s">ОСТАВИ ЗАПИТВАНЕ</button>
 			</div>
-		</div>
+		</div> -->
 
 	</main>
 	<footer>

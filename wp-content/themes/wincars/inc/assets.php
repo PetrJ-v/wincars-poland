@@ -2,10 +2,12 @@
 function wincars_assets()
 {
 
-	wp_enqueue_style('base', _TEMPLATEPATH . '/assets/css/base-styles.css', array(), '1.0.0');
-	wp_enqueue_script('main', _TEMPLATEPATH . '/assets/js/main.js', ['jquery'], '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
-	wp_register_style('swiper', _TEMPLATEPATH . '/assets/libs/swiper/swiper.min.css', array(), '8.3.1');
-	wp_register_script('swiper', _TEMPLATEPATH . '/assets/libs/swiper/swiper-bundle.min.js', array(), '8.3.1', true);
+	if (!is_page_template('service-pages/all-pdf.php') && !is_page_template('service-pages/watermark.php') && !(get_post_type() === 'pdf-price') && !(get_post_type() === 'collage')){
+		wp_enqueue_style('base', _TEMPLATEPATH . '/assets/css/base-styles.css', array(), '1.0.0');
+		wp_enqueue_script('main', _TEMPLATEPATH . '/assets/js/main.js', ['jquery'], '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
+		wp_register_style('swiper', _TEMPLATEPATH . '/assets/libs/swiper/swiper.min.css', array(), '8.3.1');
+		wp_register_script('swiper', _TEMPLATEPATH . '/assets/libs/swiper/swiper-bundle.min.js', array(), '8.3.1', true);
+	}
 
 	if (is_front_page()) {
 		wp_enqueue_style('front-page', _TEMPLATEPATH . '/assets/css/templates/front-page.css', array('base'), '1.0.0');
@@ -51,24 +53,30 @@ function wincars_assets()
 		wp_enqueue_script('wow', _TEMPLATEPATH . '/assets/libs/wow/wow.min.js', array('jquery'), '1.1.3', true);
 		wp_enqueue_script('contacts-page', _TEMPLATEPATH . '/assets/js/blog.js', array('jquery', 'wow'), '1.0.0', true);
 	}
-	// if (is_page_template('service-pages/all-pdf.php')) {
-	// 	wp_enqueue_style('all-pdf', _TEMPLATEPATH . '/assets/css/all-pdf.css', array(), '1.0.3');
-	// }
-	// if (is_page_template('service-pages/watermark.php')) {
-	// 	wp_enqueue_style('watermark', _TEMPLATEPATH . '/assets/css/watermark.css', array(), '1.0.0');
+	if (is_page_template('templates/page-feedbacks.php')) {
+		wp_enqueue_style('testimonials', _TEMPLATEPATH . '/assets/css/templates/testimonials.css', array('base'), '1.0.0');
+		wp_enqueue_style('animate', _TEMPLATEPATH . '/assets/libs/wow/animate.min.css', array(), '3.5.1');
+		wp_enqueue_script('wow', _TEMPLATEPATH . '/assets/libs/wow/wow.min.js', array('jquery'), '1.1.3', true);
+		wp_enqueue_script('testimonials', _TEMPLATEPATH . '/assets/js/testimonials.js', array('jquery', 'wow'), '1.0.0', true);
+	}
+	if (is_page_template('service-pages/all-pdf.php')) {
+		wp_enqueue_style('all-pdf', _TEMPLATEPATH . '/assets/css/all-pdf.css', array(), '1.0.3');
+	}
+	if (is_page_template('service-pages/watermark.php')) {
+		wp_enqueue_style('watermark', _TEMPLATEPATH . '/assets/css/watermark.css', array(), '1.0.0');
 
-	// 	wp_enqueue_script('html2canvas', _TEMPLATEPATH . '/assets/libs/html2canvas/html2canvas-1.4.1.min.js', array(), '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
-	// 	wp_enqueue_script('jszip', _TEMPLATEPATH . '/assets/libs/jszip/jszip.min.js', array(), '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
-	// 	wp_enqueue_script('file-saver', _TEMPLATEPATH . '/assets/libs/file-saver/file-saver.min.js', array(), '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
-	// 	wp_enqueue_script('watermark', _TEMPLATEPATH . '/assets/js/watermark.js', ['html2canvas', 'jszip', 'file-saver'], '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
-	// }
-	// if (get_post_type() === 'pdf-price') {
-	// 	wp_enqueue_style('single-pdf', _TEMPLATEPATH . '/assets/css/single-pdf.css', array(), '1.0.3');
-	// }
-	// if (get_post_type() === 'collage') {
-	// 	wp_enqueue_style('collage', _TEMPLATEPATH . '/assets/css/collage.css', array(), '1.0.1');
-	// 	wp_enqueue_script('html2canvas', _TEMPLATEPATH . '/assets/libs/html2canvas/html2canvas-1.0.0-rc.5.min.js', array(), '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
-	// }
+		wp_enqueue_script('html2canvas', _TEMPLATEPATH . '/assets/libs/html2canvas/html2canvas-1.4.1.min.js', array(), '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
+		wp_enqueue_script('jszip', _TEMPLATEPATH . '/assets/libs/jszip/jszip.min.js', array(), '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
+		wp_enqueue_script('file-saver', _TEMPLATEPATH . '/assets/libs/file-saver/file-saver.min.js', array(), '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
+		wp_enqueue_script('watermark', _TEMPLATEPATH . '/assets/js/watermark.js', ['html2canvas', 'jszip', 'file-saver'], '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
+	}
+	if (get_post_type() === 'pdf-price') {
+		wp_enqueue_style('single-pdf', _TEMPLATEPATH . '/assets/css/single-pdf.css', array(), '1.0.3');
+	}
+	if (get_post_type() === 'collage') {
+		wp_enqueue_style('collage', _TEMPLATEPATH . '/assets/css/collage.css', array(), '1.0.1');
+		wp_enqueue_script('html2canvas', _TEMPLATEPATH . '/assets/libs/html2canvas/html2canvas-1.0.0-rc.5.min.js', array(), '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
+	}
 	// wp_enqueue_script('main-scripts', _TEMPLATEPATH . '/assets/js/main.js', ['jquery'], '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
 }
 

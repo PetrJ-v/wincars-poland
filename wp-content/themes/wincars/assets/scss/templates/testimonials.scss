@@ -41,24 +41,15 @@
 	}
 }
 .header-media {
-	height: calc(604px * 0.6);
+	height: 604px;
 	@media (max-width: 799.98px) {
-		height: calc(650px * 0.6);
+		height: 650px;
+	}
+	@media (max-width: 729.98px) {
+		height: 800px;
 	}
 	@media (max-width: $breakSmall) {
-		height: calc(350px * 0.6);
-	}
-	&.active {
-		height: 604px;
-		@media (max-width: 799.98px) {
-			height: 650px;
-		}
-		@media (max-width: 729.98px) {
-			height: 800px;
-		}
-		@media (max-width: $breakSmall) {
-			height: 350px;
-		}
+		height: 350px;
 	}
 	.header-menu {
 		.menu {
@@ -116,37 +107,24 @@
 			min-width: 48%;
 			max-width: 48%;
 		}
+		img {
+			transform: scale(1.2);
+			transition: transform 0.7s;
+		}
+		&.active {
+			img {
+				transform: scale(1);
+			}
+		}
 	}
 }
 @import "../components/header-menu";
 
-@import "../components/feedback";
-.testimonials {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: flex-start;
-	gap: 20px;
-	@media (max-width: $breakSmall) {
-		flex-direction: column;
-	}
+// @import "../components/feedback";
 
-	.feedback {
-		min-width: 100%;
-		max-width: 100%;
-		@media (min-width: $breakSmall) {
-			min-width: calc(50% - 10px);
-			max-width: calc(50% - 10px);
-		}
-		@media (min-width: $breakMedium) {
-			min-width: calc(100% / 3 - 40px / 3);
-			max-width: calc(100% / 3 - 40px / 3);
-		}
-	}
-}
 
-@import "../components/pagination";
 @import "../blocks/single-form";
-@import "../blocks/promo";
+// @import "../blocks/promo";
 @import "../inc/footer";
 @import "../components/contact-form";
 @import "../components/popup";

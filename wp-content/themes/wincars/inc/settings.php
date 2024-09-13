@@ -8,7 +8,8 @@ function wincars_setup()
 
 	register_nav_menus(array(
 		'top' => 'Top Menu',
-		'footer' => 'Footer Menu',
+		'footer-left' => 'Footer Menu Left',
+		'footer-right' => 'Footer Menu right',
 	));
 
 	if (function_exists('acf_add_options_page')) {

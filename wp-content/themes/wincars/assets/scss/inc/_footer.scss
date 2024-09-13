@@ -2,7 +2,7 @@
 	font-family: "Montserrat";
 	font-weight: 400;
 	font-size: 14px;
-	line-height: calc(17 / 14);
+	line-height: calc(19 / 14);
 	color: #fff;
 	transition: color 1s;
 }
@@ -74,6 +74,15 @@
 	column-gap: 15px;
 	line-height: 1;
 	&-item {
+		svg  {
+			height: 25px;
+			width: auto;
+		}
+		&--tiktok {
+			svg  {
+				height: 28px;
+			}
+		}
 		svg path {
 			transition: fill 1s;
 		}
@@ -82,7 +91,7 @@
 		}
 	}
 }
-.footer-menu-item {
+.footer-menu .menu {
 	.menu-item {
 		padding: 7px 0;
 		a {
@@ -93,6 +102,8 @@
 		}
 	}
 }
+// .footer-menu-item {
+// }
 .footer__contacts {
 	@media (max-width: $breakMedium) {
 		min-width: 100%;

@@ -102,8 +102,8 @@
 						<?php endif; ?>
 					</div>
 					<div class="location__map img-wrapper">
-						<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2931.840336213333!2d23.30243507615891!3d42.70710141310576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8550fa66f1d5%3A0xedc501a00142aae0!2z0LYu0LouINCR0LDQvdC40YjQvtGA0LAsINGD0LsuIOKAntCS0YDQsNC90Y_igJwgODIsIDEzMDkg0KHQvtGE0LjRjw!5e0!3m2!1sru!2sbg!4v1725749231106!5m2!1sru!2sbg" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-						<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/contacts/map-temp.jpg" loading="lazy">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2935.146047678792!2d23.324694899999997!3d42.6370637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa85f2c8fce2cd%3A0xb6167b1f1735215f!2sWINCARS!5e0!3m2!1sru!2sbg!4v1725880435882!5m2!1sru!2sbg" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<!-- <img src="<?php echo _TEMPLATEPATH; ?>/assets/img/contacts/map-temp.jpg" loading="lazy"> -->
 					</div>
 				</div>
 			</div>
@@ -184,7 +184,7 @@
 								<?php if ($link || $icon || $name || $description) : ?>
 
 								<?php endif; ?>
-								<a href="<?php echo esc_url($link_url); ?>" class="messenger border-24 wow fadeInUp flipInY" data-wow-duration="1.5s">
+								<a href="<?php echo $link_url; ?>" target="<?php echo $link_target; ?>" class="messenger border-24 wow fadeInUp flipInY" data-wow-duration="1.5s">
 									<?php if ($icon) : ?>
 										<div class="messenger__icon img-wrapper">
 											<?php echo wp_get_attachment_image($icon, 'full'); ?>
