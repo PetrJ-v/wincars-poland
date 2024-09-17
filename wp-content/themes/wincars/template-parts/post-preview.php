@@ -1,10 +1,10 @@
 <div class="preview">
 	<?php $post_preview = get_field('post_preview'); ?>
 	<?php if ($post_preview) : ?>
-		<div class="preview__img cover-img">
+		<a href="<?php the_permalink(); ?>" class="preview__img cover-img">
 			<?php echo wp_get_attachment_image($post_preview, 'full'); ?>
 			<div class="preview__img-deco">Прочетете статията</div>
-		</div>
+		</a>
 	<?php endif; ?>
 	<div class="preview__date"><?php echo get_the_date('j F Y') . ' г.'; ?></div>
 	<h3 class="preview__title">
