@@ -1,5 +1,5 @@
 <header>
-	<div class="header">
+	<div class="header header--default">
 		<div class="header-container">
 			<div class="header-media active" data-function="toggleClassName" data-anim="true">
 				<div class="header-menu-wrapper">
@@ -15,6 +15,12 @@
 						'depth'           => 1,
 					]);
 					?>
+					<!-- <a href="<?php echo get_home_url(); ?>" class="header-logo img-wrapper">
+						<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/logo-black-w.svg" alt="Wincars logo">
+					</a> -->
+					<a href="<?php echo get_home_url(); ?>" class="header-logo img-wrapper">
+						<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/logo-white-b.svg" alt="Wincars logo">
+					</a>
 				</div>
 				<div class="header-media__img">
 					<?php

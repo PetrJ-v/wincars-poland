@@ -2,6 +2,7 @@
 get_header();
 $video_poster = get_field('video_poster');
 $video_link = get_field('video');
+$post_preview = get_field('post_preview');
 $hero_text = get_field('small_intro_text');
 ?>
 
@@ -31,6 +32,12 @@ $hero_text = get_field('small_intro_text');
 								</g>
 							</svg>
 						</button>
+					</div>
+				</div>
+			<?php elseif ($post_preview): ?>
+				<div class="container">
+					<div class="main-post-img img-wrapper">
+						<?php echo wp_get_attachment_image($post_preview, 'full'); ?>
 					</div>
 				</div>
 			<?php endif; ?>

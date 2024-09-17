@@ -9,4 +9,19 @@
 			padding: 0;
 		}
 	}
+	&--default {
+		.header-logo {
+			// padding: 10px 19px;
+			// background-color: var(--global-bg-grey);
+			border-radius: 25px;
+			@media (min-width: $breakMedium) and (max-width: $breakLarge){
+				top: 13px;
+			}
+			@media (max-width: 410px) {
+				padding: 5px 7px;
+				right: -15px;
+				min-width: 67px;
+			}
+		}
+	}
 }

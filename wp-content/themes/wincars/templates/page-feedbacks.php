@@ -15,7 +15,7 @@
 
 						<?php
 						wp_nav_menu([
-							'theme_location'  => 'top',
+							'theme_location'  => 'top-feedbacks',
 							'container'       => 'nav',
 							'container_class' => 'header-menu',
 							'echo'            => true,
@@ -24,6 +24,9 @@
 							'depth'           => 1,
 						]);
 						?>
+						<a href="<?php echo get_home_url(); ?>" class="header-logo img-wrapper">
+							<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/logo-white-b.svg" alt="Wincars logo">
+						</a>
 					</div>
 					<div class="header-media__info">
 						<div class="header-media__info-left">

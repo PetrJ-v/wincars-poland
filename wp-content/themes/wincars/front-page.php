@@ -29,7 +29,7 @@
 						]);
 						?>
 						<a href="<?php echo get_home_url(); ?>" class="header-logo img-wrapper">
-							<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/logo-orange.svg" alt="Wincars logo">
+							<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/logo-white-b.svg" alt="Wincars logo">
 						</a>
 					</div>
 					<?php if (get_field('video_poster')) : ?>

@@ -30,7 +30,6 @@ $popular_cars_id = get_field('popular_cars');
 							<?php endif; ?>
 							<a href="<?php echo get_the_permalink($post_id); ?>" class="car__link">
 								<span class="car__link-text">
-									<span class="hidden-text">Отивам</span>
 									<?php $car_price = get_field('price_value', $post_id); ?>
 									<?php if ($car_price) : ?>
 										<span class="visible-text">$ <?php echo esc_html($car_price); ?></span>

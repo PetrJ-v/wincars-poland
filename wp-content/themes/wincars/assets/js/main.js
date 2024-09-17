@@ -106,11 +106,11 @@
 				$('body').addClass('menu-open');
 				setTimeout(() => {
 					$('.menu').addClass('menu--visible');
-				}, 500)
+				}, 400)
 				setTimeout(() => {
 					$('.header-menu').addClass('header-menu--opened');
 					$(this).addClass('opened');
-				}, 600)
+				}, 500)
 			}
 			else {
 				$('.header-menu').removeClass('header-menu--opened');
@@ -118,7 +118,7 @@
 					$('.menu').removeClass('menu--visible');
 					$('body').removeClass('menu-open');
 					$(this).removeClass('opened');
-				}, 800)
+				}, 600)
 			}
 		})
 

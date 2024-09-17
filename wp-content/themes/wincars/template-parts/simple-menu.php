@@ -1,7 +1,7 @@
 <div class="simple-menu-wrapper">
 	<div class="header-media">
 		<div class="header-menu-wrapper">
-			<?php get_template_part('header-menu-btn'); ?>
+			<?php get_template_part('template-parts/header-menu-btn'); ?>
 			<?php
 			wp_nav_menu([
 				'theme_location'  => 'top',
@@ -13,25 +13,12 @@
 				'depth'           => 1,
 			]);
 			?>
-			<!-- <nav class="header-menu">
-				<ul id="menu-main-navigation" class="menu">
-					<li class="menu-item current-menu-item current_page_item">
-						<a href="/html/front-page.html" aria-current="page">Главната</a>
-					</li>
-					<li class="menu-item menu-item-has-children">
-						<a href="#">Автомобили</a>
-					</li>
-					<li id="menu-item-1052" class="menu-item menu-item-has-children">
-						<a href="/html/about.html">За нас</a>
-					</li>
-					<li id="menu-item-1053" class="menu-item">
-						<a href="/html/faq.html">FAQ</a>
-					</li>
-					<li id="menu-item-1053" class="menu-item">
-						<a href="/html/contacts.html">Контакти</a>
-					</li>
-				</ul>
-			</nav> -->
+			<!-- <a href="<?php echo get_home_url(); ?>" class="header-logo img-wrapper">
+				<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/logo-black-w.svg" alt="Wincars logo">
+			</a> -->
+			<a href="<?php echo get_home_url(); ?>" class="header-logo img-wrapper">
+				<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/logo-white-b.svg" alt="Wincars logo">
+			</a>
 		</div>
 		<div class="header-media__cta">
 			<div class="header-media__cta-btn-wrapper">

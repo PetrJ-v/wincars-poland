@@ -40,14 +40,6 @@
 			.car__link {
 				column-gap: 25px;
 			}
-			.visible-text{
-				font-size: 0;
-				line-height: 0;
-			}
-			.hidden-text{
-				font-size: clamp(16px, vw(24), 24px);
-				line-height: 1;
-			}
 		}
 	}
 	.car__img {
@@ -103,12 +95,6 @@
 		}
 		.visible-text {
 			display: inline-block;
-			transition: 0.3s;
-		}
-		.hidden-text {
-			display: inline-block;
-			font-size: 0;
-			line-height: 0;
 			transition: 0.3s;
 		}
 	}

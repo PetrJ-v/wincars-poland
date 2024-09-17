@@ -7,6 +7,7 @@ function wincars_setup()
 	load_theme_textdomain('wincars', get_template_directory());
 
 	register_nav_menus(array(
+		'top-feedbacks' => 'Top Menu Feedbacks',
 		'top' => 'Top Menu',
 		'footer-left' => 'Footer Menu Left',
 		'footer-right' => 'Footer Menu right',

@@ -16,6 +16,9 @@
 	.header-menu-wrapper {
 		top: unset;
 		position: unset;
+		@media (max-width: $breakMedium) {
+			position: relative;
+		}
 	}
 	.header-media__cta {
 		aspect-ratio: unset;
@@ -27,9 +30,22 @@
 			top: unset;
 			right: unset;
 		}
+		@media (max-width: $breakLarge) {
+			top: 36%;
+			transform: translateY(-50%);
+		}
+	}
+	.header-logo {
+		@media (min-width: $breakMedium) and (max-width: $breakLarge){
+			top: 8px;
+		}
 	}
 	.header-media__cta-btn {
 		top: 0;
+		@media (max-width: $breakMedium) {
+			top: 50%;
+			transform: translateY(-50%);
+		}
 	}
 	.header-menu-btn {
 		background: url("../../img/header-menu-contur-black.svg") no-repeat;
