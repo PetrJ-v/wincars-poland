@@ -54,11 +54,13 @@ get_header(); ?>
 
 	<main>
 		<div class="container 404 text-align-center">
-			<h1 class="page-title small mt-45-f"><?php _e('Sorry…', 'indiana'); ?></h1>
+			<h1 class="page-title small mt-45-f">404</h1>
 			<div class="mt-45-f">
-				<?php _e('The page you were looking for does not exist.', 'indiana'); ?>
+				<div class="message">
+					<p>Търсената страницата не е намерена</p>
+					<a href="<?php echo get_home_url(); ?>" tabindex="0" class="link-to-home mt-30-f">Обратно в началото</a>
+				</div>
 			</div>
-			<a href="#" tabindex="0" class="arrow-link mt-30-f"><?php _e('BACK TO HOME PAGE', 'indiana'); ?></a>
 		</div>
 	</main>
 

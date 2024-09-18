@@ -46,7 +46,7 @@
 		left: calc((100vw - 174px + 58px) / 2);
 	}
 	@media (max-width: 410px) {
-		// top: 55%;
+		top: 22px;
 		// right: -20px;
 		min-width: clamp(60px, calc(100 / 410 * 100vw), 100px);
 		max-width: clamp(60px, calc(100 / 410 * 100vw), 100px);
@@ -205,16 +205,12 @@ body.menu-open {
 		position: fixed;
 		padding-top: 20px;
 		top: 0;
-		// top: 49px;
 		width: 100vw;
 		height: calc(100dvh - 50px);
 		border-radius: 0;
 		@media (max-width: 500px) {
 			height: calc(100dvh - 36px);
 		}
-		// @media (max-width: 400px) {
-		// 	top: 36px;
-		// }
 	}
 	.simple-menu-wrapper {
 		.header-menu-wrapper {

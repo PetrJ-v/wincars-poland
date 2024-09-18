@@ -1,14 +1,14 @@
-@import "inc/vars";
-@import "inc/mixins";
-@import "inc/extends";
+@import "../inc/vars";
+@import "../inc/mixins";
+@import "../inc/extends";
 
-@import "inc/header";
-@import "components/header-top-links";
-@import "components/header-media-common";
-@import "components/header-media-page";
-@import "components/header-menu";
+@import "../inc/header";
+@import "../components/header-top-links";
+@import "../components/header-media-common";
+@import "../components/header-media-page";
+@import "../components/header-menu";
 
-@import "blocks/single-form";
+@import "../blocks/single-form";
 
 .single-form {
 	margin-top: 16px;
@@ -21,8 +21,8 @@
 	}
 }
 
-@import "components/video-wrapper";
-@import "blocks/previews";
+@import "../components/video-wrapper";
+@import "../blocks/previews";
 
 .posts-previews {
 	display: flex;
@@ -43,12 +43,12 @@
 		}
 	}
 }
-@import "components/pagination";
+@import "../components/pagination";
 // @import "blocks/promo";
 
-@import "inc/footer";
-@import "components/contact-form";
-@import "components/popup";
+@import "../inc/footer";
+@import "../components/contact-form";
+@import "../components/popup";
 main {
 	margin-bottom: clamp(40px, vw(60), 60px);
 }

@@ -48,7 +48,7 @@ function wincars_assets()
 		wp_enqueue_script('contacts-page', _TEMPLATEPATH . '/assets/js/faq.js', array('jquery', 'wow'), '1.0.0', true);
 	}
 	if (is_page_template('templates/blog.php')) {
-		wp_enqueue_style('blog', _TEMPLATEPATH . '/assets/css/blog.css', array('base'), '1.0.2');
+		wp_enqueue_style('blog', _TEMPLATEPATH . '/assets/css/templates/blog.css', array('base'), '1.0.2');
 		wp_enqueue_style('animate', _TEMPLATEPATH . '/assets/libs/wow/animate.min.css', array(), '3.5.1');
 		wp_enqueue_script('wow', _TEMPLATEPATH . '/assets/libs/wow/wow.min.js', array('jquery'), '1.1.3', true);
 		wp_enqueue_script('contacts-page', _TEMPLATEPATH . '/assets/js/blog.js', array('jquery', 'wow'), '1.0.0', true);
@@ -76,6 +76,9 @@ function wincars_assets()
 	if (get_post_type() === 'collage') {
 		wp_enqueue_style('collage', _TEMPLATEPATH . '/assets/css/collage.css', array(), '1.0.2');
 		wp_enqueue_script('html2canvas', _TEMPLATEPATH . '/assets/libs/html2canvas/html2canvas-1.0.0-rc.5.min.js', array(), '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
+	}
+	if (is_404()) {
+		wp_enqueue_style('404', _TEMPLATEPATH . '/assets/css/404.css', array('base'), '1.0.0');
 	}
 	// wp_enqueue_script('main-scripts', _TEMPLATEPATH . '/assets/js/main.js', ['jquery'], '1.0.0', ['in_footer' => true, 'strategy'  => 'async']);
 }
