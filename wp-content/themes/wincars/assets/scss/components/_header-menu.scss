@@ -37,16 +37,19 @@
 	@media (max-width: $breakMedium) {
 		min-width: clamp(100px, calc(124 / 768 * 100vw), 124px);
 		max-width: clamp(100px, calc(124 / 768 * 100vw), 124px);
-		top: 50%;
-		left: unset;
-		right: -30px;
-		transform: translate(100%, -50%);
+		// top: 50%;
+		// left: unset;
+		// right: -30px;
+		// transform: translate(100%, -50%);
+	}
+	@media (max-width: $breakSmall) {
+		left: calc((100vw - 174px + 58px) / 2);
 	}
 	@media (max-width: 410px) {
-		top: 55%;
-		right: -20px;
-		min-width: 60px;
-		max-width: 60px;
+		// top: 55%;
+		// right: -20px;
+		min-width: clamp(60px, calc(100 / 410 * 100vw), 100px);
+		max-width: clamp(60px, calc(100 / 410 * 100vw), 100px);
 	}
 }
 .header-menu-btn {
@@ -149,24 +152,24 @@
 			justify-content: center;
 			transform: translateX(-100vw);
 			transition: transform 0.3s;
-			&:nth-child(1) {
-				transition-delay: 0s;
-			}
-			&:nth-child(2) {
-				transition-delay: 0.1s;
-			}
-			&:nth-child(3) {
-				transition-delay: 0.2s;
-			}
-			&:nth-child(4) {
-				transition-delay: 0.3s;
-			}
-			&:nth-child(5) {
-				transition-delay: 0.4s;
-			}
-			&:nth-child(6) {
-				transition-delay: 0.5s;
-			}
+			// &:nth-child(1) {
+			// 	transition-delay: 0s;
+			// }
+			// &:nth-child(2) {
+			// 	transition-delay: 0.1s;
+			// }
+			// &:nth-child(3) {
+			// 	transition-delay: 0.2s;
+			// }
+			// &:nth-child(4) {
+			// 	transition-delay: 0.3s;
+			// }
+			// &:nth-child(5) {
+			// 	transition-delay: 0.4s;
+			// }
+			// &:nth-child(6) {
+			// 	transition-delay: 0.5s;
+			// }
 		}
 		a {
 			padding: 12px 0;

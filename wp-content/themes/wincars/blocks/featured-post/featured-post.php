@@ -21,7 +21,7 @@ $featured_post_exerpt = get_the_excerpt($featured_post_id);
 			</div>
 		<?php elseif ($post_preview) : ?>
 			<div class="featured-post__img img-wrapper">
-				<?php echo wp_get_attachment_image($post_preview); ?>
+				<?php echo wp_get_attachment_image($post_preview, 'full'); ?>
 			</div>
 		<?php endif; ?>
 		<div class="featured-post__preview preview">

@@ -13,7 +13,8 @@
 		transform: translate(-50%, -50%);
 		border-radius: clamp(24px, vw(32), 32px);
 		overflow: hidden;
-		img, video {
+		img,
+		video {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
@@ -25,14 +26,20 @@
 	&__cta {
 		position: absolute;
 		width: clamp(250px, vw(305), 305px);
-		aspect-ratio: 305 / 97;
-		top: -1px;
-		right: -2px;
-		background: url('../../img/header-media/cta-bg.svg') no-repeat;
-		background-position: left top;
-		background-size: contain;
+		@media (min-width: $breakMedium) {
+			aspect-ratio: 305 / 97;
+			top: -1px;
+			right: -2px;
+			background: url("../../img/header-media/cta-bg.svg") no-repeat;
+			background-position: left top;
+			background-size: contain;
+		}
 		@media (max-width: $breakMedium) {
-			width: clamp(220px, calc(242 / 768 * 100vw), 242px);
+			top: calc((64px - 36px) / 2);
+			right: 15px;
+			width: clamp(159px, calc(180 / 768 * 100vw), 180px);
+			// width: clamp(220px, calc(242 / 768 * 100vw), 242px);
+			height: 36px;
 		}
 	}
 	&__cta-btn-wrapper {
@@ -41,11 +48,6 @@
 		height: 100%;
 	}
 	&__cta-btn {
-		position: absolute;
-		right: 24px;
-		bottom: clamp(26px, vw(36), 36px);
-		width: clamp(180px, vw(228), 228px);
-		height: 41px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -56,26 +58,37 @@
 		text-transform: uppercase;
 		color: var(--color-black);
 		border-radius: 50px;
-		transition: right 1s, width 1s;
+		transition:
+			right 1s,
+			width 1s;
+		@media (min-width: $breakMedium) {
+			position: absolute;
+			right: 24px;
+			bottom: clamp(26px, vw(36), 36px);
+			width: clamp(180px, vw(228), 228px);
+			height: 36px;
+			&:hover {
+				width: clamp(200px, vw(248), 248px);
+				right: 4px;
+			}
+		}
 		@media (max-width: $breakMedium) {
-			width: clamp(159px, calc(180 / 768 * 100vw), 180px);
-			bottom: clamp(22px, vw(36), 36px);
-			font-size: clamp(10px, calc(12 / 768 * 100vw), 12px);
+			width: 100%;
+			height: 100%;
+			// width: clamp(159px, calc(180 / 768 * 100vw), 180px);
+			// top: calc((64px - 36px) / 2);
+			// bottom: unset;
+			// bottom: clamp(22px, vw(36), 36px);
+			font-size: clamp(11px, calc(12 / 768 * 100vw), 12px);
 		}
 		@media (max-width: $breakSmall) {
 			height: 34px;
 		}
-		&:hover {
-			width: clamp(200px, vw(248), 248px);
-			right: 4px;
-			@media (max-width: $breakMedium) {
-				width: clamp(179px, calc(200 / 768 * 100vw), 200px);
-			}
-		}
 	}
 	&.active {
 		.header-media__img {
-			img, video {
+			img,
+			video {
 				transform: scale(1);
 			}
 		}

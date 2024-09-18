@@ -15,12 +15,12 @@
 						'depth'           => 1,
 					]);
 					?>
-					<!-- <a href="<?php echo get_home_url(); ?>" class="header-logo img-wrapper">
-						<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/logo-black-w.svg" alt="Wincars logo">
-					</a> -->
 					<a href="<?php echo get_home_url(); ?>" class="header-logo img-wrapper">
-						<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/logo-white-b.svg" alt="Wincars logo">
+						<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/logo-black-w.svg" alt="Wincars logo">
 					</a>
+					<!-- <a href="<?php echo get_home_url(); ?>" class="header-logo img-wrapper">
+						<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/logo-white-b.svg" alt="Wincars logo">
+					</a> -->
 				</div>
 				<div class="header-media__img">
 					<?php

@@ -10,7 +10,7 @@ function wincars_assets()
 	}
 
 	if (is_front_page()) {
-		wp_enqueue_style('front-page', _TEMPLATEPATH . '/assets/css/templates/front-page.css', array('base'), '1.0.3');
+		wp_enqueue_style('front-page', _TEMPLATEPATH . '/assets/css/templates/front-page.css', array('base'), '1.0.4');
 		wp_enqueue_style('animate', _TEMPLATEPATH . '/assets/libs/wow/animate.min.css', array(), '3.5.1');
 		wp_enqueue_style('swiper');
 		wp_enqueue_script('wow', _TEMPLATEPATH . '/assets/libs/wow/wow.min.js', array('jquery'), '1.1.3', true);
