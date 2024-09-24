@@ -104,18 +104,12 @@
 		$('.header-menu-btn').on('click', function() {
 			if (!$('body').hasClass('menu-open')) {
 				$('body').addClass('menu-open');
-				$('.menu').addClass('menu--visible');
-				// setTimeout(() => {
-				// }, 400)
 				$('.header-menu').addClass('header-menu--opened');
 				$(this).addClass('opened');
-				// setTimeout(() => {
-				// }, 100)
 			}
 			else {
 				$('.header-menu').removeClass('header-menu--opened');
 				setTimeout(() => {
-					$('.menu').removeClass('menu--visible');
 					$('body').removeClass('menu-open');
 					$(this).removeClass('opened');
 				}, 100)

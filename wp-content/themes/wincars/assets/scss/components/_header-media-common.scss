@@ -1,9 +1,5 @@
-// Fonts
 .header-media {
 	position: relative;
-	// border-radius: clamp(24px, vw(32), 32px);
-	// overflow: hidden;
-	// transition: height 1s;
 	&__img {
 		position: absolute;
 		top: 50%;
@@ -24,22 +20,17 @@
 		}
 	}
 	&__cta {
-		position: absolute;
-		width: clamp(250px, vw(305), 305px);
-		@media (min-width: $breakMedium) {
+		margin-right: -1px;
+		@media (min-width: $breakLarge) {
+			width: clamp(250px, vw(305), 305px);
 			aspect-ratio: 305 / 97;
-			top: -1px;
-			right: -2px;
 			background: url("../../img/header-media/cta-bg.svg") no-repeat;
 			background-position: left top;
 			background-size: contain;
 		}
-		@media (max-width: $breakMedium) {
-			top: calc((64px - 36px) / 2);
-			right: 15px;
-			width: clamp(159px, calc(180 / 768 * 100vw), 180px);
-			// width: clamp(220px, calc(242 / 768 * 100vw), 242px);
-			height: 36px;
+		@media (max-width: $breakLarge) {
+			width: clamp(220px, calc(250 / 992 * 100vw), 250px);
+			height: 42px;
 		}
 	}
 	&__cta-btn-wrapper {
@@ -53,36 +44,30 @@
 		align-items: center;
 		font-family: "Montserrat";
 		font-weight: 800;
-		font-size: clamp(12px, vw(14), 14px);
 		line-height: 1;
 		text-transform: uppercase;
-		color: var(--color-black);
+		color: #fff;
 		border-radius: 50px;
 		transition:
 			right 1s,
 			width 1s;
-		@media (min-width: $breakMedium) {
+		@media (min-width: $breakLarge) {
 			position: absolute;
 			right: 24px;
 			bottom: clamp(26px, vw(36), 36px);
 			width: clamp(180px, vw(228), 228px);
 			height: 36px;
+			font-size: clamp(12px, vw(14), 14px);
 			&:hover {
 				width: clamp(200px, vw(248), 248px);
 				right: 4px;
 			}
 		}
-		@media (max-width: $breakMedium) {
+		@media (max-width: $breakLarge) {
 			width: 100%;
 			height: 100%;
-			// width: clamp(159px, calc(180 / 768 * 100vw), 180px);
-			// top: calc((64px - 36px) / 2);
-			// bottom: unset;
-			// bottom: clamp(22px, vw(36), 36px);
-			font-size: clamp(11px, calc(12 / 768 * 100vw), 12px);
-		}
-		@media (max-width: $breakSmall) {
-			height: 34px;
+			// font-size: 14px;
+			font-size: clamp(14px, calc(16 / 992 * 100vw), 16px);
 		}
 	}
 	&.active {
