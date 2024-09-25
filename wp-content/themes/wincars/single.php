@@ -12,9 +12,6 @@ $hero_text = get_field('small_intro_text');
 			<div class="header-container">
 				<?php get_template_part('template-parts/header-top-line'); ?>
 			</div>
-			<?php
-			// get_template_part('template-parts/simple-menu');
-			?>
 
 			<div class="container">
 				<div class="hero align-center">
@@ -56,32 +53,6 @@ $hero_text = get_field('small_intro_text');
 
 		<?php get_template_part('template-parts/post-previews'); ?>
 
-		<!-- Promo block -->
-		<!-- <div class="promo-wrapper">
-			<div class="promo img-wrapper">
-				<div class="promo-content">
-					<div class="promo-content__img img-wrapper wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0s">
-						<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/promotion/promo-text.svg">
-					</div>
-					<div class="promo-content__text promo-content__text--desktop wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
-						За да имаш повече шансове да спечелиш автомобила, бъди активен, споделяй постовете, коментирай,
-						добавяй повече хора выв viber групата!
-					</div>
-					<button class="promo-content__btn promo-content__btn--desktop wow fadeInUp flipInY open-popup" data-target="main-form" data-wow-duration="2.5s" data-wow-delay="0.4s">ОСТАВИ ЗАПИТВАНЕ</button>
-				</div>
-				<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/promotion/banner.jpg">
-				<div class="promo__deco img-wrapper wow fadeIn" data-wow-duration="1.5s" data-wow-delay="3s">
-					<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/promotion/promo-phone.png">
-				</div>
-			</div>
-			<div class="promo-content-mobile">
-				<div class="promo-content__text wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
-					За да имаш повече шансове да спечелиш автомобила, бъди активен, споделяй постовете, коментирай,
-					добавяй повече хора выв viber групата!
-				</div>
-				<button class="promo-content__btn align-center wow fadeInUp flipInY open-popup" data-target="main-form" data-wow-duration="2.5s" data-wow-delay="0.4s">ОСТАВИ ЗАПИТВАНЕ</button>
-			</div>
-		</div> -->
 	</main>
 
 	<?php get_footer(); ?>
