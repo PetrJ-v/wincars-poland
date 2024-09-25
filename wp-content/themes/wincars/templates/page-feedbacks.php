@@ -8,26 +8,8 @@
 	<header>
 		<div class="header">
 			<div class="header-container">
+				<?php get_template_part('template-parts/header-top-line'); ?>
 				<div class="header-media">
-					<div class="header-menu-wrapper">
-
-						<?php get_template_part('template-parts/header-menu-btn'); ?>
-
-						<?php
-						wp_nav_menu([
-							'theme_location'  => 'top-feedbacks',
-							'container'       => 'nav',
-							'container_class' => 'header-menu',
-							'echo'            => true,
-							'fallback_cb'     => 'wp_page_menu',
-							'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-							'depth'           => 1,
-						]);
-						?>
-						<a href="<?php echo get_home_url(); ?>" class="header-logo img-wrapper">
-							<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/logo-white-b.svg" alt="Wincars logo">
-						</a>
-					</div>
 					<div class="header-media__info">
 						<div class="header-media__info-left">
 							<h1 class="header-media__title testimonials-title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"><?php the_title(); ?></h1>
@@ -39,13 +21,8 @@
 							<?php endif; ?>
 						</div>
 						<?php $fb_header_img = get_field('pfb_image'); ?>
-						<div class="header-media__info-img cover-img active" data-function="toggleClassName" data-anim="true">
+						<div class="header-media__info-img header-media__info-img--desktop cover-img active" data-function="toggleClassName" data-anim="true">
 							<?php echo wp_get_attachment_image($fb_header_img, 'full'); ?>
-						</div>
-					</div>
-					<div class="header-media__cta">
-						<div class="header-media__cta-btn-wrapper">
-							<button class="header-media__cta-btn accent-btn open-popup" data-target="main-form">Остави запитване</button>
 						</div>
 					</div>
 				</div>
