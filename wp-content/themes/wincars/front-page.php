@@ -8,12 +8,6 @@
 	<header>
 		<div class="header">
 			<div class="header-container">
-				<!-- <div class="header-top-links">
-					<a href='#' rel='nofollow noopener sponsored' target='blank'>Нашите оферти в mobile.bg</a>
-					<a href='tel:+359889333631' rel='nofollow noopener sponsored' target='blank'>Контакти
-						+359889333631</a>
-				</div> -->
-
 				<div class="header-top-line">
 					<div class="header-menu-wrapper">
 						<?php get_template_part('template-parts/header-menu-btn'); ?>
@@ -47,8 +41,30 @@
 							<button class="header-media__cta-btn accent-btn open-popup" data-target="main-form"><?php echo esc_html($cta_button_text); ?></button>
 						</div>
 					</div>
+					<div class="mobile-menu-wrapper" id="mobile-menu-wrapper">
+						<?php
+						wp_nav_menu([
+							'theme_location'  => 'top',
+							'container'       => 'nav',
+							'container_class' => 'header-menu header-menu--mobile',
+							'echo'            => true,
+							'fallback_cb'     => 'wp_page_menu',
+							'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+							'depth'           => 1,
+						]);
+						?>
+						<hr>
+						<div class="header-banner img-wrapper">
+							<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/menu-banner.jpg" alt="Ние ще сбъднем вашата мечта">
+						</div>
+						<div class="header-links">
+							<a href='#' rel='nofollow noopener sponsored' target='blank'>Нашите оферти в mobile.bg</a>
+							<a href='tel:+359889333631' rel='nofollow noopener sponsored' target='blank'>Контакти
+								+359889333631</a>
+						</div>
+					</div>
 				</div>
-				<div class="header-media">
+				<div class="header-media active">
 					<?php if (get_field('video_poster')) : ?>
 						<?php $video_poster = get_field('video_poster'); ?>
 						<div class="header-media__img">

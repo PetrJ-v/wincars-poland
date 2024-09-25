@@ -20,6 +20,7 @@
 		}
 	}
 	&__cta {
+		margin-top: -1px;
 		margin-right: -1px;
 		@media (min-width: $breakLarge) {
 			width: clamp(250px, vw(305), 305px);
@@ -31,6 +32,9 @@
 		@media (max-width: $breakLarge) {
 			width: clamp(220px, calc(250 / 992 * 100vw), 250px);
 			height: 42px;
+		}
+		@media (max-width: $breakSmall) {
+			width: auto;
 		}
 	}
 	&__cta-btn-wrapper {
@@ -54,9 +58,9 @@
 		@media (min-width: $breakLarge) {
 			position: absolute;
 			right: 24px;
-			bottom: clamp(26px, vw(36), 36px);
+			bottom: clamp(22px, vw(32), 32px);
 			width: clamp(180px, vw(228), 228px);
-			height: 36px;
+			height: 42px;
 			font-size: clamp(12px, vw(14), 14px);
 			&:hover {
 				width: clamp(200px, vw(248), 248px);
@@ -66,8 +70,15 @@
 		@media (max-width: $breakLarge) {
 			width: 100%;
 			height: 100%;
-			// font-size: 14px;
 			font-size: clamp(14px, calc(16 / 992 * 100vw), 16px);
+		}
+		@media (max-width: $breakSmall) {
+			padding: 0 22px;
+			font-size: 13px;
+		}
+		@media (max-width: 414px) {
+			padding: 0 clamp(15px, calc(22 / 576 * 100vw), 22px);
+			font-size: clamp(10px, calc(13 / 414 * 100vw), 13px);
 		}
 	}
 	&.active {

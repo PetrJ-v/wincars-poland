@@ -106,13 +106,15 @@
 				$('body').addClass('menu-open');
 				$('.header-menu').addClass('header-menu--opened');
 				$(this).addClass('opened');
+				$('#mobile-menu-wrapper').slideDown();
 			}
 			else {
 				$('.header-menu').removeClass('header-menu--opened');
-				setTimeout(() => {
-					$('body').removeClass('menu-open');
-					$(this).removeClass('opened');
-				}, 100)
+				$('#mobile-menu-wrapper').slideUp();
+				$('body').removeClass('menu-open');
+				$(this).removeClass('opened');
+				// setTimeout(() => {
+				// }, 100)
 			}
 		})
 

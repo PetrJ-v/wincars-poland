@@ -1,5 +1,5 @@
 <header>
-	<div class="header header--default">
+	<div class="header">
 		<div class="header-container">
 			<div class="header-media active" data-function="toggleClassName" data-anim="true">
 				<div class="header-menu-wrapper">
