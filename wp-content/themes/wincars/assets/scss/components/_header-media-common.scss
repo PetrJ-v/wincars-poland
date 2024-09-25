@@ -9,6 +9,13 @@
 		transform: translate(-50%, -50%);
 		border-radius: clamp(24px, vw(32), 32px);
 		overflow: hidden;
+		@media (max-width: $breakLarge) {
+			border-radius: 0 0 40px 40px;
+		}
+		@media (max-width: $breakMedium) {
+			border-radius: 0 0 30px 30px;
+		}
+
 		img,
 		video {
 			width: 100%;
