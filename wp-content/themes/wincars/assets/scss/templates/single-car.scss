@@ -1,10 +1,15 @@
 @import "../inc/vars";
 @import "../inc/mixins";
 @import "../inc/extends";
+// @import "../components/header-media-common";
+// @import "../components/header-media-simple";
+@import "../inc/header";
 @import "../components/header-media-common";
-@import "../components/header-media-simple";
-@import "../components/header-media-page";
 @import "../components/header-menu";
+@import "../components/header-media-simple";
+
+@import "../components/header-media-page";
+// @import "../components/header-menu";
 
 .single-car {
 	margin-top: 20px;

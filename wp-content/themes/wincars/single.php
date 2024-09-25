@@ -9,8 +9,12 @@ $hero_text = get_field('small_intro_text');
 <body <?php body_class(); ?>>
 	<header>
 		<div class="header">
-
-			<?php get_template_part('template-parts/simple-menu'); ?>
+			<div class="header-container">
+				<?php get_template_part('template-parts/header-top-line'); ?>
+			</div>
+			<?php
+			// get_template_part('template-parts/simple-menu');
+			?>
 
 			<div class="container">
 				<div class="hero align-center">
@@ -34,7 +38,7 @@ $hero_text = get_field('small_intro_text');
 						</button>
 					</div>
 				</div>
-			<?php elseif ($post_preview): ?>
+			<?php elseif ($post_preview) : ?>
 				<div class="container">
 					<div class="main-post-img img-wrapper">
 						<?php echo wp_get_attachment_image($post_preview, 'full'); ?>

@@ -113,6 +113,9 @@
 			}
 		}
 	}
+	.menu {
+		background-color: var(--color-new-dark);
+	}
 	&--desktop {
 		.menu {
 			@media (min-width: $breakLarge) {
@@ -125,7 +128,6 @@
 				padding: 0 40px;
 				column-gap: 30px;
 				border-radius: 80px;
-				background-color: var(--global-bg-grey);
 				transition: column-gap 0.5s;
 			}
 		}
@@ -183,11 +185,7 @@
 	min-width: 100%;
 	max-width: 100%;
 	display: none;
-	// @media (min-width: $breakLarge) {
-	// }
+
 }
 body.menu-open {
-	.header-top-line {
-		border-color: var(--color-orange);
-	}
 }

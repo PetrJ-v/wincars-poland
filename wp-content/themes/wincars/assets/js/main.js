@@ -86,37 +86,36 @@
 			}, 1000);
 		});
 
-		// Faq block
-		// $('.question').on('click', (e) => {
-		// 	let faqItem = $(e.currentTarget).closest('.faq__item'),
-		// 		faqAnswer = faqItem.find('.faq__item-answer');
-
-		// 	if (!faqItem.hasClass('faq__item--opened')) {
-		// 		faqItem.addClass('faq__item--opened');
-		// 		faqAnswer.slideDown(1000);
-		// 	}
-		// 	else {
-		// 		faqItem.removeClass('faq__item--opened');
-		// 		faqAnswer.slideUp(1000);
-		// 	}
-		// })
 		// Header menu
-		$('.header-menu-btn').on('click', function() {
+		const openMenu = function (el) {
+			$('body').addClass('menu-open');
+			$('.header-menu').addClass('header-menu--opened');
+			$(el).addClass('opened');
+			$('#mobile-menu-wrapper').slideDown();
+		}
+		const closeMenu = function (el) {
+			$('.header-menu').removeClass('header-menu--opened');
+			$('#mobile-menu-wrapper').slideUp();
+			$('body').removeClass('menu-open');
+			$(el).removeClass('opened');
+		}
+		$('.header-menu-btn').on('click', function () {
 			if (!$('body').hasClass('menu-open')) {
-				$('body').addClass('menu-open');
-				$('.header-menu').addClass('header-menu--opened');
-				$(this).addClass('opened');
-				$('#mobile-menu-wrapper').slideDown();
+				openMenu(this);
 			}
 			else {
-				$('.header-menu').removeClass('header-menu--opened');
-				$('#mobile-menu-wrapper').slideUp();
-				$('body').removeClass('menu-open');
-				$(this).removeClass('opened');
-				// setTimeout(() => {
-				// }, 100)
+				closeMenu(this);
 			}
 		})
+		const checkMenu = function(){
+			if ($('body').width() >= 992) {
+				closeMenu();
+			}
+		}
+
+		$(window).resize(function () {
+			checkMenu();
+		});
 
 		function toggleClassName(entry) {
 			let element = $(entry.target);
@@ -174,12 +173,12 @@
 		// )
 		// wow.init();
 
-		$('.open-popup').on('click', function(){
+		$('.open-popup').on('click', function () {
 			let target = $(this).attr('data-target');
 			$(`.popup-wrapper--${target}`).fadeIn(500);
 			$('body').addClass('popup-open');
 		})
-		$('.popup__close').on('click', function(){
+		$('.popup__close').on('click', function () {
 			let popupWrapper = $(this).closest('.popup-wrapper');
 			popupWrapper.fadeOut(500);
 			$('body').removeClass('popup-open');

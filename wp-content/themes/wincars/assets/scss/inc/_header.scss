@@ -29,9 +29,8 @@
 			width: calc(100% - 30px);
 			padding: 15px 20px;
 			background-color: var(--color-new-dark);
-			border: 1px solid var(--global-bg-grey);
+			border: 1px solid var(--color-orange);
 			border-radius: clamp(30px, calc(40 / 992 * 100vw), 40px);
-			transition: border-color 0.3s;
 		}
 		@media (max-width: $breakSmall) {
 			padding: 10px 12px;

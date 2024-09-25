@@ -8,9 +8,9 @@ $hero_text = get_field('small_intro_text');
 <body <?php body_class(); ?>>
 	<header>
 		<div class="header">
-
-			<?php get_template_part('template-parts/simple-menu'); ?>
-
+			<div class="header-container">
+				<?php get_template_part('template-parts/header-top-line'); ?>
+			</div>
 		</div>
 	</header>
 	<main>
@@ -127,7 +127,7 @@ $hero_text = get_field('small_intro_text');
 											<div class="lot-info__name"><?php echo esc_html($info_name); ?></div>
 										<?php endif; ?>
 										<?php if ($info_value) : ?>
-											<div class="lot-info__value <?php if($is_active) echo 'lot-info__value--active'; ?>"><?php echo esc_html($info_value); ?></div>
+											<div class="lot-info__value <?php if ($is_active) echo 'lot-info__value--active'; ?>"><?php echo esc_html($info_value); ?></div>
 										<?php endif; ?>
 									</div>
 								<?php endif; ?>
