@@ -56,16 +56,17 @@
 
 		// Feedbacks block
 
-		$('.feedback').on('mouseenter', function () {
-			$(this).addClass('fb-hovered');
-			let fbText = $(this).find('.feedback__content');
-			fbText.slideDown(500);
-		})
-		$('.feedback').on('mouseleave', function () {
-			$(this).removeClass('fb-hovered');
-			let fbText = $(this).find('.feedback__content');
-			fbText.slideUp(500);
-		})
+		// $('.feedback').on('mouseenter', function () {
+		// 	$(this).addClass('fb-hovered');
+		// 	let fbText = $(this).find('.feedback__content');
+		// 	fbText.slideDown(500);
+		// })
+		// $('.feedback').on('mouseleave', function () {
+		// 	$(this).removeClass('fb-hovered');
+		// 	let fbText = $(this).find('.feedback__content');
+		// 	fbText.slideUp(500);
+		// })
+
 		// if ($('.feedbacks-slider')) {
 		// 	var feedbacksSlider = new Swiper(".feedbacks-slider", {
 		// 		spaceBetween: 20,

@@ -118,6 +118,9 @@
 		border-radius: 14px;
 		overflow: hidden;
 		cursor: pointer;
+		@media (max-width: $breakSmall) {
+			border-radius: 7px;
+		}
 	}
 	.swiper-slide-thumb-active {
 		.car-thumbnail-item {

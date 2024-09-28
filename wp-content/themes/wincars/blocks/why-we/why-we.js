@@ -6,8 +6,9 @@
 			loop: true,
 			slideToClickedSlide: true,
 			centeredSlides: true,
+			// autoplay: false,
 			autoplay: {
-				delay: 2000,
+				delay: 3000,
 				disableOnInteraction: true,
 			},
 			effect: 'coverflow',

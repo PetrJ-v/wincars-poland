@@ -6,8 +6,8 @@
 .header-media {
 	height: 630px;
 	transition: height 0.5s;
-	@media (max-width: $breakLarge) {
-		height: 730px;
+	@media (max-width: $breakMedium) {
+		height: 450px;
 	}
 	@media (max-width: $breakSmall) {
 		height: 340px;

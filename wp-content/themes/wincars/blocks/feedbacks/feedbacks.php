@@ -48,7 +48,7 @@ $block_type = get_field('block_type');
 <?php endif; ?>
 
 <?php if ($block_type === 'table') : ?>
-	<div class="container p-tb-30-44">
+	<div class="container testimonials-container p-tb-30-44">
 		<?php if (have_rows('feedbacks')) : ?>
 			<div class="testimonials">
 				<?php $i = 0; ?>
