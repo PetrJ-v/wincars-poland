@@ -1,9 +1,11 @@
 <?php
 $animation = $args['animation'];
-$feedback_classes = ($animation) ? 'wow fadeInUp flipInX' : '';
+$feedback_classes = ($animation) ? 'wow fadeInUp' : '';
+// $feedback_classes = ($animation) ? 'wow fadeInUp flipInX' : '';
 $animation_delay = $args['animation_delay'];
+
 ?>
-<div class="feedback <?php echo $feedback_classes; ?>" <?php if ($animation) echo sprintf('data-wow-duration="1.5s" data-wow-delay="%ds"', $animation_delay); ?>>
+<div class="feedback <?php echo $feedback_classes; ?>" <?php if ($animation) echo sprintf('data-wow-duration="1.5s" data-wow-delay="ds"', $animation_delay); ?>>
 	<?php
 	$client_photo = get_sub_field('client_photo');
 	$reviewer_name = get_sub_field('reviewer_name');

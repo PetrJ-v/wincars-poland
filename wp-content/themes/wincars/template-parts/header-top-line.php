@@ -1,3 +1,6 @@
+<?php
+$menu_location = (get_template_name() === 'templates/page-feedbacks.php') ? 'top-feedbacks' : 'top';
+?>
 <div class="header-top-line">
 	<div class="header-menu-wrapper">
 		<?php get_template_part('template-parts/header-menu-btn'); ?>
@@ -14,7 +17,7 @@
 		</a>
 		<?php
 		wp_nav_menu([
-			'theme_location'  => 'top',
+			'theme_location'  => $menu_location,
 			'container'       => 'nav',
 			'container_class' => 'header-menu header-menu--desktop',
 			'echo'            => true,
@@ -33,7 +36,7 @@
 	<div class="mobile-menu-wrapper" id="mobile-menu-wrapper">
 		<?php
 		wp_nav_menu([
-			'theme_location'  => 'top',
+			'theme_location'  => $menu_location,
 			'container'       => 'nav',
 			'container_class' => 'header-menu header-menu--mobile',
 			'echo'            => true,
