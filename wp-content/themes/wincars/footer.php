@@ -212,4 +212,7 @@
 		</div>
 	</div>
 </div>
+<div class="top-btn" id="top-btn">
+	<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/icons/to-top.svg" alt="бутон отгоре">
+</div>
 <?php wp_footer(); ?>

@@ -5,6 +5,9 @@
 			$('html, body').animate({ scrollTop: $(destination).offset().top - topMargin }, 800, 'linear') // анимируем скроолинг к элементу destination
 		}
 	};
+	$('#top-btn').on('click', function(){
+		$('html, body').animate({ scrollTop: 0 }, 600, 'linear') // анимируем скроолинг к элементу destination
+	})
 	document.breakpointChecker = function (breakpoint, slider, enableSlider) {
 		if (breakpoint.matches === true) {
 			if (slider !== undefined) {
@@ -116,6 +119,20 @@
 		$(window).resize(function () {
 			checkMenu();
 		});
+
+		$(window).on('scroll', function(){
+			if ($(window).scrollTop() > 500) {
+				if (!$('#top-btn').hasClass('vissible')) {
+					$('#top-btn').addClass('vissible');
+				}
+			}
+			else {
+				if ($('#top-btn').hasClass('vissible')) {
+					$('#top-btn').removeClass('vissible');
+				}
+			}
+
+		})
 
 		function toggleClassName(entry) {
 			let element = $(entry.target);
