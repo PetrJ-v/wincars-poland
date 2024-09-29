@@ -9,14 +9,34 @@
 		<div class="header">
 			<div class="header-container">
 				<?php get_template_part('template-parts/header-top-line'); ?>
-				<div class="header-media active">
-					<?php if (get_field('video_poster')) : ?>
-						<?php $video_poster = get_field('video_poster'); ?>
+				<?php
+				$video_poster_desktop = get_field('hp_video_poster_desktop');
+				$video_url_desktop = get_field('hp_video_url_desktop');
+				$video_poster_mobile = get_field('hp_video_poster_mobile');
+				// $video_url_mobile = get_field('hp_video_url_mobile');
+				$video_url_mobile = 'f';
+				?>
+				<?php if ($video_url_desktop) : ?>
+					<div class="header-media header-media--desktop active">
 						<div class="header-media__img">
-							<video preload="none" autoplay="" muted="" playsinline="" loop="" poster="<?php echo $video_poster; ?>" src="<?php the_field('video'); ?>"></video>
+							<video preload="none" autoplay="" muted="" playsinline="" loop="" poster="<?php echo $video_poster_desktop; ?>" src="<?php echo $video_url_desktop; ?>"></video>
 						</div>
-					<?php endif; ?>
-				</div>
+					</div>
+				<?php endif; ?>
+				<?php if ($video_url_mobile) : ?>
+					<div class="header-media header-media--mobile active">
+						<div class="header-media__img">
+							<img src="<?php echo $video_poster_mobile; ?>" fetchpriority="high" width="574" height="340" alt="">
+							<!-- <video preload="none" autoplay="" muted="" playsinline="" loop="" poster="<?php echo $video_poster_mobile; ?>" src="<?php echo $video_url_mobile; ?>"></video> -->
+						</div>
+					</div>
+				<?php else : ?>
+					<div class="header-media header-media--mobile active">
+						<div class="header-media__img">
+							<video preload="none" autoplay="" muted="" playsinline="" loop="" poster="<?php echo $video_poster_desktop; ?>" src="<?php echo $video_url_desktop; ?>"></video>
+						</div>
+					</div>
+				<?php endif; ?>
 				<div class="hp-tracking align-center">
 					<div class="hp-tracking__title">Проследяване</div>
 					<form class="hp-tracking__form">

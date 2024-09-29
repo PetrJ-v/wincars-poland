@@ -27,10 +27,9 @@ $menu_location = (get_template_name() === 'templates/page-feedbacks.php') ? 'top
 		]);
 		?>
 	</div>
-	<?php $cta_button_text = (get_field('cta_button_text')) ? get_field('cta_button_text') : 'Остави запитване'; ?>
 	<div class="header-media__cta">
 		<div class="header-media__cta-btn-wrapper">
-			<button class="header-media__cta-btn accent-btn open-popup" data-target="main-form"><?php echo esc_html($cta_button_text); ?></button>
+			<button class="header-media__cta-btn accent-btn open-popup" data-target="main-form">Остави запитване</button>
 		</div>
 	</div>
 	<div class="mobile-menu-wrapper" id="mobile-menu-wrapper">
