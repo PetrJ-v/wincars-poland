@@ -1,0 +1,114 @@
+@import "../inc/vars";
+@import "../inc/mixins";
+@import "../inc/extends";
+@import "../inc/header";
+@import "../components/header-media-common";
+@import "../components/header-menu";
+@import "../components/header-media-simple";
+
+@import "../components/header-media-page";
+@import "../components/header-menu";
+
+.page-template-tracking {
+	// margin-top: 20px;
+	font-family: "Montserrat";
+	.simple-menu-wrapper {
+		margin-bottom: 47px;
+		@media (max-width: $breakLarge) {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+main {
+	margin-bottom: clamp(40px, vw(60), 60px);
+}
+
+#tracking_system_root {
+	border-radius: 40px;
+	overflow: hidden;
+}
+.tracking-wrapper {
+	border-radius: 35px;
+	overflow: hidden;
+}
+.tracking-search-wrapper {
+	position: relative;
+	margin-bottom: -75px;
+	padding: 0 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+	background-color: var(--color-new-dark);
+	z-index: 2;
+}
+.tracking-search {
+	position: relative;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 42px;
+	flex-grow: 1;
+	max-width: 400px;
+	font-family: "Montserrat";
+	background-color: #303030;
+	border-radius: 26px;
+	&__input {
+		flex-grow: 1;
+		height: 100%;
+		padding: 0 20px;
+		font-family: inherit;
+		font-weight: 400;
+		font-size: 16px;
+		color: var(--color-white);
+		@media (max-width: $breakSmall) {
+			font-size: 15px;
+		}
+	}
+	&__btn-wrapper {
+		height: 100%;
+		margin-left: auto;
+		@media (min-width: $breakSmall) {
+			width: 130px;
+		}
+	}
+	&__btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: auto;
+		min-width: 112px;
+		height: 100%;
+		font-family: inherit;
+		font-weight: 600;
+		font-size: 16px;
+		text-align: center;
+		border-radius: 26px;
+		transition: min-width 0.7s;
+		@media (min-width: $breakSmall) {
+			&:hover {
+				min-width: 100%;
+			}
+		}
+		@media (max-width: $breakSmall) {
+			min-width: 100px;
+			font-size: 14px;
+		}
+	}
+	&__message {
+		display: none;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		bottom: -4px;
+		font-size: 14px;
+		text-align: center;
+		line-height: 1;
+		color: var(--color-orange);
+		transform: translateY(100%);
+	}
+}
+
+@import "../inc/footer";

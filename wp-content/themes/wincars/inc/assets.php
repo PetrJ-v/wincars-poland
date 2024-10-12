@@ -5,6 +5,10 @@ function wincars_assets()
 	if (!is_page_template('service-pages/all-pdf.php') && !is_page_template('service-pages/watermark.php') && !(get_post_type() === 'pdf-price') && !(get_post_type() === 'collage')){
 		wp_enqueue_style('base', _TEMPLATEPATH . '/assets/css/base-styles.css', array(), _S_VERSION);
 		wp_enqueue_script('main', _TEMPLATEPATH . '/assets/js/main.js', ['jquery'], _S_VERSION, ['in_footer' => true, 'strategy'  => 'async']);
+		$ajax_params = array(
+			'ajax_url' => admin_url('admin-ajax.php')
+		);
+		wp_localize_script('main', 'ajax_params', $ajax_params);
 		wp_register_style('swiper', _TEMPLATEPATH . '/assets/libs/swiper/swiper.min.css', array(), '8.3.1');
 		wp_register_script('swiper', _TEMPLATEPATH . '/assets/libs/swiper/swiper-bundle.min.js', array(), '8.3.1', true);
 	}
@@ -16,6 +20,7 @@ function wincars_assets()
 		wp_enqueue_script('wow', _TEMPLATEPATH . '/assets/libs/wow/wow.min.js', array('jquery'), '1.1.3', true);
 		wp_enqueue_script('swiper');
 		wp_enqueue_script('front-page', _TEMPLATEPATH . '/assets/js/front-page.js', array('wow', 'swiper'), _S_VERSION, true);
+		wp_enqueue_script('tracking', _TEMPLATEPATH . '/assets/js/tracking.js', array(), _S_VERSION, true);
 	}
 	if (is_single() && (get_post_type() != 'car')) {
 		wp_enqueue_style('single-header', _TEMPLATEPATH . '/assets/css/first-screen/post-header.css', array('base'), _S_VERSION);
@@ -23,6 +28,10 @@ function wincars_assets()
 		wp_enqueue_style('swiper');
 		wp_enqueue_script('swiper');
 		wp_enqueue_script('single', _TEMPLATEPATH . '/assets/js/single.js', array('jquery', 'swiper'), _S_VERSION, true);
+	}
+	if (get_template_name() === 'templates/tracking.php') {
+		wp_enqueue_style('tracking', _TEMPLATEPATH . '/assets/css//templates/tracking.css', array('base'), _S_VERSION);
+		wp_enqueue_script('tracking', _TEMPLATEPATH . '/assets/js/tracking.js', array(), _S_VERSION, true);
 	}
 	if (is_page() && get_template_name() === 'default') {
 		wp_enqueue_style('single-header', _TEMPLATEPATH . '/assets/css/first-screen/post-header.css', array('base'), _S_VERSION);

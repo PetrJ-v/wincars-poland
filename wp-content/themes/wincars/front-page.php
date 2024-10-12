@@ -40,8 +40,9 @@
 				<div class="hp-tracking align-center">
 					<div class="hp-tracking__title">Проследяване</div>
 					<form class="hp-tracking__form">
-						<div class="hp-tracking-input-wrapper">
-							<input type="text" name="hp-tracking" class="hp-tracking__vin" id="hp-tracking" placeholder="Въведете VIN">
+						<div class="hp-tracking-input-wrapper" id="tracking-form">
+							<input type="text" name="hp-tracking" class="hp-tracking__vin" id="tracking" required placeholder="Въведете VIN">
+							<div class="hp-tracking__form-message tracking-form-message">Грешен VIN номер</div>
 						</div>
 						<input type="submit" class="hp-tracking__submit accent-btn" value="Търсене">
 					</form>
