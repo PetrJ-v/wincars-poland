@@ -2,6 +2,6 @@
 if ( ! defined( '_TEMPLATEPATH' ) ) {
 
 	define( '_TEMPLATEPATH', get_template_directory_uri() );
-	define( '_S_VERSION', '1.0.6' );
+	define( '_S_VERSION', '1.0.7' );
 
 }
