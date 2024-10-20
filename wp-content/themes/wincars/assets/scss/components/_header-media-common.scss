@@ -34,6 +34,16 @@
 			object-position: center;
 			transform: scale(1.4);
 			transition: transform 1.4s;
+			&.desktop-video {
+				@media (max-width: $breakSmall) {
+					display: none;
+				}
+			}
+			&.mobile-video {
+				@media (min-width: $breakSmall) {
+					display: none;
+				}
+			}
 		}
 	}
 	&__cta {

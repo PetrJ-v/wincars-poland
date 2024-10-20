@@ -1,14 +1,4 @@
 .header-media {
-	// height: calc(450px * 0.6);
-	// @media (max-width: $breakLarge) {
-	// 	height: calc(530px * 0.6);
-	// }
-	// @media (max-width: $breakSmall) {
-	// 	height: calc(260px * 0.6);
-	// }
-
-	// &.active {
-	// }
 	height: 450px;
 	@media (max-width: $breakLarge) {
 		height: 530px;
