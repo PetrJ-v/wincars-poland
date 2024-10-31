@@ -19,18 +19,18 @@
 				<div class="tracking-search-wrapper">
 					<form class="tracking-search" id="tracking-form">
 						<?php
-							// $query_string = $_SERVER['QUERY_STRING'];
-							// if (isset($_SERVER['HTTP_REFERER'])) {
-							// 	$referer = rtrim($_SERVER['HTTP_REFERER'], '/');
-							// 	$home_url = rtrim(get_home_url(), '/');
-							// 	if ($referer && $referer === $home_url) {
-							// 		$container_number = $query_string;
-							// 	}
-							// 	else {
-							// 		$container_number = null;
-							// 	}
-							// }
-							// if( isset($container_number) ) echo 'value="' . $container_number . '"';
+						// $query_string = $_SERVER['QUERY_STRING'];
+						// if (isset($_SERVER['HTTP_REFERER'])) {
+						// 	$referer = rtrim($_SERVER['HTTP_REFERER'], '/');
+						// 	$home_url = rtrim(get_home_url(), '/');
+						// 	if ($referer && $referer === $home_url) {
+						// 		$container_number = $query_string;
+						// 	}
+						// 	else {
+						// 		$container_number = null;
+						// 	}
+						// }
+						// if( isset($container_number) ) echo 'value="' . $container_number . '"';
 						?>
 						<input id="tracking" type="text" class="tracking-search__input" name="track-input" size="1" id="track-input" required placeholder="Въведете VIN">
 						<div class="tracking-search__btn-wrapper">
@@ -41,7 +41,7 @@
 						</div>
 					</form>
 				</div>
-				<div id="tracking_system_root" data-filter='{"platform":11598, "lang": "en"}'></div>
+				<div id="tracking_system_root" data-filter='{"platform":13446, "lang": "en"}'></div>
 				<script src=https://www.searates.com/container/widget></script>
 			</div>
 		</div>

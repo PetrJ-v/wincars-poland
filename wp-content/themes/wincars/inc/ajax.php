@@ -8,7 +8,8 @@ function get_cnum_by_vin()
 	$url = "https://www.cargoloop.com:8081/SVehicle.asmx";
 
 	// SOAP XML for sending
-	$vin = "1FA6P0HD2E5369469";
+	// $vin = "1FA6P0HD2E5369469";
+	$vin = $_POST['vin'];
 	$xml_data = '<?xml version="1.0" encoding="utf-8"?>
 				<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 							xmlns:xsd="http://www.w3.org/2001/XMLSchema"
