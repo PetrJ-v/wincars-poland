@@ -110,5 +110,111 @@ main {
 		transform: translateY(100%);
 	}
 }
+.api-container {
+	padding: 0;
+	overflow: visible;
+	// border-radius: 10px;
+	// box-shadow: 0px 0px 10px var(--color-light-blue);
+	// box-shadow: 0px 0px 46px var(--color-medium-dark);
+	// box-shadow: 0 0 3px var(--color-medium-dark);
+}
+.car-api {
+	font-family: "Montserrat";
+	color: var(--color-white);
+	border-radius: 10px;
+	overflow: hidden;
+	.main-top-bar {
+		position: relative;
+		height: 50px;
+		background-color: var(--color-orange-hover);
+		&__close {
+			position: absolute;
+			width: 36px;
+			height: 36px;
+			top: 50%;
+			right: 15px;
+			transform: translateY(-50%);
+			svg rect {
+				fill: #000;
+				fill: #fff;
+			}
+		}
+	}
+	.car-ap-content {
+		padding: 50px 20px;
+		border-left: 1px solid var(--color-medium-dark);
+		border-right: 1px solid var(--color-medium-dark);
+		border-bottom: 1px solid var(--color-medium-dark);
+		border-radius: 20px;
+	}
+	&__title {
+		margin-bottom: 35px;
+		font-weight: 600;
+		font-size: 28px;
+	}
+	&__info-row:not(:last-child) {
+		margin-bottom: 30px;
+	}
+	.info-row {
+		&--col-2 {
+			@media (min-width: $breakExtra) {
+				display: flex;
+				column-gap: 20px;
+				.info-col {
+					min-width: calc(50% - 10px);
+					max-width: calc(50% - 10px);
+				}
+			}
+			@media (max-width: $breakExtra) {
+				.info-col:not(:last-child) {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+
+	.info-col {
+		border: 1px solid var(--color-orange);
+		border-radius: 10px;
+		overflow: hidden;
+		&-bar {
+			padding: 10px 20px;
+			background-color: var(--color-orange);
+		}
+		&-bar-title {
+			font-weight: 600;
+			font-size: 24px;
+			line-height: 1;
+			color: var(--color-new-dark);
+		}
+		&-content {
+			padding: 20px;
+		}
+	}
+	.info-col-line {
+		display: flex;
+		column-gap: 20px;
+		line-height: 1.6;
+		&__title {
+			font-weight: 700;
+			font-size: 20px;
+			letter-spacing: 0.07em;
+			flex-grow: 1;
+			max-width: 300px;
+			@media (min-width: $breakExtra) and (max-width: $breakHuge){
+				max-width: clamp(260px, vw(300), 300px);
+				font-size: clamp(16px, vw(20), 20px);
+			}
+		}
+		&__text {
+			font-weight: 400;
+			font-size: 20px;
+			@media (max-width: $breakHuge) {
+				font-size: clamp(16px, vw(20), 20px);
+			}
+		}
+	}
+	
+}
 
 @import "../inc/footer";
