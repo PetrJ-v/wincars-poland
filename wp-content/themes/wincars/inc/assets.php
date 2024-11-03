@@ -20,7 +20,7 @@ function wincars_assets()
 		wp_enqueue_script('wow', _TEMPLATEPATH . '/assets/libs/wow/wow.min.js', array('jquery'), '1.1.3', true);
 		wp_enqueue_script('swiper');
 		wp_enqueue_script('front-page', _TEMPLATEPATH . '/assets/js/front-page.js', array('wow', 'swiper'), _S_VERSION, true);
-		wp_enqueue_script('tracking', _TEMPLATEPATH . '/assets/js/tracking.js', array(), _S_VERSION, true);
+		wp_enqueue_script('tracking-form', _TEMPLATEPATH . '/assets/js/tracking-form.js', array(), _S_VERSION, true);
 	}
 	if (is_single() && (get_post_type() != 'car')) {
 		wp_enqueue_style('single-header', _TEMPLATEPATH . '/assets/css/first-screen/post-header.css', array('base'), _S_VERSION);
@@ -31,7 +31,8 @@ function wincars_assets()
 	}
 	if (get_template_name() === 'templates/tracking.php') {
 		wp_enqueue_style('tracking', _TEMPLATEPATH . '/assets/css//templates/tracking.css', array('base'), _S_VERSION);
-		wp_enqueue_script('tracking', _TEMPLATEPATH . '/assets/js/tracking.js', array(), _S_VERSION, true);
+		wp_enqueue_script('tracking-form', _TEMPLATEPATH . '/assets/js/tracking-form.js', array(), _S_VERSION, true);
+		wp_enqueue_script('tracking-page', _TEMPLATEPATH . '/assets/js/tracking-page.js', array(), _S_VERSION, true);
 	}
 	if (is_page() && get_template_name() === 'default') {
 		wp_enqueue_style('single-header', _TEMPLATEPATH . '/assets/css/first-screen/post-header.css', array('base'), _S_VERSION);
