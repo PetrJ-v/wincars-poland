@@ -76,99 +76,127 @@ add_action('wp_ajax_nopriv_get_car_info', 'get_car_info');
 
 function get_car_info()
 {
-	$car_images = [];
-	for ($i = 1; $i < 19; $i++) {
-		$thumb_img_url = get_stylesheet_directory_uri() . '/assets/img/cargoloop-api/' . $i . '.jpg';
-		$full_img_url = get_stylesheet_directory_uri() . '/assets/img/cargoloop-api/' . $i . '-full.jpg';
-		$car_images[] = [
-			'thumb_img_url' => $thumb_img_url,
-			'full_img_url' => $full_img_url,
+	check_ajax_referer('tracking_ajax_nonce', 'security');
+	function get_data_from_cargoloop()
+	{
+		$car_images = [];
+		for ($i = 1; $i < 19; $i++) {
+			$thumb_img_url = get_stylesheet_directory_uri() . '/assets/img/cargoloop-api/' . $i . '.jpg';
+			$full_img_url = get_stylesheet_directory_uri() . '/assets/img/cargoloop-api/' . $i . '-full.jpg';
+			$car_images[] = [
+				'thumb_img_url' => $thumb_img_url,
+				'full_img_url' => $full_img_url,
+			];
+		}
+		$car_info = [
+			'car_api_title' => 'Unit Status Report',
+			'main_info_title' => 'Unit Information',
+			'main_info' => [
+				0 => [
+					'title' => 'Description',
+					'text' => 'Description'
+				],
+				1 => [
+					'title' => 'Auction:',
+					'text' => 'Copart'
+				],
+				2 => [
+					'title' => 'Auction Location:',
+					'text' => 'FAIRBURN (GA) 30213'
+				],
+				3 => [
+					'title' => 'Lot Number:',
+					'text' => '70217814'
+				],
+				4 => [
+					'title' => 'Purchase Date:',
+					'text' => '10/07/2024'
+				],
+			],
+			'additional_info_title' => 'Additional Details',
+			'additional_info' => [
+				0 => [
+					'title' => 'Los Angeles, CA',
+					'text' => 'Description'
+				],
+				1 => [
+					'title' => 'Promised Delivery Date:',
+					'text' => '10/15/2024'
+				],
+				2 => [
+					'title' => 'Actual Delivery Date:',
+					'text' => '10/11/2024'
+				],
+				3 => [
+					'title' => 'Keys:',
+					'text' => 'Keys Present'
+				],
+				4 => [
+					'title' => 'Ownership Document:',
+					'text' => 'Title - VALID'
+				],
+				5 => [
+					'title' => 'VIN:',
+					'text' => 'KM8KN4DE0RU263503'
+				],
+				6 => [
+					'title' => 'Make:',
+					'text' => 'Hyundai'
+				],
+				6 => [
+					'title' => 'Model:',
+					'text' => 'IONIQ 5'
+				],
+				7 => [
+					'title' => 'Year:',
+					'text' => '2024'
+				],
+			],
+			'contailner_info_title' => 'Container Info',
+			'contailner_info' => [
+				0 => [
+					'title' => 'Container No:',
+					'text' => ''
+				],
+				1 => [
+					'title' => 'Shipped Date:',
+					'text' => ''
+				],
+				2 => [
+					'title' => 'Arrival Date:',
+					'text' => ''
+				],
+				3 => [
+					'title' => 'Shipping Line:',
+					'text' => ''
+				],
+			],
+			'car_images_title' => 'Photos',
+			'car_images' => $car_images,
+		];
+		$api_answer = [
+			'error' => false,
+			'car_info' => $car_info
+		];
+		return $api_answer;
+	}
+	$api_answer = get_data_from_cargoloop();
+	if (!$api_answer['error']) {
+		$car_info = $api_answer['car_info'];
+		ob_start();
+		get_template_part('template-parts/cargollop-data', null, $car_info);
+		$car_info_html = ob_get_contents();
+		ob_get_clean();
+		$data = [
+			'car_info' => $car_info_html,
+			'success' => true,
+		];
+	} else {
+		$data = [
+			'success' => false,
+			'message' => 'Api return error',
 		];
 	}
-	$car_info = [
-		'car_api_title' => 'Unit Status Report',
-		'main_info_title' => 'Unit Information',
-		'main_info' => [
-			0 => [
-				'title' => 'Description',
-				'text' => 'Description'
-			],
-			1 => [
-				'title' => 'Auction:',
-				'text' => 'Copart'
-			],
-			2 => [
-				'title' => 'Auction Location:',
-				'text' => 'FAIRBURN (GA) 30213'
-			],
-			3 => [
-				'title' => 'Lot Number:',
-				'text' => '70217814'
-			],
-			4 => [
-				'title' => 'Purchase Date:',
-				'text' => '10/07/2024'
-			],
-		],
-		'additional_info_title' => 'Additional Details',
-		'additional_info' => [
-			0 => [
-				'title' => 'Los Angeles, CA',
-				'text' => 'Description'
-			],
-			1 => [
-				'title' => 'Promised Delivery Date:',
-				'text' => '10/15/2024'
-			],
-			2 => [
-				'title' => 'Actual Delivery Date:',
-				'text' => '10/11/2024'
-			],
-			3 => [
-				'title' => 'Keys:',
-				'text' => 'Keys Present'
-			],
-			4 => [
-				'title' => 'Ownership Document:',
-				'text' => 'Title - VALID'
-			],
-			5 => [
-				'title' => 'VIN:',
-				'text' => 'KM8KN4DE0RU263503'
-			],
-			6 => [
-				'title' => 'Make:',
-				'text' => 'Hyundai'
-			],
-			6 => [
-				'title' => 'Model:',
-				'text' => 'IONIQ 5'
-			],
-			7 => [
-				'title' => 'Year:',
-				'text' => '2024'
-			],
-		],
-		'contailner_info_title' => 'Container Info',
-		'contailner_info' => [
-			0 => [
-				'title' => 'Container No:',
-				'text' => ''
-			],
-			1 => [
-				'title' => 'Shipped Date:',
-				'text' => ''
-			],
-			2 => [
-				'title' => 'Arrival Date:',
-				'text' => ''
-			],
-			3 => [
-				'title' => 'Shipping Line:',
-				'text' => ''
-			],
-		],
-		'car_images_title' => 'Photos',
-		'car_images' => $car_images,
-	];
+	wp_send_json($data);
+	die();
 }

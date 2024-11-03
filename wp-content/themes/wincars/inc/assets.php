@@ -6,7 +6,8 @@ function wincars_assets()
 		wp_enqueue_style('base', _TEMPLATEPATH . '/assets/css/base-styles.css', array(), _S_VERSION);
 		wp_enqueue_script('main', _TEMPLATEPATH . '/assets/js/main.js', ['jquery'], _S_VERSION, ['in_footer' => true, 'strategy'  => 'async']);
 		$ajax_params = array(
-			'ajax_url' => admin_url('admin-ajax.php')
+			'ajax_url' => admin_url('admin-ajax.php'),
+			'security' => wp_create_nonce('tracking_ajax_nonce'),
 		);
 		wp_localize_script('main', 'ajax_params', $ajax_params);
 		wp_register_style('swiper', _TEMPLATEPATH . '/assets/libs/swiper/swiper.min.css', array(), '8.3.1');
