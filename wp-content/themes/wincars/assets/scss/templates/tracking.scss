@@ -127,6 +127,9 @@ main {
 		position: relative;
 		height: 50px;
 		background-color: var(--color-orange-hover);
+		@media (max-width: $breakMedium) {
+			border-radius: 10px;
+		}
 		&__close {
 			position: absolute;
 			width: 36px;
@@ -141,11 +144,14 @@ main {
 		}
 	}
 	.car-ap-content {
-		padding: 50px 20px;
-		border-left: 1px solid var(--color-medium-dark);
-		border-right: 1px solid var(--color-medium-dark);
-		border-bottom: 1px solid var(--color-medium-dark);
+		padding: 40px 0;
 		border-radius: 20px;
+		@media (min-width: $breakMedium) {
+			padding: 50px 20px;
+			border-left: 1px solid var(--color-medium-dark);
+			border-right: 1px solid var(--color-medium-dark);
+			border-bottom: 1px solid var(--color-medium-dark);
+		}
 	}
 	&__title {
 		margin-bottom: 35px;
@@ -192,16 +198,18 @@ main {
 		}
 	}
 	.info-col-line {
-		display: flex;
-		column-gap: 20px;
 		line-height: 1.6;
+		@media (min-width: $breakMedium) {
+			display: flex;
+			column-gap: 20px;
+		}
 		&__title {
 			font-weight: 700;
 			font-size: 20px;
 			letter-spacing: 0.07em;
 			flex-grow: 1;
 			max-width: 300px;
-			@media (min-width: $breakExtra) and (max-width: $breakHuge){
+			@media (min-width: $breakExtra) and (max-width: $breakHuge) {
 				max-width: clamp(260px, vw(300), 300px);
 				font-size: clamp(16px, vw(20), 20px);
 			}
@@ -214,7 +222,24 @@ main {
 			}
 		}
 	}
-	
+	.car-gallery {
+		display: grid;
+		gap: 15px;
+		grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	}
+
+	.car-gallery__item {
+		aspect-ratio: 120 / 90; /* Устанавливаем соотношение сторон */
+		width: 100%; /* Ширина элемента занимает всю доступную ширину ячейки */
+		border-radius: 7px;
+		overflow: hidden;
+		cursor: zoom-in;
+		filter: brightness(70%);
+		transition: filter 0.5s;
+		&:hover {
+			filter: brightness(100%);
+		}
+	}
 }
 
 @import "../inc/footer";

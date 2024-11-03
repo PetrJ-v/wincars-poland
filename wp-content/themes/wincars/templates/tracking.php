@@ -139,6 +139,33 @@
 								</div>
 							</div>
 						</div>
+						<?php
+						$car_images = [];
+						for ($i = 1; $i < 19; $i++) {
+							$thumb_img_url = get_stylesheet_directory_uri() . '/assets/img/cargoloop-api/' . $i . '.jpg';
+							$full_img_url = get_stylesheet_directory_uri() . '/assets/img/cargoloop-api/' . $i . '-full.jpg';
+							$car_images[] = [
+								'thumb_img_url' => $thumb_img_url,
+								'full_img_url' => $full_img_url,
+							];
+						}
+						?>
+						<div class="info-row car-api__info-row">
+							<div class="info-col">
+								<div class="info-col-bar">
+									<h2 class="info-col-bar-title">Photos</h2>
+								</div>
+								<div class="info-col-content">
+									<div class="car-gallery">
+										<?php foreach ($car_images as $car_image) : ?>
+											<a class="car-gallery__item cover-img" data-fancybox="car-gallery" href="<?php echo esc_url($car_image['full_img_url']); ?>">
+												<img src="<?php echo esc_url($car_image['thumb_img_url']); ?>">
+											</a>
+										<?php endforeach; ?>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
