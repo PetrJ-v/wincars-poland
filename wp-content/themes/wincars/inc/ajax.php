@@ -152,8 +152,8 @@ function get_car_info()
 					'text' => '2024'
 				],
 			],
-			'contailner_info_title' => 'Container Info',
-			'contailner_info' => [
+			'container_info_title' => 'Container Info',
+			'container_info' => [
 				0 => [
 					'title' => 'Container No:',
 					'text' => ''
