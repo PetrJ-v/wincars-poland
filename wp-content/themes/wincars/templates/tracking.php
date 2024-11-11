@@ -31,13 +31,11 @@
 				<script src=https://www.searates.com/container/widget></script>
 			</div> -->
 			<button class="accent-btn test-btn">Получить данные</button>
-			<div class="api-container">
-
-			</div>
 		</div>
 	</main>
 
 	<?php get_footer(); ?>
+	<div class="api-container"></div>
 
 </body>
 

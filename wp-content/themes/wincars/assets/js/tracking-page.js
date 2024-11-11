@@ -74,11 +74,11 @@
 	});
 	$('.test-btn').on('click', function () {
 		$('.api-container').fadeIn();
+		$('body').addClass('popup-open');
 	});
 	$('body').on('click', '#car-api-close', function(){
-		console.log('close btn cliked');
-
 		$('.api-container').fadeOut();
+		$('body').removeClass('popup-open');
 	})
 
 })(jQuery);
