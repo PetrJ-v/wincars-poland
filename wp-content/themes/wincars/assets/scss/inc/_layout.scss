@@ -7,16 +7,22 @@ body {
 	color: #fff;
 	background-color: var(--global-bg-grey);
 	-webkit-font-smoothing: antialiased;
-	header, main {
+	header,
+	main {
 		transition: filter 1s;
 	}
 	&.popup-open {
-		header, main, footer {
+		overflow: hidden;
+		height: 100vh;
+		header,
+		main,
+		footer {
 			filter: blur(10px);
 		}
 	}
 	&.menu-open {
-		main, footer {
+		main,
+		footer {
 			filter: blur(10px);
 		}
 	}
@@ -41,7 +47,6 @@ body {
 	&:hover {
 		background-color: var(--color-orange-hover);
 	}
-
 }
 /***********************************************************************************************************************
 **	MARGINS AND PADDINGS

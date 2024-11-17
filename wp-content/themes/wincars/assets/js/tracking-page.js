@@ -43,40 +43,52 @@
 		});
 	}
 
-	$(document).ready(function () {
-		$.ajax({
-			url: ajax_params.ajax_url, // Стандартная переменная WordPress для AJAX URL
-			type: 'POST',
-			data: {
-				action: 'get_car_info',
-				security: ajax_params.security, // Nonce для безопасности
-			},
-			success: function (response) {
-				if (response.success) {
-					$('.api-container').append(response.car_info);
-					if ($('.car-gallery').length != 0) {
-						// console.log('it is here');
-						// loadFancybox();
-						initializeFancybox();
-					}
-					$('.test-btn').fadeIn();
-					setTimeout(() => {
+	//KM8KN4DE0RU263503
 
-					}, 100)
-				} else {
-					console.log('Ошибка:', response.message);
+	$(document).ready(function () {
+		// Get current URL
+		const urlParams = new URLSearchParams(window.location.search);
+
+		// Get vin from url
+		const vin = urlParams.get('vin');
+
+		if (vin === 'KM8KN4DE0RU263503') {
+			$.ajax({
+				url: ajax_params.ajax_url,
+				type: 'POST',
+				data: {
+					action: 'get_car_info',
+					security: ajax_params.security, // Nonce for security
+					vin: vin,
+				},
+				success: function (response) {
+					if (response.success) {
+						$('.api-container').append(response.car_info);
+						if ($('.car-gallery').length != 0) {
+							// console.log('it is here');
+							// loadFancybox();
+							initializeFancybox();
+						}
+						$('.get-more').css('display', 'flex');
+						setTimeout(() => {
+
+						}, 100)
+					} else {
+						console.log('Ошибка:', response.message);
+					}
+				},
+				error: function (error) {
+					console.log('Ошибка AJAX запроса:', error);
 				}
-			},
-			error: function (error) {
-				console.log('Ошибка AJAX запроса:', error);
-			}
-		});
+			});
+		}
+
 	});
-	$('.test-btn').on('click', function () {
+	$('#get-more-btn').on('click', function () {
 		$('.api-container').fadeIn();
 		$('body').addClass('popup-open');
 	});
-	$('body').on('click', '#car-api-close', function(){
+	$('body').on('click', '#car-api-close', function () {
 		$('.api-container').fadeOut();
 		$('body').removeClass('popup-open');
 	})

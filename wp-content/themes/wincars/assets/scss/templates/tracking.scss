@@ -29,6 +29,7 @@ main {
 	overflow: hidden;
 }
 .tracking-wrapper {
+	position: relative;
 	border-radius: 35px;
 	overflow: hidden;
 }
@@ -110,12 +111,28 @@ main {
 		transform: translateY(100%);
 	}
 }
-.test-btn {
-	display: none;
+.get-more {
+	// display: none;
+	display: flex;
+	height: 66px;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	left: 15px;
+	bottom: 15px;
 	padding: 10px 20px;
-	font-weight: 700;
-	font-size: 20px;
-	border-radius: 7px;
+	border-radius: 25px;
+	background-color: var(--global-bg-grey);
+	z-index: 2;
+	&__btn {
+		font-weight: 700;
+		font-size: 16px;
+		color: var(--color-light-blue);
+		transition: color 0.3s;
+		&:hover {
+			color: var(--color-orange);
+		}
+	}
 }
 .api-container {
 	display: none;
@@ -134,10 +151,6 @@ main {
 	@media (max-width: $breakHuge) {
 		max-width: calc(100vw - 40px);
 	}
-	// border-radius: 10px;
-	// box-shadow: 0px 0px 10px var(--color-light-blue);
-	// box-shadow: 0px 0px 46px var(--color-medium-dark);
-	// box-shadow: 0 0 3px var(--color-medium-dark);
 }
 .car-api {
 	height: 100%;
@@ -145,20 +158,13 @@ main {
 	color: var(--color-white);
 	border-radius: 10px;
 	overflow: hidden;
-	// box-shadow: 0 0 10px var(--color-light-blue);
 	border-left: 1px solid var(--color-medium-dark);
 	border-right: 1px solid var(--color-medium-dark);
 	border-bottom: 1px solid var(--color-medium-dark);
-	// @media (min-width: $breakMedium) {
-	// }
 	.main-top-bar {
-		// margin-bottom: 25px;
 		position: relative;
 		height: 50px;
 		background-color: var(--color-orange-hover);
-		// @media (max-width: $breakMedium) {
-		// 	border-radius: 10px;
-		// }
 		&__close {
 			position: absolute;
 			width: 36px;
@@ -202,9 +208,6 @@ main {
 
 		@media (min-width: $breakMedium) {
 			padding: 50px 20px;
-			// border-left: 1px solid var(--color-medium-dark);
-			// border-right: 1px solid var(--color-medium-dark);
-			// border-bottom: 1px solid var(--color-medium-dark);
 		}
 	}
 	&__title {
@@ -259,7 +262,7 @@ main {
 		}
 		&__title {
 			font-weight: 700;
-			font-size: 20px;
+			font-size: 18px;
 			letter-spacing: 0.07em;
 			flex-grow: 1;
 			max-width: 300px;
@@ -270,7 +273,7 @@ main {
 		}
 		&__text {
 			font-weight: 400;
-			font-size: 20px;
+			font-size: 18px;
 			@media (max-width: $breakHuge) {
 				font-size: clamp(16px, vw(20), 20px);
 			}
@@ -295,24 +298,6 @@ main {
 		}
 	}
 }
-// Fancybox styles
-// .fancybox-thumbs {
-// 	top: auto;
-// 	width: auto;
-// 	bottom: 0;
-// 	left: 0;
-// 	right: 0;
-// 	height: 95px;
-// 	padding: 10px 10px 5px 10px;
-// 	box-sizing: border-box;
-// 	background: rgba(0, 0, 0, 0.3);
-// 	&__list {
-// 		margin-inline: auto;
-// 		a::before {
-// 			border: 3px solid var(--color-orange);
-// 		}
-// 	}
-// }
 
 .fancybox-thumbs {
 	top: auto;
@@ -340,5 +325,12 @@ main {
 .fancybox-show-thumbs .fancybox-inner {
 	right: 0;
 	bottom: 95px;
+}
+.popup-test {
+	margin-top: 30px;
+	// position: relative;
+	// min-height: 200px;
+	// border-radius: 35px;
+	// background-color: var(--color-light-blue);
 }
 @import "../inc/footer";
