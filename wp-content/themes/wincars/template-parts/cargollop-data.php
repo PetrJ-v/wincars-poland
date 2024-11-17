@@ -4,8 +4,6 @@ $main_info_title = $args['main_info_title'];
 $main_info = $args['main_info'];
 $additional_info_title = $args['additional_info_title'];
 $additional_info = $args['additional_info'];
-$container_info_title = $args['container_info_title'];
-$container_info = $args['container_info'];
 $car_images_title = $args['car_images_title'];
 $car_images = $args['car_images'];
 
@@ -21,7 +19,7 @@ function gen_col_content($info_line)
 	echo '</div>';
 }
 ?>
-<?php if ($main_info || $additional_info || $container_info || $car_images) : ?>
+<?php if ($main_info || $additional_info || $car_images) : ?>
 	<div class="car-api">
 		<div class="main-top-bar">
 			<button class="main-top-bar__close img-wrapper" id="car-api-close" aria-label="close popup">
@@ -51,8 +49,12 @@ function gen_col_content($info_line)
 				</div>
 			<?php endif; ?>
 
-			<?php $row_class = ($additional_info && $container_info) ? 'info-row--col-2' : ''; ?>
-			<?php if ($additional_info || $container_info) : ?>
+			<?php
+			// Логика на случай если нужно сделать 2 колонки
+			// $row_class = ($additional_info && $container_info) ? 'info-row--col-2' : '';
+			$row_class = '';
+			?>
+			<?php if ($additional_info) : ?>
 				<div class="info-row <?php echo $row_class; ?> car-api__info-row">
 
 					<?php if ($additional_info) : ?>
@@ -68,18 +70,6 @@ function gen_col_content($info_line)
 						</div>
 					<?php endif; ?>
 
-					<?php if ($container_info) : ?>
-						<div class="info-col">
-							<div class="info-col-bar">
-								<h2 class="info-col-bar-title"><?php echo esc_html($container_info_title); ?></h2>
-							</div>
-							<div class="info-col-content">
-								<?php foreach ($container_info as $container_info_line) : ?>
-									<?php gen_col_content($container_info_line); ?>
-								<?php endforeach; ?>
-							</div>
-						</div>
-					<?php endif; ?>
 				</div>
 			<?php endif; ?>
 

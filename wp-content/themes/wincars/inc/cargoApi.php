@@ -1,20 +1,33 @@
 <?php
 class CargoloopAPI
 {
+	private static $instance = null;
 	private $username;
 	private $password;
 	private $url;
+	private $urlForImages;
 
-	public function __construct($username, $password, $url)
+	public function __construct()
 	{
-		$this->username = $username;
-		$this->password = $password;
-		$this->url = $url;
+		$this->username = defined('CARGOLOOP_API_USERNAME') ? CARGOLOOP_API_USERNAME : '';
+		$this->password = defined('CARGOLOOP_API_PASSWORD') ? CARGOLOOP_API_PASSWORD : '';
+		$this->url = defined('CARGOLOOP_API_URL') ? CARGOLOOP_API_URL : '';
+		$this->urlForImages = defined('CARGOLOOP_API_URL_IMAGES') ? CARGOLOOP_API_URL_IMAGES : '';
 	}
 
-	private function sendRequest($xmlRequest)
+	// Метод для получения единственного экземпляра класса
+	public static function getInstance()
 	{
-		$ch = curl_init($this->url);
+		if (self::$instance === null) {
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
+
+	private function sendRequest($xmlRequest, $urlForImages = null)
+	{
+		$url = ($urlForImages) ? $urlForImages : $this->url;
+		$ch = curl_init($url);
 
 		// cURL setup
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -58,7 +71,6 @@ class CargoloopAPI
 			'error' => null
 		];
 	}
-
 
 	private function pushNewArrayElement($dateFormat, $key, $value)
 	{
@@ -163,6 +175,7 @@ class CargoloopAPI
 		];
 		return $response;
 	}
+
 	private function parseVehicleDetailsByAccount($cargoResponse)
 	{
 		if (!$cargoResponse->success) {
@@ -192,11 +205,58 @@ class CargoloopAPI
 		// Извлекаем результат GetVehicleDetailsByAccountResult
 		$result = $body->children()->GetVehicleDetailsByAccountResponse->GetVehicleDetailsByAccountResult;
 		// Get all available data
-		$main_info = $this->getTextArray($result, null , ['ID', 'BookingNumber']);
+		$main_info = $this->getTextArray($result, null, ['BookingNumber']);
 
 		$response = (object)[
 			'success' => true,
 			'data' => $main_info,
+			'error' => null
+		];
+		return $response;
+	}
+
+	private function parseVehicleImages($cargoResponse)
+	{
+		if (!$cargoResponse->success) {
+			return $cargoResponse;
+		}
+		// if $cargoResponse have no errors
+		$cargoData = $cargoResponse->data;
+		$xml = simplexml_load_string($cargoData);
+
+		// Проверяем наличие пространства имен "soap12"
+		$namespaces = $xml->getNamespaces(true);
+
+		// Если ключ "soap12" не существует, пробуем получить первый доступный ключ
+		$soapNamespace = $namespaces['soap12'] ?? reset($namespaces);
+
+		// Получаем тело ответа
+		$body = $xml->children($soapNamespace)->Body ?? null;
+
+		if ($body === null) {
+			return $response = (object)[
+				'success' => false,
+				'data' => [],
+				'error' => "Ошибка: Не удалось найти элемент Body в ответе."
+			];
+		}
+
+
+		// Извлекаем результат GetVehicleDetailsByAccountResult
+		$result = $body->children()->GetListResponse->GetListResult;
+		$car_images = [];
+		$i = 0;
+
+		foreach ($result->children() as $image) {
+			$car_images[] = [
+				'thumb_img_url' => (string)$image->ThumbnailURL,
+				'full_img_url' => (string)$image->URL,
+			];
+			$i++;
+		}
+		$response = (object)[
+			'success' => true,
+			'data' => $car_images,
 			'error' => null
 		];
 		return $response;
@@ -245,5 +305,25 @@ class CargoloopAPI
 
 		$response = $this->sendRequest($xmlRequest);
 		return $this->parseVehicleDetailsByAccount($response);
+	}
+
+	public function getVehicleImages($vin)
+	{
+
+		// SOAP-request
+		$xmlRequest = <<<XML
+		<?xml version="1.0" encoding="utf-8"?>
+		<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+			<soap12:Body>
+				<GetList xmlns="http://www.cargoloop.com/">
+					<VIN>{$vin}</VIN>
+				</GetList>
+			</soap12:Body>
+		</soap12:Envelope>
+		XML;
+
+
+		$response = $this->sendRequest($xmlRequest, $this->urlForImages);
+		return $this->parseVehicleImages($response);
 	}
 }

@@ -52,36 +52,34 @@
 		// Get vin from url
 		const vin = urlParams.get('vin');
 
-		if (vin === 'KM8KN4DE0RU263503') {
-			$.ajax({
-				url: ajax_params.ajax_url,
-				type: 'POST',
-				data: {
-					action: 'get_car_info',
-					security: ajax_params.security, // Nonce for security
-					vin: vin,
-				},
-				success: function (response) {
-					if (response.success) {
-						$('.api-container').append(response.car_info);
-						if ($('.car-gallery').length != 0) {
-							// console.log('it is here');
-							// loadFancybox();
-							initializeFancybox();
-						}
-						$('.get-more').css('display', 'flex');
-						setTimeout(() => {
-
-						}, 100)
-					} else {
-						console.log('Ошибка:', response.message);
+		$.ajax({
+			url: ajax_params.ajax_url,
+			type: 'POST',
+			data: {
+				action: 'get_car_info',
+				security: ajax_params.security, // Nonce for security
+				vin: vin,
+			},
+			success: function (response) {
+				if (response.success) {
+					$('.api-container').append(response.car_info);
+					if ($('.car-gallery').length != 0) {
+						// console.log('it is here');
+						// loadFancybox();
+						initializeFancybox();
 					}
-				},
-				error: function (error) {
-					console.log('Ошибка AJAX запроса:', error);
+					$('.get-more').css('display', 'flex');
+					setTimeout(() => {
+
+					}, 100)
+				} else {
+					console.log('Ошибка:', response.message);
 				}
-			});
-		}
+			},
+			error: function (error) {
+				console.log('Ошибка AJAX запроса:', error);
+			}
+		});
 
 	});
 	$('#get-more-btn').on('click', function () {

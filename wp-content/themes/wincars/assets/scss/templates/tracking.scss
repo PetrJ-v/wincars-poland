@@ -111,24 +111,60 @@ main {
 		transform: translateY(100%);
 	}
 }
+
+/* Ключевые кадры для анимации подпрыгивания */
+@keyframes bounce {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-10px);
+	}
+	60% {
+		transform: translateY(-5px);
+	}
+}
+
 .get-more {
-	// display: none;
-	display: flex;
-	height: 66px;
+	display: none;
+	// display: flex;
 	justify-content: center;
 	align-items: center;
 	position: absolute;
-	left: 15px;
-	bottom: 15px;
-	padding: 10px 20px;
-	border-radius: 25px;
-	background-color: var(--global-bg-grey);
+	left: 31px;
+	bottom: 27px;
+	border-radius: 6px;
+	overflow: hidden;
+	animation: bounce 2s infinite;
 	z-index: 2;
+	@media (max-width: $breakMedium) {
+		left: 50%;
+		bottom: 56px;
+		transform: translateX(-50%);
+		animation: none;
+	}
+	&:hover {
+		animation: none;
+	}
 	&__btn {
-		font-weight: 700;
-		font-size: 16px;
-		color: var(--color-light-blue);
+		min-width: 264px;
+		height: 38px;
+		font-weight: 600;
+		font-size: 18px;
+		color: #fff;
+		cursor: pointer;
+		background-color: var(--global-bg-grey);
 		transition: color 0.3s;
+		@media (max-width: $breakMedium) {
+			min-width: 284px;
+			height: 34px;
+			font-weight: 400;
+			font-size: 16px;
+		}
 		&:hover {
 			color: var(--color-orange);
 		}
@@ -137,7 +173,7 @@ main {
 .api-container {
 	display: none;
 	position: fixed;
-	top: 30px;
+	top: 15px;
 	left: 50%;
 	width: 100%;
 	max-width: 1400px;
@@ -145,7 +181,7 @@ main {
 	// padding: 0;
 	overflow: visible;
 	padding-bottom: 20px;
-	background-color: var(--global-bg-grey);
+	// background-color: var(--global-bg-grey);
 	transform: translateX(-50%);
 	z-index: 3;
 	@media (max-width: $breakHuge) {
@@ -161,6 +197,7 @@ main {
 	border-left: 1px solid var(--color-medium-dark);
 	border-right: 1px solid var(--color-medium-dark);
 	border-bottom: 1px solid var(--color-medium-dark);
+	background-color: var(--global-bg-grey);
 	.main-top-bar {
 		position: relative;
 		height: 50px;
@@ -172,6 +209,7 @@ main {
 			top: 50%;
 			right: 15px;
 			transform: translateY(-50%);
+			cursor: pointer;
 			svg rect {
 				fill: #000;
 				fill: #fff;
@@ -261,7 +299,7 @@ main {
 			column-gap: 20px;
 		}
 		&__title {
-			font-weight: 700;
+			font-weight: 600;
 			font-size: 18px;
 			letter-spacing: 0.07em;
 			flex-grow: 1;
@@ -269,6 +307,9 @@ main {
 			@media (min-width: $breakExtra) and (max-width: $breakHuge) {
 				max-width: clamp(260px, vw(300), 300px);
 				font-size: clamp(16px, vw(20), 20px);
+			}
+			@media (max-width: $breakLarge) {
+				letter-spacing: 0.03em;
 			}
 		}
 		&__text {
