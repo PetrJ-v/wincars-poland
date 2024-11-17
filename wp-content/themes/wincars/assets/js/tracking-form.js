@@ -71,8 +71,8 @@
 					if (responseData.status != 'error') {
 
 						let containerNumnber = responseData.container_number;
-						window.location = 'https://wincars.local/tracking/?number=' + containerNumnber +'&vin=' + vin;
-						// window.location = 'https://wincars.bg/tracking/?number=' + containerNumnber +'&vin=' + vin;
+						// window.location = 'https://wincars.local/tracking/?number=' + containerNumnber +'&vin=' + vin;
+						window.location = 'https://wincars.bg/tracking/?number=' + containerNumnber +'&vin=' + vin;
 					} else {
 						$('.tracking-form-message').fadeIn();
 						console.log(responseData.error);
