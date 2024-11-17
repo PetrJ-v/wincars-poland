@@ -1,13 +1,12 @@
 <?php
 
-use WpOrg\Requests\Response;
+
 
 $username = 'wincars';
 $password = 'McLaren2!24';
 
 function get_main_info_from_cargoloop($vin)
 {
-
 	// API URL
 	$url = "https://www.cargoloop.com:8081/SVehicle.asmx";
 	// vin wxample "KM8KN4DE0RU263503"
