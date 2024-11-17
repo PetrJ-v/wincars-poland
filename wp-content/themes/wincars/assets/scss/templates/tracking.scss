@@ -153,8 +153,9 @@ main {
 	&__btn {
 		min-width: 264px;
 		height: 38px;
+		font-family: "Montserrat";
 		font-weight: 600;
-		font-size: 18px;
+		font-size: 16px;
 		color: #fff;
 		cursor: pointer;
 		background-color: var(--global-bg-grey);
@@ -162,8 +163,7 @@ main {
 		@media (max-width: $breakMedium) {
 			min-width: 284px;
 			height: 34px;
-			font-weight: 400;
-			font-size: 16px;
+			font-weight: 500;
 		}
 		&:hover {
 			color: var(--color-orange);
