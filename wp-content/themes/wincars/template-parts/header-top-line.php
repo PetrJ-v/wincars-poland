@@ -29,7 +29,7 @@ $menu_location = (get_template_name() === 'templates/page-feedbacks.php') ? 'top
 	</div>
 	<div class="header-media__cta">
 		<div class="header-media__cta-btn-wrapper">
-			<button class="header-media__cta-btn accent-btn open-popup" data-target="main-form">Остави запитване</button>
+			<button class="header-media__cta-btn accent-btn open-popup" data-target="main-form">Zostaw zapytanie</button>
 		</div>
 	</div>
 	<div class="mobile-menu-wrapper" id="mobile-menu-wrapper">

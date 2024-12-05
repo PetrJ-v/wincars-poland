@@ -109,7 +109,7 @@ $hero_text = get_field('small_intro_text');
 				<div class="lot">
 					<div class="lot__left">
 						<?php if ($lot_number) : ?>
-							<div class="lot__title">Търг <?php echo esc_html($lot_number); ?></div>
+							<div class="lot__title">Aukcja <?php echo esc_html($lot_number); ?></div>
 						<?php endif; ?>
 
 						<?php if (have_rows('lot_info')) : ?>
@@ -140,9 +140,9 @@ $hero_text = get_field('small_intro_text');
 					<div class="lot__right">
 						<div class="lot-subscribe">
 							<div class="lot-subscribe__left">
-								<div class="lot-subscribe__title">Харесваш автомобила?</div>
-								<div class="lot-subscribe__info">Оставете заявка и ние ще се свържем с вас, за да предоставим цялата необходима информация</div>
-								<div class="lot-subscribe__btn accent-btn open-popup" data-target="main-form">Получите оферта</div>
+								<div class="lot-subscribe__title">Podoba Ci się samochód?</div>
+								<div class="lot-subscribe__info">Złóż zapytanie, a my skontaktujemy się z Tobą, aby dostarczyć wszystkie niezbędne informacje.</div>
+								<div class="lot-subscribe__btn accent-btn open-popup" data-target="main-form">Uzyskaj ofertę</div>
 							</div>
 							<div class="lot-subscribe__right">
 								<video preload="none" muted="" playsinline="" loop="" poster="<?php echo _TEMPLATEPATH; ?>/assets/video/form-video-poster.jpg" src="<?php echo _TEMPLATEPATH; ?>/assets/video/form-video.mp4"></video>

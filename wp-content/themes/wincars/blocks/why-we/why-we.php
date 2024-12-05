@@ -1,5 +1,5 @@
 <?php
-$why_we_secrion_title = get_field('');
+$why_we_secrion_title = get_field('why_we_title');
 ?>
 
 <?php if (have_rows('why_we_slider') || $why_we_secrion_title) : ?>
