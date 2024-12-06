@@ -109,7 +109,8 @@ $hero_text = get_field('small_intro_text');
 				<div class="lot">
 					<div class="lot__left">
 						<?php if ($lot_number) : ?>
-							<div class="lot__title">Aukcja <?php echo esc_html($lot_number); ?></div>
+							<?php $lot_title = __('Auction', 'wincars'); ?>
+							<div class="lot__title"><?php echo $lot_title . ' ' . esc_html($lot_number); ?></div>
 						<?php endif; ?>
 
 						<?php if (have_rows('lot_info')) : ?>

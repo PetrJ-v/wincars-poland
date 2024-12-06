@@ -57,7 +57,7 @@
 			<div class='swiper-button-prev'></div>
 			<div class='swiper-button-next'></div>
 		</div>
-		<a href="#" class="last-post-header__btn accent-btn undr-md">Вижте всички публикации</a>
+		<a href="#" class="last-post-header__btn accent-btn undr-md"><?php _e('See all posts', 'wincars'); ?></a>
 	<?php endif; ?>
 
 </div>

@@ -87,6 +87,13 @@
 			}
 		}
 	}
+	a {
+		color: var(--color-orange);
+		transition: color 0.3s;
+		&:hover {
+			color: var(--color-orange-hover);
+		}
+	}
 }
 
 @import "blocks/previews";

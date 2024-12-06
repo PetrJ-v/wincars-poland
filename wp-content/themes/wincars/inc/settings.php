@@ -4,7 +4,7 @@ add_action('after_setup_theme', 'wincars_setup');
 function wincars_setup()
 {
 
-	load_theme_textdomain('wincars', get_template_directory());
+	load_theme_textdomain('wincars', get_template_directory() . '/languages');
 
 	register_nav_menus(array(
 		'top-feedbacks' => 'Top Menu Feedbacks',

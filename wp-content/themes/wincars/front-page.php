@@ -37,13 +37,13 @@
 					</div>
 				<?php endif; ?>
 				<div class="hp-tracking align-center">
-					<div class="hp-tracking__title">Śledzenie</div>
+					<div class="hp-tracking__title"><?php _e('Tracking', 'wincars'); ?></div>
 					<form class="hp-tracking__form" id="tracking-form">
 						<div class="hp-tracking-input-wrapper" id="tracking-form">
 							<input type="text" name="hp-tracking" class="hp-tracking__vin" id="tracking" required placeholder="Wprowadź VIN">
-							<div class="hp-tracking__form-message tracking-form-message">Zły numer vin</div>
+							<div class="hp-tracking__form-message tracking-form-message"><?php _e('Wrong vin number', 'wincars'); ?></div>
 						</div>
-						<button type="submit" class="hp-tracking__submit accent-btn">Szukaj</button>
+						<button type="submit" class="hp-tracking__submit accent-btn"><?php _e('Search', 'wincars'); ?></button>
 					</form>
 				</div>
 			</div>

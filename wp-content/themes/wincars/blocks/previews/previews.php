@@ -8,7 +8,7 @@
 			<div class="last-post-header__info-description">Най-новите новини, технологии и ресурси от нашия
 				екип.</div>
 		</div>
-		<a href="#" class="last-post-header__btn accent-btn at-md">Вижте всички публикации</a>
+		<a href="#" class="last-post-header__btn accent-btn at-md"><?php _e('See all posts', 'wincars'); ?></a>
 	</div>
 	<div class='swiper previews-slider'>
 		<div class="slider-buttons">
