@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: wincars\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-06 20:09+0000\n"
-"PO-Revision-Date: 2024-12-06 20:27+0000\n"
+"PO-Revision-Date: 2024-12-06 20:52+0000\n"
 "Last-Translator: Petr\n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
@@ -28,11 +28,16 @@ msgstr "Aukcja"
 msgid "Published on "
 msgstr "Opublikowano dnia"
 
+#: template-parts/post-preview.php:6
+msgid "Read article"
+msgstr "Przeczytaj artykuł"
+
 #: front-page.php:46
 msgid "Search"
 msgstr "Szukaj"
 
 #: template-parts/post-previews.php:60 blocks/previews/previews.php:11
+#: blocks/previews/previews.php:90
 msgid "See all posts"
 msgstr "Zobacz wszystkie posty"
 

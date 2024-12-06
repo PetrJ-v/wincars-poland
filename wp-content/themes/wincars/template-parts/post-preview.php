@@ -3,7 +3,7 @@
 	<?php if ($post_preview) : ?>
 		<a href="<?php the_permalink(); ?>" class="preview__img cover-img">
 			<?php echo wp_get_attachment_image($post_preview, 'full'); ?>
-			<div class="preview__img-deco">Прочетете статията</div>
+			<div class="preview__img-deco"><?php _e('Read article', 'wincars'); ?></div>
 		</a>
 	<?php endif; ?>
 	<div class="preview__date"><?php echo get_the_date('j F Y') . ' г.'; ?></div>

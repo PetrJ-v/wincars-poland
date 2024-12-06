@@ -15,7 +15,8 @@ $hero_text = get_field('small_intro_text');
 
 			<div class="container">
 				<div class="hero align-center">
-					<div class="hero__subtitle"><?php _e('Published on ', 'wincars') . get_the_date('j F Y') . ' г.'; ?></div>
+					<?php $hero_subtitle_text = __('Published on ', 'wincars'); ?>
+					<div class="hero__subtitle"><?php echo $hero_subtitle_text . ' ' . get_the_date('j F Y') . ' r.'; ?></div>
 					<h1 class="hero__title"><?php the_title(); ?></h1>
 					<?php if ($hero_text) : ?>
 						<div class="hero__text text"><?php echo $hero_text; ?></div>

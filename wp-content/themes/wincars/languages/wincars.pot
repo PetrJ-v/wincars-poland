@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wincars\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-06 20:25+0000\n"
+"POT-Creation-Date: 2024-12-06 20:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -28,11 +28,16 @@ msgstr ""
 msgid "Published on "
 msgstr ""
 
+#: template-parts/post-preview.php:6
+msgid "Read article"
+msgstr ""
+
 #: front-page.php:46
 msgid "Search"
 msgstr ""
 
 #: template-parts/post-previews.php:60 blocks/previews/previews.php:11
+#: blocks/previews/previews.php:90
 msgid "See all posts"
 msgstr ""
 
