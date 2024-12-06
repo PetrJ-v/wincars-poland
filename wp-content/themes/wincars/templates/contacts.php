@@ -102,8 +102,7 @@
 						<?php endif; ?>
 					</div>
 					<div class="location__map img-wrapper">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2935.146047678792!2d23.324694899999997!3d42.6370637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa85f2c8fce2cd%3A0xb6167b1f1735215f!2sWINCARS!5e0!3m2!1sru!2sbg!4v1725880435882!5m2!1sru!2sbg" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-						<!-- <img src="<?php echo _TEMPLATEPATH; ?>/assets/img/contacts/map-temp.jpg" loading="lazy"> -->
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.2833632090455!2d20.981335376823473!3d52.23823657198873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc8175b64d11%3A0x6ceb1bdf0a67e02!2zYWwuIOKAnlNvbGlkYXJub8WbY2nigJ0gMTYzL3UwMTAsIDAwLTE0MCBXYXJzemF3YSwg0J_QvtC70YzRiNCw!5e0!3m2!1sru!2sbg!4v1733426526311!5m2!1sru!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 					</div>
 				</div>
 			</div>
