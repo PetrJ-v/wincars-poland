@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: wincars\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-06 20:09+0000\n"
-"PO-Revision-Date: 2024-12-06 20:52+0000\n"
+"PO-Revision-Date: 2024-12-08 18:47+0000\n"
 "Last-Translator: Petr\n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
@@ -23,6 +23,10 @@ msgstr "Anonimowy"
 #: single-car.php:112
 msgid "Auction"
 msgstr "Aukcja"
+
+#: template-parts/header-top-line.php:53
+msgid "Contacts"
+msgstr "Kontakt"
 
 #: single.php:18
 msgid "Published on "

@@ -6,6 +6,8 @@
 !wp-content/
 !README.md
 .DS_Store
+*.pot~
+*.po~
 
 .idea/
 .history/

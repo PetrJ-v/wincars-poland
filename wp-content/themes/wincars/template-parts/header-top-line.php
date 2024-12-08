@@ -48,10 +48,16 @@ $menu_location = (get_template_name() === 'templates/page-feedbacks.php') ? 'top
 		<div class="header-banner img-wrapper">
 			<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/menu-banner.jpg" alt="Ние ще сбъднем вашата мечта">
 		</div>
-		<div class="header-links">
-			<a href='#' rel='nofollow noopener sponsored' target='blank'>Нашите оферти в mobile.bg</a>
-			<a href='tel:+359889333631' rel='nofollow noopener sponsored' target='blank'>Контакти
-				+359889333631</a>
-		</div>
+		<?php
+			$contact = get_field('f_contacts', 'options');
+			$contact_number = $contact['phone'];
+		?>
+		<?php if ($contact_number) : ?>
+
+			<div class="header-links">
+				<!-- <a href='#' rel='nofollow noopener sponsored' target='blank'>Нашите оферти в mobile.bg</a> -->
+				<a href='tel:+<?php echo $contact_number; ?>' rel='nofollow noopener sponsored' target='blank'><?php _e('Contacts', 'wincars'); ?> +<?php echo $contact_number; ?></a>
+			</div>
+		<?php endif; ?>
 	</div>
 </div>
