@@ -45,15 +45,18 @@ $menu_location = (get_template_name() === 'templates/page-feedbacks.php') ? 'top
 		]);
 		?>
 		<hr>
-		<div class="header-banner img-wrapper">
-			<img src="<?php echo _TEMPLATEPATH; ?>/assets/img/menu-banner.jpg" alt="Ние ще сбъднем вашата мечта">
-		</div>
 		<?php
+			$banner_image = get_field('menu_banner', 'options');
 			$contact = get_field('f_contacts', 'options');
 			$contact_number = $contact['phone'];
 		?>
-		<?php if ($contact_number) : ?>
+		<?php if ($banner_image) : ?>
+			<div class="header-banner img-wrapper">
+				<?php echo wp_get_attachment_image($banner_image, 'full'); ?>
+			</div>
+		<?php endif; ?>
 
+		<?php if ($contact_number) : ?>
 			<div class="header-links">
 				<!-- <a href='#' rel='nofollow noopener sponsored' target='blank'>Нашите оферти в mobile.bg</a> -->
 				<a href='tel:+<?php echo $contact_number; ?>' rel='nofollow noopener sponsored' target='blank'><?php _e('Contacts', 'wincars'); ?> +<?php echo $contact_number; ?></a>
