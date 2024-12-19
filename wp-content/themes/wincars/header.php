@@ -27,8 +27,6 @@
 			'https://connect.facebook.net/en_US/fbevents.js');
 		fbq('init', '1268784784409264');
 		fbq('track', 'PageView');
-		fbq('track', 'Contact');
-		fbq('track', 'Lead');
 	</script>
 	<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1268784784409264&ev=PageView&noscript=1" /></noscript>
 	<!-- End Meta Pixel Code -->

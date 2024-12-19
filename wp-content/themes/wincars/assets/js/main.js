@@ -5,7 +5,7 @@
 			$('html, body').animate({ scrollTop: $(destination).offset().top - topMargin }, 800, 'linear') // анимируем скроолинг к элементу destination
 		}
 	};
-	$('#top-btn').on('click', function(){
+	$('#top-btn').on('click', function () {
 		$('html, body').animate({ scrollTop: 0 }, 600, 'linear') // анимируем скроолинг к элементу destination
 	})
 	document.breakpointChecker = function (breakpoint, slider, enableSlider) {
@@ -110,7 +110,7 @@
 				closeMenu(this);
 			}
 		})
-		const checkMenu = function(){
+		const checkMenu = function () {
 			if ($('body').width() >= 992) {
 				closeMenu();
 			}
@@ -120,7 +120,7 @@
 			checkMenu();
 		});
 
-		$(window).on('scroll', function(){
+		$(window).on('scroll', function () {
 			if ($(window).scrollTop() > 500) {
 				if (!$('#top-btn').hasClass('vissible')) {
 					$('#top-btn').addClass('vissible');
@@ -201,5 +201,10 @@
 			$('body').removeClass('popup-open');
 		})
 
+		document.addEventListener('wpcf7mailsent', function (event) {
+			if ( '171' == event.detail.contactFormId ) { // 171 - main form id
+				fbq('track', 'Lead');
+			}
+		}, false);
 	});
 })(jQuery);

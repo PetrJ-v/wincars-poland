@@ -3,7 +3,9 @@
 ?>
 
 <?php get_header(); ?>
-
+<script>
+	fbq('track', 'Contact'); // facebook pixel event
+</script>
 <body <?php body_class(); ?>>
 	<?php get_template_part('template-parts/page-header'); ?>
 
