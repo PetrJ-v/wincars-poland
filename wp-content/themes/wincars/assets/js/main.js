@@ -202,8 +202,20 @@
 		})
 
 		document.addEventListener('wpcf7mailsent', function (event) {
-			if ( '171' == event.detail.contactFormId ) { // 171 - main form id
+			if ('171' == event.detail.contactFormId) { // 171 - main form id
 				fbq('track', 'Lead');
+
+				let callback = function () {
+					if (typeof (url) != 'undefined') {
+						window.location = url;
+					}
+				};
+				gtag('event', 'conversion', {
+					'send_to': 'AW-11519460837/IU9XCK-Ir4IaEOWL9PQq',
+					'value': 1.0,
+					'currency': 'PLN',
+					'event_callback': callback
+				});
 			}
 		}, false);
 	});
