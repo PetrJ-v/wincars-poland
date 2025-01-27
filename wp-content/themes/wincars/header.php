@@ -5,6 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<?php wp_head(); ?>
 
+	<!-- Cookies banner -->
+	<script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="UCxtr_GjtJgr17" async></script>
+
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-BVPFMZDHK8"></script>
 	<script>
